@@ -27,6 +27,7 @@ public class Main extends Application {
 
 
 
+
         // Drag
         root.lookup("#dank").setOnMouseDragged(event -> {
             primaryStage.setX(event.getScreenX());
