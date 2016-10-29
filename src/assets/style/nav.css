@@ -1,16 +1,16 @@
 #exit{
-    -fx-background-color: rgba(255, 0, 255, 0);
     -fx-background-radius: 0;
 }
 #exit:hover{
     -fx-border-radius: 12px;
     -fx-background-color: cadetblue;
 }
-#Pane {
+#pane{
     -fx-border-width: 1px;
     -fx-border-color: black;
     -fx-border-style: solid;
 }
+
 #hyperlink {
-    
+
 }
