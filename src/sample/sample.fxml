@@ -2,9 +2,11 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 
-<Pane id="dank" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="900" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button id="exit" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" stylesheets="@../assets/style/nav.css" text="Click if you like Pepe" />
+      <Button id="exit" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="732.0" layoutY="431.0" mnemonicParsing="false" stylesheets="@../assets/style/nav.css" text="Click if you like Pepe" />
+      <Rectangle id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" stroke="BLACK" strokeType="INSIDE" width="900.0" />
    </children>
 </Pane>
