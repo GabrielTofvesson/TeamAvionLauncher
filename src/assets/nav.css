@@ -1,3 +1,7 @@
 #exit{
     -fx-background-color: rgba(255, 0, 255, 0.5);
+    -fx-background-radius: 0;
+}
+#exit:hover{
+    -fx-background-color: rgba(0, 0, 255, 0.5);
 }

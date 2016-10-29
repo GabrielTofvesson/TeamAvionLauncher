@@ -9,9 +9,11 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
+    volatile double[] posOrigin = {0, 0};
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 900, 500));
@@ -21,6 +23,16 @@ public class Main extends Application {
                 primaryStage.setMaximized(false);
         });
         root.lookup("#exit").setOnMouseClicked(event -> primaryStage.close());                                          // Close program if button is clicked
+
+
+
+
+        // Drag
+        root.lookup("#dank").setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX());
+            primaryStage.setY(event.getScreenY());
+        });
+
     }
 
 
