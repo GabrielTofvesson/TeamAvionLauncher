@@ -24,8 +24,9 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
         primaryStage.maximizedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue)
+            if (newValue) {
                 primaryStage.setMaximized(false);
+            }
         });
         root.lookup("#exit").setOnMouseClicked(event -> primaryStage.close());
 
