@@ -16,6 +16,8 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 400, 400));
         primaryStage.show();
+
+        root.lookup("#exit").setOnMouseClicked(event -> primaryStage.close());                                          // Close program if button is clicked
     }
 
 
