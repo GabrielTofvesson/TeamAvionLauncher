@@ -11,19 +11,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
-        primaryStage.maximizedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue)
-                primaryStage.setMaximized(false);
-        });
-        root.lookup("#exit").setOnMouseClicked(event -> primaryStage.close());                                          // Close program if button is clicked
+        root.lookup("#exit").setOnMouseClicked(event -> primaryStage.close());
     }
-
-
     public static void main(String[] args) {
         launch(args);
     }
