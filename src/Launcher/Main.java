@@ -3,8 +3,9 @@ NOTE TO ANY READERS:
 Check out "Rogue - Atlantic". It's a pretty sweet song though I must say that Flo Rida has some pretty good songs too.
 Either way, I'd recommend some music if you're considering reading through this hell. Honestly, I feel like even my
 not-so-messy code is extremely messy just because of how I work. I mean, I try to make the code readable but people
-always tell me that it's virtually unreadable and it doesn't help that It's difficult to explain to them what the code
-does without them losing interest.
+always tell me that it's virtually unreadable and it doesn't help that it's difficult to explain to them what the code
+does without them losing interest. Also, in case you are actually, seriously going to read this crap, do yourself a
+favour and pour yourself some nice Jack Daniels. You deserve it if you're going to read through this.
  */
 package Launcher;
 
@@ -20,7 +21,7 @@ import javafx.stage.StageStyle;
 public class Main extends Application {
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
-    private Button exit, min, Home_btn, Modpack_btn;                                                                                           // Define buttons
+    private Button exit, min, Home_btn, Modpack_btn;                                                                    // Define buttons
     private Rectangle dragBar;                                                                                          // Draggable top bar
 
     @Override
