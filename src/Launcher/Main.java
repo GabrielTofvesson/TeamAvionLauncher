@@ -14,6 +14,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -27,8 +28,9 @@ public class Main extends Application {
     public static final URL mainLauncher = Main.class.getResource("../assets/layout/main.fxml");                        // Launcher body
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
-    private Button exit, min, Home_btn, Modpack_btn, Settings_btn;                                                      // Define buttons
+    private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Search_modpacks_btn;                                 // Define buttons
     private ImageView icon;
+    private TextField Search_modpacks;
     private Image appIcon;
     private Rectangle dragBar;                                                                                          // Draggable top bar
     private Pane root, tab;
@@ -55,6 +57,8 @@ public class Main extends Application {
         Settings_btn = (Button) root.lookup("#Settings-btn");
         tab = (Pane) root.lookup("#tab");
         icon = (ImageView) root.lookup("#icon");
+        Search_modpacks_btn = (Button) root.lookup("#search-modpacks-btn");
+        Search_modpacks = (TextField) root.lookup("#search-modpacks");
 
         // Infrastructural navigation
         exit.setOnMouseClicked(event -> primaryStage.close());                                                          // Closes the program if exit button is clicked
