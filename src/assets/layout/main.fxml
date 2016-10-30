@@ -27,5 +27,6 @@
               <Font name="Centaur" size="16.0" />
           </font>
       </Button>
+      <Pane id="tab" layoutX="150.0" layoutY="50.0" prefHeight="451.0" prefWidth="751.0" />
    </children>
 </Pane>
