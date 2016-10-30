@@ -6,11 +6,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="900" stylesheets="@../assets/style/nav.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
+<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="900" stylesheets="@../style/nav.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="white" height="50.0" strokeType="INSIDE" width="900.0" />
-      <Button id="exit" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="862.0" layoutY="13.0" mnemonicParsing="false" stylesheets="@../assets/style/nav.css" text="X" textFill="WHITE" />
-       <Button id="min" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="841.0" layoutY="13.0" mnemonicParsing="false" stylesheets="@../assets/style/nav.css" text="-" textFill="WHITE" />
+      <Button id="exit" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="862.0" layoutY="13.0" mnemonicParsing="false" stylesheets="@../style/nav.css" text="X" textFill="WHITE" />
+       <Button id="min" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="841.0" layoutY="13.0" mnemonicParsing="false" stylesheets="@../style/nav.css" text="-" textFill="WHITE" />
        <Label layoutX="46.0" layoutY="11.0" text="Team-Avion Launcher" textFill="WHITE">
          <font>
             <Font name="Centaur" size="24.0" />

@@ -29,7 +29,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         primaryStage.initStyle(StageStyle.UNDECORATED);
-        Parent root = FXMLLoader.load(getClass().getResource("Main_Launcher.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../assets/layout/Main_Launcher.fxml"));
         primaryStage.setTitle("Team-Avion Launcher [WIP]");
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
