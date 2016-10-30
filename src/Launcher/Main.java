@@ -13,7 +13,7 @@ import javafx.stage.StageStyle;
 public class Main extends Application {
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
-    private Button exit, min;                                                                                           // Define buttons
+    private Button exit, min, Home_btn, Modpack_btn;                                                                                           // Define buttons
     private Rectangle dragBar;                                                                                          // Draggable top bar
 
     @Override
@@ -30,7 +30,8 @@ public class Main extends Application {
         exit = (Button) root.lookup("#exit");
         min = (Button) root.lookup("#min");
         dragBar = (Rectangle) root.lookup("#rectangle");
-
+        Home_btn = (Button) root.lookup("#Home-btn");
+        Modpack_btn = (Button) root.lookup("#Modpacks-btn");
 
 
         // Infrastructural navigation
