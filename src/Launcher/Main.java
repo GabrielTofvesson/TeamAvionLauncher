@@ -1,6 +1,7 @@
 package Launcher;
 
 import javafx.application.Application;
+import javafx.beans.property.ReadOnlyBooleanProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,6 +19,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
         primaryStage.initStyle(StageStyle.UNDECORATED);
         Parent root = FXMLLoader.load(getClass().getResource("Main_Launcher.fxml"));
         primaryStage.setTitle("Team-Avion Launcher [WIP]");
@@ -32,6 +34,7 @@ public class Main extends Application {
             xOffset = event.getSceneX();
             yOffset = event.getSceneY();
         });
+
         root.lookup("#rectangle").setOnMouseDragged(event -> {
             primaryStage.setX(event.getScreenX() - xOffset);
             primaryStage.setY(event.getScreenY() - yOffset);

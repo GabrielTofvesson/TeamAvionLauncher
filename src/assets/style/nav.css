@@ -12,9 +12,9 @@
 }
 #min:hover {
     -fx-border-radius: 30px;
-    -fx-background-color: red;
+    -fx-background-color: #bf0000;
 }
 #exit:hover{
     -fx-border-radius: 30px;
-    -fx-background-color: red;
+    -fx-background-color: #bf0000;
 }
