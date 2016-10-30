@@ -21,14 +21,13 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import java.net.URL;
-import java.util.Set;
 
 public class Main extends Application {
 
     public static final URL mainLauncher = Main.class.getResource("../assets/layout/main.fxml");                        // Launcher body
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
-    private Button exit, min, Home_btn, Modpack_btn, Settings_btn;                                                                    // Define buttons
+    private Button exit, min, Home_btn, Modpack_btn, Settings_btn;                                                      // Define buttons
     private ImageView icon;
     private Image appIcon;
     private Rectangle dragBar;                                                                                          // Draggable top bar
@@ -57,7 +56,6 @@ public class Main extends Application {
         tab = (Pane) root.lookup("#tab");
         icon = (ImageView) root.lookup("#icon");
 
-
         // Infrastructural navigation
         exit.setOnMouseClicked(event -> primaryStage.close());                                                          // Closes the program if exit button is clicked
         min.setOnMouseClicked(event -> primaryStage.setIconified(true));                                                // Minimizes the program if minimize button is clicked
@@ -74,7 +72,6 @@ public class Main extends Application {
             primaryStage.setX(event.getScreenX() - xOffset);
             primaryStage.setY(event.getScreenY() - yOffset);
         });
-
 
         // Set up default layout
         Tabs.Home.switchTab(tab);
