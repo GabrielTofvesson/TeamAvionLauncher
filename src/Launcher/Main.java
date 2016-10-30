@@ -1,7 +1,14 @@
+/*
+NOTE TO ANY READERS:
+Check out "Rogue - Atlantic". It's a pretty sweet song though I must say that Flo Rida has some pretty good songs too.
+Either way, I'd recommend some music if you're considering reading through this hell. Honestly, I feel like even my
+not-so-messy code is extremely messy just because of how I work. I mean, I try to make the code readable but people
+always tell me that it's virtually unreadable and it doesn't help that It's difficult to explain to them what the code
+does without them losing interest.
+ */
 package Launcher;
 
 import javafx.application.Application;
-import javafx.beans.property.ReadOnlyBooleanProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
