@@ -1,8 +1,8 @@
 #pane {
-    -fx-background-color: rgba(38, 33, 33, 1)
+    -fx-background-color: #050f19;
 }
 #rectangle {
-    -fx-fill: rgba(30, 25, 25, 1)
+    -fx-fill: #031128;
 }
 #exit, #min{
     -fx-background-color: rgba(30, 25, 25, 0);
@@ -15,6 +15,6 @@
     -fx-background-color: rgba(0, 0, 0, 0);
 }
 #Home-btn:hover, #Modpacks-btn:hover {
-    -fx-background-color: rgba(50, 50, 50, 1);
+    -fx-background-color: #0c182d;
     -fx-background-radius: 0em;
 }
