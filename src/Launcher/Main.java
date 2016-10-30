@@ -73,8 +73,7 @@ public class Main extends Application {
             if(activeTab!=Tabs.Modpacks){
                 (activeTab=Tabs.Modpacks).switchTab(tab);                                                               // Sets the active tab to the modpacks tab unless it's already active
                 Tabs.Modpacks.loaded.lookup("#search-modpacks").setOnInputMethodTextChanged(System.out::println);
-                //TODO: Create a dynamic updating string for the input
-
+                //TODO: Create a dynamic updating string from the input ( Text Field )
             }
         });
         Settings_btn.setOnMouseClicked(event ->{
