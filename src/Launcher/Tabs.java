@@ -8,7 +8,7 @@ import java.net.URL;
 
 public enum Tabs {
 
-    Modpacks(Main.class.getResource("../assets/layout/modpacks.fxml")), Home(Main.class.getResource("../assets/layout/home.fxml")), Settings(Main.class.getResource("../assets/layout/settings.fxml"));
+    Modpacks(Tabs.class.getResource("../assets/layout/modpacks.fxml")), Home(Tabs.class.getResource("../assets/layout/home.fxml")), Settings(Tabs.class.getResource("../assets/layout/settings.fxml"));
 
     public final URL url;
     private Parent loaded;

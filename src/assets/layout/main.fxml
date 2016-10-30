@@ -12,8 +12,8 @@
       <Rectangle id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="white" height="50.0" strokeType="INSIDE" width="900.0" />
       <Button id="exit" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="862.0" layoutY="13.0" mnemonicParsing="false" stylesheets="@../style/nav.css" text="X" textFill="WHITE" />
        <Button id="min" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="841.0" layoutY="13.0" mnemonicParsing="false" stylesheets="@../style/nav.css" text="-" textFill="WHITE" />
-       <ImageView id="icon" fitHeight="30" fitWidth="30" layoutX="10" layoutY="11" />
-       <Label layoutX="46.0" layoutY="11.0" text="Team-Avion Launcher" textFill="WHITE">
+       <ImageView id="icon" fitHeight="32" fitWidth="64" layoutX="5" layoutY="10" />
+       <Label layoutX="70.0" layoutY="11.0" text="Team-Avion Launcher" textFill="WHITE">
          <font>
             <Font name="Centaur" size="24.0" />
          </font>
