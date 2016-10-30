@@ -7,6 +7,7 @@ always tell me that it's virtually unreadable and it doesn't help that it's diff
 does without them losing interest. Also, in case you are actually, seriously going to read this crap, do yourself a
 favour and pour yourself some nice Jack Daniels. You deserve it if you're going to read through this.
  */
+
 package Launcher;
 
 import javafx.application.Application;

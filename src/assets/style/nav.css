@@ -4,22 +4,15 @@
 #rectangle {
     -fx-fill: rgba(30, 25, 25, 1)
 }
-#exit{
-    -fx-background-color: rgba(30, 25, 25, 1);
+#exit, #min{
+    -fx-background-color: rgba(30, 25, 25, 0);
 }
-#min {
-    -fx-background-color: rgba(30, 25, 25, 1);
-}
-#min:hover {
-    -fx-border-radius: 30px;
-    -fx-background-color: #bf0000;
-}
-#exit:hover{
+#min:hover, #exit:hover{
     -fx-border-radius: 30px;
     -fx-background-color: #bf0000;
 }
 #Home-btn, #Modpacks-btn {
-    -fx-background-color: rgba(0, 0, 0, 1)
+    -fx-background-color: rgba(0, 0, 0, 0)
 }
 #Home-btn:hover, #Modpacks-btn:hover {
     -fx-background-color: rgba(100, 100, 100, 1)
