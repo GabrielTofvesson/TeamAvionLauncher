@@ -21,13 +21,14 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import java.net.URL;
+import java.util.Set;
 
 public class Main extends Application {
 
     public static final URL mainLauncher = Main.class.getResource("../assets/layout/main.fxml");                        // Launcher body
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
-    private Button exit, min, Home_btn, Modpack_btn;                                                                    // Define buttons
+    private Button exit, min, Home_btn, Modpack_btn, Settings_btn;                                                                    // Define buttons
     private ImageView icon;
     private Image appIcon;
     private Rectangle dragBar;                                                                                          // Draggable top bar
@@ -52,6 +53,7 @@ public class Main extends Application {
         dragBar = (Rectangle) root.lookup("#rectangle");
         Home_btn = (Button) root.lookup("#Home-btn");
         Modpack_btn = (Button) root.lookup("#Modpacks-btn");
+        Settings_btn = (Button) root.lookup("#Settings-btn");
         tab = (Pane) root.lookup("#tab");
         icon = (ImageView) root.lookup("#icon");
 
@@ -61,7 +63,7 @@ public class Main extends Application {
         min.setOnMouseClicked(event -> primaryStage.setIconified(true));                                                // Minimizes the program if minimize button is clicked
         Home_btn.setOnMouseClicked(event -> {if(activeTab!=Tabs.Home)(activeTab=Tabs.Home).switchTab(tab);});           // Sets the active tab to the home tab unless it's already active
         Modpack_btn.setOnMouseClicked(event -> {if(activeTab!=Tabs.Modpacks)(activeTab=Tabs.Modpacks).switchTab(tab);});// Sets the active tab to the modpacks tab unless it's already active
-
+        Settings_btn.setOnMouseClicked(event -> {if(activeTab!=Tabs.Settings)(activeTab=Tabs.Settings).switchTab(tab);});
 
         // Drag
         dragBar.setOnMousePressed(event -> {

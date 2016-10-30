@@ -19,16 +19,21 @@
          </font>
       </Label>
       <Rectangle id="nav" arcHeight="5.0" arcWidth="5.0" fill="#101e38" height="450.0" layoutY="50.0" stroke="TRANSPARENT" strokeType="INSIDE" width="150.0" />
-      <Button id="Home-btn" layoutY="50.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="150.0" text="Home" textFill="WHITE" textOverrun="CLIP">
+      <Button id="Home-btn" layoutY="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Home" textFill="WHITE" textOverrun="CLIP">
          <font>
             <Font name="Centaur" size="16.0" />
          </font>
       </Button>
-      <Button id="Modpacks-btn" layoutY="89.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="150.0" text="Modpack" textFill="WHITE" textOverrun="CLIP">
+      <Button id="Modpacks-btn" layoutY="90.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Modpack" textFill="WHITE" textOverrun="CLIP">
           <font>
               <Font name="Centaur" size="16.0" />
           </font>
       </Button>
+       <Button id="Settings-btn" layoutY="130.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Settings" textFill="WHITE" textOverrun="CLIP">
+           <font>
+               <Font name="Centaur" size="16.0" />
+           </font>
+       </Button>
       <Pane id="tab" layoutX="150.0" layoutY="50.0" prefHeight="450.0" prefWidth="750.0" />
       <Label layoutX="26.0" layoutY="455.0" text="Version : Dev-0.0.1" textFill="white" />
       <Label layoutX="9.0" layoutY="472.0" text="Copyright 2016 TeamAvion" textFill="WHITE">
