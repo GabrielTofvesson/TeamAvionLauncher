@@ -1,0 +1,20 @@
+#pane {
+    -fx-background-color: rgba(38, 33, 33, 1)
+}
+#rectangle {
+    -fx-fill: rgba(30, 25, 25, 1)
+}
+#exit{
+    -fx-background-color: rgba(30, 25, 25, 1);
+}
+#min {
+    -fx-background-color: rgba(30, 25, 25, 1);
+}
+#min:hover {
+    -fx-border-radius: 30px;
+    -fx-background-color: #bf0000;
+}
+#exit:hover{
+    -fx-border-radius: 30px;
+    -fx-background-color: #bf0000;
+}
