@@ -22,6 +22,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+import javafx.scene.input.KeyEvent;
 import java.net.URL;
 import com.tofvesson.async.*;
 
@@ -30,7 +32,7 @@ public class Main extends Application {
     public static final URL mainLauncher = Main.class.getResource("../assets/layout/main.fxml");                        // Launcher body
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
-    private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Search_modpacks_btn;                                 // Define buttons
+    private Button exit, min, Home_btn, Modpack_btn, Settings_btn;                                 // Define buttons
     private ImageView icon;
     private TextField Search_modpacks;
     private Image appIcon;
@@ -60,7 +62,6 @@ public class Main extends Application {
         Settings_btn = (Button) root.lookup("#Settings-btn");
         tab = (Pane) root.lookup("#tab");
         icon = (ImageView) root.lookup("#icon");
-        Search_modpacks_btn = (Button) root.lookup("#search-modpacks-btn");
         Search_modpacks = (TextField) root.lookup("#search-modpacks");
 
 
@@ -72,6 +73,8 @@ public class Main extends Application {
             if(activeTab!=Tabs.Modpacks){
                 (activeTab=Tabs.Modpacks).switchTab(tab);                                                               // Sets the active tab to the modpacks tab unless it's already active
                 Tabs.Modpacks.loaded.lookup("#search-modpacks").setOnInputMethodTextChanged(System.out::println);
+                //TODO: Create a dynamic updating string for the input
+
             }
         });
         Settings_btn.setOnMouseClicked(event ->{

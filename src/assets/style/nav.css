@@ -4,6 +4,9 @@
 #rectangle {
     -fx-fill: #031128;
 }
+#Modpack-back {
+    -fx-fill: #042344;
+}
 #exit, #min{
     -fx-background-color: rgba(30, 25, 25, 0);
 }
@@ -17,13 +20,8 @@
     -fx-background-color: #0c182d;
     -fx-background-radius: 0em;
 }
-#search-modpacks-btn {
-    -fx-background-color: #031128;
-}
-#search-modpacks-btn:hover  {
-    -fx-background-color: #0c182d;
-}
 #search-modpacks {
+    -fx-text-inner-color: white;
     -fx-background-color: rgba(0, 0, 0, 0.5);
     -fx-padding: 10px;
 }
