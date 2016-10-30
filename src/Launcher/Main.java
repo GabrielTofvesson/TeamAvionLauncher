@@ -19,15 +19,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.initStyle(StageStyle.UNDECORATED);
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Main_Launcher.fxml"));
         primaryStage.setTitle("Team-Avion Launcher [WIP]");
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
 
-        Desktop.getDesktop().browse(new URI("www.youtube.com"));
-
-
         root.lookup("#exit").setOnMouseClicked(event -> primaryStage.close());
+        root.lookup("#min").setOnMouseClicked(event -> primaryStage.setIconified(true));
 
         // Drag
         root.lookup("#rectangle").setOnMousePressed(event -> {

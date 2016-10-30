@@ -7,6 +7,13 @@
 #exit{
     -fx-background-color: rgba(30, 25, 25, 1);
 }
+#min {
+    -fx-background-color: rgba(30, 25, 25, 1);
+}
+#min:hover {
+    -fx-border-radius: 30px;
+    -fx-background-color: red;
+}
 #exit:hover{
     -fx-border-radius: 30px;
     -fx-background-color: red;
