@@ -8,7 +8,6 @@
     -fx-background-color: rgba(30, 25, 25, 0);
 }
 #min:hover, #exit:hover{
-    -fx-border-radius: 30px;
     -fx-background-color: #bf0000;
 }
 #Home-btn, #Modpacks-btn {
