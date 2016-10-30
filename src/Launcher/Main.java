@@ -5,17 +5,16 @@ import javafx.beans.property.ReadOnlyBooleanProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import java.awt.*;
-import java.net.URI;
 
 public class Main extends Application {
 
-    private double xOffset = 0;
-    private double yOffset = 0;
-
-    volatile double[] posOrigin = {0, 0};
+    private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
+    private Button exit, min;                                                                                           // Define buttons
+    private Rectangle dragBar;                                                                                          // Draggable top bar
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -26,20 +25,29 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
 
-        root.lookup("#exit").setOnMouseClicked(event -> primaryStage.close());
-        root.lookup("#min").setOnMouseClicked(event -> primaryStage.setIconified(true));
+
+        // Field initialization
+        exit = (Button) root.lookup("#exit");
+        min = (Button) root.lookup("#min");
+        dragBar = (Rectangle) root.lookup("#rectangle");
+
+
+
+        // Infrastructural navigation
+        exit.setOnMouseClicked(event -> primaryStage.close());
+        min.setOnMouseClicked(event -> primaryStage.setIconified(true));
 
         // Drag
-        root.lookup("#rectangle").setOnMousePressed(event -> {
+        dragBar.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
             yOffset = event.getSceneY();
         });
-
-        root.lookup("#rectangle").setOnMouseDragged(event -> {
+        dragBar.setOnMouseDragged(event -> {
             primaryStage.setX(event.getScreenX() - xOffset);
             primaryStage.setY(event.getScreenY() - yOffset);
         });
     }
+
     public static void main(String[] args) {
         launch(args);
     }
