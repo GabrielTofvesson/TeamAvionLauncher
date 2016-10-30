@@ -16,16 +16,16 @@ public class Updater {
         conn = new URL(URL).openConnection();
     }
 
-    public void download(){
-        //TODO: Download lots of
+    public void downloadStuff(){
+        //TODO: Download lots of stuff
     }
 
-    public void downloadMore(){
-        //TODO: Download more
+    public void downloadMoreStuff(){
+        //TODO: Download more stuff
     }
 
-    public void downloadEvenMore(){
-        //TODO: Download even more
+    public void downloadEvenMoreStuff(){
+        //TODO: Download even more stuff
     }
 
     public static Updater getInstance(String url) throws IOException {

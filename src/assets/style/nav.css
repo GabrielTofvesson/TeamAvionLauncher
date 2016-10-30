@@ -1,20 +1,27 @@
 #pane {
-    -fx-background-color: rgba(38, 33, 33, 1)
+    -fx-background-color: #050f19;
 }
 #rectangle {
-    -fx-fill: rgba(30, 25, 25, 1)
+    -fx-fill: #031128;
 }
-#exit{
-    -fx-background-color: rgba(30, 25, 25, 1);
+#Modpack-back {
+    -fx-fill: #042344;
 }
-#min {
-    -fx-background-color: rgba(30, 25, 25, 1);
+#exit, #min{
+    -fx-background-color: rgba(30, 25, 25, 0);
 }
-#min:hover {
-    -fx-border-radius: 30px;
+#min:hover, #exit:hover{
     -fx-background-color: #bf0000;
 }
-#exit:hover{
-    -fx-border-radius: 30px;
-    -fx-background-color: #bf0000;
+#Home-btn, #Modpacks-btn, #Settings-btn {
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+#Home-btn:hover, #Modpacks-btn:hover, #Settings-btn:hover {
+    -fx-background-color: #0c182d;
+    -fx-background-radius: 0em;
+}
+#search-modpacks {
+    -fx-text-inner-color: white;
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-padding: 10px;
 }
