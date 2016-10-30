@@ -28,6 +28,7 @@ public class Main extends Application {
     private Button exit, min, Home_btn, Modpack_btn;                                                                    // Define buttons
     private Rectangle dragBar;                                                                                          // Draggable top bar
     private Pane root, tab;
+    private Tabs activeTab = Tabs.Home;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -51,6 +52,8 @@ public class Main extends Application {
         // Infrastructural navigation
         exit.setOnMouseClicked(event -> primaryStage.close());
         min.setOnMouseClicked(event -> primaryStage.setIconified(true));
+        Home_btn.setOnMouseClicked(event -> { if(activeTab!=Tabs.Home) (activeTab=Tabs.Home).switchTab(tab); });
+        Modpack_btn.setOnMouseClicked(event -> { if(activeTab!=Tabs.Modpacks) (activeTab=Tabs.Modpacks).switchTab(tab); });
 
         // Drag
         dragBar.setOnMousePressed(event -> {
