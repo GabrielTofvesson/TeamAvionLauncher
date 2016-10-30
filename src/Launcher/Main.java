@@ -37,6 +37,7 @@ public class Main extends Application {
         exit.setOnMouseClicked(event -> primaryStage.close());
         min.setOnMouseClicked(event -> primaryStage.setIconified(true));
 
+
         // Drag
         dragBar.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
