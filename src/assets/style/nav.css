@@ -15,5 +15,6 @@
     -fx-background-color: rgba(0, 0, 0, 0);
 }
 #Home-btn:hover, #Modpacks-btn:hover {
-    -fx-background-color: rgba(50, 50, 50, 1)
+    -fx-background-color: rgba(50, 50, 50, 1);
+    -fx-background-radius: 0em;
 }

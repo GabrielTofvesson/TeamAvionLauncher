@@ -14,6 +14,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -39,7 +40,8 @@ public class Main extends Application {
         primaryStage.setTitle("Team-Avion Launcher [WIP]");
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
-
+        primaryStage.getIcons().clear();
+        primaryStage.getIcons().add(new Image("file:../assets/icons/app.png"));
 
         // Field initialization
         exit = (Button) root.lookup("#exit");
@@ -49,11 +51,13 @@ public class Main extends Application {
         Modpack_btn = (Button) root.lookup("#Modpacks-btn");
         tab = (Pane) root.lookup("#tab");
 
+
         // Infrastructural navigation
         exit.setOnMouseClicked(event -> primaryStage.close());
         min.setOnMouseClicked(event -> primaryStage.setIconified(true));
         Home_btn.setOnMouseClicked(event -> { if(activeTab!=Tabs.Home) (activeTab=Tabs.Home).switchTab(tab); });
         Modpack_btn.setOnMouseClicked(event -> { if(activeTab!=Tabs.Modpacks) (activeTab=Tabs.Modpacks).switchTab(tab); });
+
 
         // Drag
         dragBar.setOnMousePressed(event -> {
@@ -64,6 +68,7 @@ public class Main extends Application {
             primaryStage.setX(event.getScreenX() - xOffset);
             primaryStage.setY(event.getScreenY() - yOffset);
         });
+
 
         // Set up default layout
         Tabs.Home.switchTab(tab);
