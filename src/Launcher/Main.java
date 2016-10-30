@@ -18,23 +18,23 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.net.URL;
 
 public class Main extends Application {
 
     public static final URL mainLauncher = Main.class.getResource("../assets/layout/main.fxml");                        // Launcher body
-    public static final URL homeTab = Main.class.getResource("../assets/layout/home.fxml");                             // Launcher home tab
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
     private Button exit, min, Home_btn, Modpack_btn;                                                                    // Define buttons
     private Rectangle dragBar;                                                                                          // Draggable top bar
+    private Pane root, tab;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-        Pane root = FXMLLoader.load(mainLauncher);
+        primaryStage.initStyle(StageStyle.UNDECORATED);                                                                 // Remove ugly trash
+
+        root = FXMLLoader.load(mainLauncher);
         primaryStage.setTitle("Team-Avion Launcher [WIP]");
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
@@ -46,7 +46,7 @@ public class Main extends Application {
         dragBar = (Rectangle) root.lookup("#rectangle");
         Home_btn = (Button) root.lookup("#Home-btn");
         Modpack_btn = (Button) root.lookup("#Modpacks-btn");
-
+        tab = (Pane) root.lookup("#tab");
 
         // Infrastructural navigation
         exit.setOnMouseClicked(event -> primaryStage.close());
@@ -61,9 +61,14 @@ public class Main extends Application {
             primaryStage.setX(event.getScreenX() - xOffset);
             primaryStage.setY(event.getScreenY() - yOffset);
         });
+
+        // Set up default layout
+        Tabs.Home.switchTab(tab);
     }
 
     public static void main(String[] args) {
         launch(args);
     }
+
+
 }
