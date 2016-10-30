@@ -8,12 +8,12 @@
 
 <Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" stylesheets="@../style/nav.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Label layoutX="316.0" layoutY="148.0" text="Modpacks" textFill="WHITE">
+        <Label layoutX="63.0" layoutY="23.0" text="Modpacks" textFill="WHITE">
             <font>
                 <Font name="Centaur" size="31.0" />
             </font>
         </Label>
-      <TextField id="search-modpacks" layoutX="269.0" layoutY="207.0" prefHeight="25.0" prefWidth="212.0" promptText="Search Modpacks" />
-      <Button id="search-modpacks-btn" layoutX="296.0" layoutY="263.0" mnemonicParsing="false" text="Search available Modpacks" textFill="white" />
+      <TextField id="search-modpacks" layoutX="269.0" layoutY="23.0" prefHeight="25.0" prefWidth="212.0" promptText="Search Modpacks" />
+      <Button id="search-modpacks-btn" layoutX="553.0" layoutY="30.0" mnemonicParsing="false" text="Search available Modpacks" textFill="white" />
     </children>
 </Pane>
