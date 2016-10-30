@@ -41,7 +41,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
         primaryStage.getIcons().clear();
-        primaryStage.getIcons().add(new Image("file:../assets/icons/app.png"));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("../assets/icons/app.png")));
 
         // Field initialization
         exit = (Button) root.lookup("#exit");
@@ -53,10 +53,10 @@ public class Main extends Application {
 
 
         // Infrastructural navigation
-        exit.setOnMouseClicked(event -> primaryStage.close());
-        min.setOnMouseClicked(event -> primaryStage.setIconified(true));
-        Home_btn.setOnMouseClicked(event -> { if(activeTab!=Tabs.Home) (activeTab=Tabs.Home).switchTab(tab); });
-        Modpack_btn.setOnMouseClicked(event -> { if(activeTab!=Tabs.Modpacks) (activeTab=Tabs.Modpacks).switchTab(tab); });
+        exit.setOnMouseClicked(event -> primaryStage.close());                                                          // Closes the program if exit button is clicked
+        min.setOnMouseClicked(event -> primaryStage.setIconified(true));                                                // Minimizes the program if minimize button is clicked
+        Home_btn.setOnMouseClicked(event -> {if(activeTab!=Tabs.Home)(activeTab=Tabs.Home).switchTab(tab);});           // Sets the active tab to the home tab unless it's already active
+        Modpack_btn.setOnMouseClicked(event -> {if(activeTab!=Tabs.Modpacks)(activeTab=Tabs.Modpacks).switchTab(tab);});// Sets the active tab to the modpacks tab unless it's already active
 
 
         // Drag
