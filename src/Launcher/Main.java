@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -27,6 +28,8 @@ public class Main extends Application {
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
     private Button exit, min, Home_btn, Modpack_btn;                                                                    // Define buttons
+    private ImageView icon;
+    private Image appIcon;
     private Rectangle dragBar;                                                                                          // Draggable top bar
     private Pane root, tab;
     private Tabs activeTab = Tabs.Home;
@@ -41,7 +44,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
         primaryStage.getIcons().clear();
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("../assets/icons/app.png")));
+        primaryStage.getIcons().add(appIcon = new Image(getClass().getResourceAsStream("../assets/icons/app.png")));
 
         // Field initialization
         exit = (Button) root.lookup("#exit");
@@ -50,6 +53,7 @@ public class Main extends Application {
         Home_btn = (Button) root.lookup("#Home-btn");
         Modpack_btn = (Button) root.lookup("#Modpacks-btn");
         tab = (Pane) root.lookup("#tab");
+        icon = (ImageView) root.lookup("#icon");
 
 
         // Infrastructural navigation
@@ -72,6 +76,7 @@ public class Main extends Application {
 
         // Set up default layout
         Tabs.Home.switchTab(tab);
+        icon.setImage(appIcon);
     }
 
     public static void main(String[] args) {
