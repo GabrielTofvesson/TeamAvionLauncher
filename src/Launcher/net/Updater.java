@@ -1,4 +1,4 @@
-package sample.net;
+package Launcher.net;
 
 import java.io.IOException;
 import java.net.URL;

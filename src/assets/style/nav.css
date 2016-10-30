@@ -1,16 +1,13 @@
+#pane {
+    -fx-background-color: rgba(38, 33, 33, 1)
+}
+#rectangle {
+    -fx-fill: rgba(30, 25, 25, 1)
+}
 #exit{
-    -fx-background-radius: 0;
+    -fx-background-color: rgba(30, 25, 25, 1);
 }
 #exit:hover{
-    -fx-border-radius: 12px;
-    -fx-background-color: cadetblue;
-}
-#pane{
-    -fx-border-width: 1px;
-    -fx-border-color: black;
-    -fx-border-style: solid;
-}
-
-#hyperlink {
-
+    -fx-border-radius: 30px;
+    -fx-background-color: red;
 }
