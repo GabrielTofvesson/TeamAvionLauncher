@@ -15,7 +15,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -29,7 +31,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         primaryStage.initStyle(StageStyle.UNDECORATED);
-        Parent root = FXMLLoader.load(getClass().getResource("../assets/layout/Main_Launcher.fxml"));
+        Pane root = FXMLLoader.load(getClass().getResource("../assets/layout/Main_Launcher.fxml"));
         primaryStage.setTitle("Team-Avion Launcher [WIP]");
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
