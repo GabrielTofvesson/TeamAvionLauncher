@@ -10,6 +10,7 @@ favour and pour yourself some nice Jack Daniels. You deserve it if you're going 
 
 package Launcher;
 
+import com.tofvesson.reflection.SafeReflection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -22,6 +23,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import java.net.URL;
+import com.tofvesson.async.*;
 
 public class Main extends Application {
 
@@ -48,6 +50,7 @@ public class Main extends Application {
         primaryStage.getIcons().clear();
         primaryStage.getIcons().add(appIcon = new Image(getClass().getResourceAsStream("../assets/icons/app.png")));
 
+
         // Field initialization
         exit = (Button) root.lookup("#exit");
         min = (Button) root.lookup("#min");
@@ -60,12 +63,26 @@ public class Main extends Application {
         Search_modpacks_btn = (Button) root.lookup("#search-modpacks-btn");
         Search_modpacks = (TextField) root.lookup("#search-modpacks");
 
+
         // Infrastructural navigation
         exit.setOnMouseClicked(event -> primaryStage.close());                                                          // Closes the program if exit button is clicked
         min.setOnMouseClicked(event -> primaryStage.setIconified(true));                                                // Minimizes the program if minimize button is clicked
-        Home_btn.setOnMouseClicked(event -> {if(activeTab!=Tabs.Home)(activeTab=Tabs.Home).switchTab(tab);});           // Sets the active tab to the home tab unless it's already active
-        Modpack_btn.setOnMouseClicked(event -> {if(activeTab!=Tabs.Modpacks)(activeTab=Tabs.Modpacks).switchTab(tab);});// Sets the active tab to the modpacks tab unless it's already active
-        Settings_btn.setOnMouseClicked(event -> {if(activeTab!=Tabs.Settings)(activeTab=Tabs.Settings).switchTab(tab);});
+        Home_btn.setOnMouseClicked(event ->{if(activeTab!=Tabs.Home)(activeTab=Tabs.Home).switchTab(tab);});            // Sets the active tab to the home tab unless it's already active
+        Modpack_btn.setOnMouseClicked(event ->{
+            if(activeTab!=Tabs.Modpacks){
+                (activeTab=Tabs.Modpacks).switchTab(tab);                                                               // Sets the active tab to the modpacks tab unless it's already active
+                Tabs.Modpacks.loaded.lookup("#search-modpacks").setOnInputMethodTextChanged(System.out::println);
+            }
+        });
+        Settings_btn.setOnMouseClicked(event ->{
+            if(activeTab!=Tabs.Settings){
+                (activeTab=Tabs.Settings).switchTab(tab);                                                               // Sets the active tab to the settings tab unless it's already active
+            }
+        });
+
+
+        Async a = new Async(null, SafeReflection.getMethod(getClass(), "run", (Class<?>[]) null), null);
+        System.out.println(a.await());
 
         // Drag
         dragBar.setOnMousePressed(event -> {
@@ -77,6 +94,7 @@ public class Main extends Application {
             primaryStage.setY(event.getScreenY() - yOffset);
         });
 
+
         // Set up default layout
         Tabs.Home.switchTab(tab);
         icon.setImage(appIcon);
@@ -86,5 +104,8 @@ public class Main extends Application {
         launch(args);
     }
 
+    public static int run(){
+        return 500;
+    }
 
 }
