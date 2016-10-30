@@ -12,16 +12,19 @@ package Launcher;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.net.URL;
+
 public class Main extends Application {
+
+    public static final URL mainLauncher = Main.class.getResource("../assets/layout/main.fxml");                        // Launcher body
+    public static final URL homeTab = Main.class.getResource("../assets/layout/home.fxml");                             // Launcher home tab
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
     private Button exit, min, Home_btn, Modpack_btn;                                                                    // Define buttons
@@ -31,7 +34,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         primaryStage.initStyle(StageStyle.UNDECORATED);
-        Pane root = FXMLLoader.load(getClass().getResource("../assets/layout/Main_Launcher.fxml"));
+        Pane root = FXMLLoader.load(mainLauncher);
         primaryStage.setTitle("Team-Avion Launcher [WIP]");
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
@@ -48,7 +51,6 @@ public class Main extends Application {
         // Infrastructural navigation
         exit.setOnMouseClicked(event -> primaryStage.close());
         min.setOnMouseClicked(event -> primaryStage.setIconified(true));
-
 
         // Drag
         dragBar.setOnMousePressed(event -> {
