@@ -22,8 +22,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import javafx.scene.input.KeyEvent;
 import java.net.URL;
 import com.tofvesson.async.*;
 
@@ -56,30 +54,41 @@ public class Main extends Application {
         // Field initialization
         exit = (Button) root.lookup("#exit");
         min = (Button) root.lookup("#min");
+
         dragBar = (Rectangle) root.lookup("#rectangle");
+
         Home_btn = (Button) root.lookup("#Home-btn");
         Modpack_btn = (Button) root.lookup("#Modpacks-btn");
         Settings_btn = (Button) root.lookup("#Settings-btn");
+
         tab = (Pane) root.lookup("#tab");
+
         icon = (ImageView) root.lookup("#icon");
+
         Search_modpacks = (TextField) root.lookup("#search-modpacks");
 
 
         // Infrastructural navigation
         exit.setOnMouseClicked(event -> primaryStage.close());                                                          // Closes the program if exit button is clicked
         min.setOnMouseClicked(event -> primaryStage.setIconified(true));                                                // Minimizes the program if minimize button is clicked
-        Home_btn.setOnMouseClicked(event ->{if(activeTab!=Tabs.Home)(activeTab=Tabs.Home).switchTab(tab);});            // Sets the active tab to the home tab unless it's already active
+
+        Home_btn.setOnMouseClicked(event ->{
+            if(activeTab!=Tabs.Home){
+                (activeTab=Tabs.Home).switchTab(tab);
+            }
+        });                                                                                                             // Sets the active tab to the home tab unless it's already active
+
         Modpack_btn.setOnMouseClicked(event ->{
             if(activeTab!=Tabs.Modpacks){
                 (activeTab=Tabs.Modpacks).switchTab(tab);                                                               // Sets the active tab to the modpacks tab unless it's already active
-                Tabs.Modpacks.loaded.lookup("#search-modpacks").setOnInputMethodTextChanged(System.out::println);
-                //TODO: Create a dynamic updating string for the input
-
+                //TODO: Create a dynamic updating string from the input ( Text Field )
             }
         });
+
         Settings_btn.setOnMouseClicked(event ->{
             if(activeTab!=Tabs.Settings){
                 (activeTab=Tabs.Settings).switchTab(tab);                                                               // Sets the active tab to the settings tab unless it's already active
+
             }
         });
 
@@ -108,7 +117,7 @@ public class Main extends Application {
     }
 
     public static int run(){
-        return 500;
+        return 1500;
     }
 
 }
