@@ -82,7 +82,6 @@ public class Main extends Application {
             if(activeTab!=Tabs.Modpacks){
                 (activeTab=Tabs.Modpacks).switchTab(tab);                                                               // Sets the active tab to the modpacks tab unless it's already active
                 //TODO: Create a dynamic updating string from the input ( Text Field )
-                System.out.println(Tabs.Modpacks.loaded.lookup("#searchModpacks"));
             }
         });
 
