@@ -83,8 +83,12 @@ public class Main extends Application {
             if(activeTab!=Tabs.Modpacks){
                 if(stringUpdater!=null && stringUpdater.isAlive()) stringUpdater.cancel();
                 (activeTab=Tabs.Modpacks).switchTab(tab);                                                               // Sets the active tab to the modpacks tab unless it's already active
-                //TODO: Create a dynamic updating string from the input ( Text Field )
+
+                //TODO: Create a dynamic updating string from the input ( Text Field ) *-* Done *-*
+
+
                 stringUpdater = new Async(SafeReflection.getFirstMethod(Main.class, "detectStringUpdate"), Tabs.Modpacks.loaded.lookup("#search-modpacks"));
+
             }
         });
 
