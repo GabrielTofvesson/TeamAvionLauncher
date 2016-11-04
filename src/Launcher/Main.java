@@ -37,6 +37,7 @@ public class Main extends Application {
     private Rectangle dragBar;                                                                                          // Draggable top bar
     private Pane root, tab;
     private Tabs activeTab = Tabs.Home;
+    Async stringUpdater;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -80,8 +81,10 @@ public class Main extends Application {
 
         Modpack_btn.setOnMouseClicked(event ->{
             if(activeTab!=Tabs.Modpacks){
+                if(stringUpdater!=null && stringUpdater.isAlive()) stringUpdater.cancel();
                 (activeTab=Tabs.Modpacks).switchTab(tab);                                                               // Sets the active tab to the modpacks tab unless it's already active
                 //TODO: Create a dynamic updating string from the input ( Text Field )
+                stringUpdater = new Async(SafeReflection.getFirstMethod(Main.class, "detectStringUpdate"), Tabs.Modpacks.loaded.lookup("#search-modpacks"));
             }
         });
 
@@ -92,9 +95,6 @@ public class Main extends Application {
             }
         });
 
-
-        Async a = new Async(null, SafeReflection.getMethod(getClass(), "run", (Class<?>[]) null), null);
-        System.out.println(a.await());
 
         // Drag
         dragBar.setOnMousePressed(event -> {
@@ -116,8 +116,9 @@ public class Main extends Application {
         launch(args);
     }
 
-    public static int run(){
-        return 1500;
+    public static void detectStringUpdate(TextField toRead){
+        String s = "";
+        while(true) if(!s.equals(toRead.getText())) System.out.println(s = toRead.getText());
     }
 
 }
