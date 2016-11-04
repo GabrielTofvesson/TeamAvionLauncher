@@ -23,7 +23,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import java.net.URL;
+
 import com.tofvesson.async.*;
+import org.jetbrains.annotations.Contract;
 
 public class Main extends Application {
 
@@ -81,7 +83,7 @@ public class Main extends Application {
         Modpack_btn.setOnMouseClicked(event ->{
             if(activeTab!=Tabs.Modpacks){
                 (activeTab=Tabs.Modpacks).switchTab(tab);                                                               // Sets the active tab to the modpacks tab unless it's already active
-                //TODO: Create a dynamic updating string from the input ( Text Field )
+
             }
         });
 
@@ -91,6 +93,10 @@ public class Main extends Application {
 
             }
         });
+
+        //TODO: Create a dynamic updating string from the input ( Text Field )
+
+
 
 
         Async a = new Async(null, SafeReflection.getMethod(getClass(), "run", (Class<?>[]) null), null);
@@ -116,8 +122,10 @@ public class Main extends Application {
         launch(args);
     }
 
+    @Contract(pure = true)
     public static int run(){
         return 1500;
     }
+
 
 }
