@@ -119,6 +119,7 @@ public class Main extends Application {
     public static void detectStringUpdate(TextField toRead){
         String s = "";
         while(true) if(!s.equals(toRead.getText())) System.out.println(s = toRead.getText());
+
     }
 
 }
