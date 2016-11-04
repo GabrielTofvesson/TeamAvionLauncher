@@ -16,6 +16,6 @@
                 <Font name="Centaur" size="31.0" />
             </font>
         </Label>
-      <TextField id="search-modpacks" layoutX="524.0" layoutY="9.0" prefHeight="25.0" prefWidth="212.0" promptText="Search Modpacks" />
+      <TextField id="searchModpacks" layoutX="524.0" layoutY="9.0" prefHeight="25.0" prefWidth="212.0" promptText="Search Modpacks" />
     </children>
 </Pane>
