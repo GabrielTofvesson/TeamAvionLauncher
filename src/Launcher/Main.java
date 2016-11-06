@@ -15,7 +15,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -31,7 +30,7 @@ public class Main extends Application {
     public static final URL mainLauncher = Main.class.getResource("../assets/layout/main.fxml");                        // Launcher body
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
-    private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn;                                 // Define buttons
+    private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn;                                        // Define buttons
     private ImageView icon;
     private TextField Search_modpacks;
     private Image appIcon;
@@ -52,7 +51,6 @@ public class Main extends Application {
         primaryStage.getIcons().clear();
         primaryStage.getIcons().add(appIcon = new Image(getClass().getResourceAsStream("../assets/icons/app.png")));
 
-
         // Field initialization
         exit = (Button) root.lookup("#exit");
         min = (Button) root.lookup("#min");
@@ -70,7 +68,6 @@ public class Main extends Application {
 
         Search_modpacks = (TextField) root.lookup("#search-modpacks");
 
-
         // Infrastructural navigation
         exit.setOnMouseClicked(event -> primaryStage.close());                                                          // Closes the program if exit button is clicked
         min.setOnMouseClicked(event -> primaryStage.setIconified(true));                                                // Minimizes the program if minimize button is clicked
@@ -85,9 +82,6 @@ public class Main extends Application {
             if(activeTab!=Tabs.Modpacks){
                 if(stringUpdater!=null && stringUpdater.isAlive()) stringUpdater.cancel();
                 (activeTab=Tabs.Modpacks).switchTab(tab);                                                               // Sets the active tab to the modpacks tab unless it's already active
-
-                //TODO: Create a dynamic updating string from the input ( Text Field ) *-* Done *-*
-
 
                 stringUpdater = new Async(SafeReflection.getFirstMethod(Main.class, "detectStringUpdate"), Tabs.Modpacks.loaded.lookup("#search-modpacks"));
 
@@ -108,7 +102,6 @@ public class Main extends Application {
             }
         });
 
-
         // Drag
         dragBar.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
@@ -118,7 +111,6 @@ public class Main extends Application {
             primaryStage.setX(event.getScreenX() - xOffset);
             primaryStage.setY(event.getScreenY() - yOffset);
         });
-
 
         // Set up default layout
         Tabs.Home.switchTab(tab);
@@ -134,5 +126,4 @@ public class Main extends Application {
         while(true) if(!s.equals(toRead.getText())) System.out.println(s = toRead.getText());
 
     }
-
 }
