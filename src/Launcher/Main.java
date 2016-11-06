@@ -30,7 +30,7 @@ public class Main extends Application {
     public static final URL mainLauncher = Main.class.getResource("../assets/layout/main.fxml");                        // Launcher body
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
-    private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn;                                        // Define buttons
+    private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn, Settings_General_btn, Settings_Minecraft_btn;                                        // Define buttons
     private ImageView icon;
     private TextField Search_modpacks;
     private Image appIcon;
@@ -61,6 +61,8 @@ public class Main extends Application {
         Modpack_btn = (Button) root.lookup("#Modpacks-btn");
         Settings_btn = (Button) root.lookup("#Settings-btn");
         Instance_btn = (Button) root.lookup("#Instance-btn");
+        Settings_General_btn = (Button) root.lookup("Settings-Gen-btn");
+        Settings_Minecraft_btn = (Button) root.lookup("Settings-Mine-btn");
 
         tab = (Pane) root.lookup("#tab");
 

@@ -13,10 +13,10 @@
 #min:hover, #exit:hover{
     -fx-background-color: #bf0000;
 }
-#Home-btn, #Modpacks-btn, #Settings-btn, #Instance-btn {
+#Home-btn, #Modpacks-btn, #Settings-btn, #Instance-btn, #Settings-Gen-btn, #Settings-Mine-btn{
     -fx-background-color: rgba(0, 0, 0, 0);
 }
-#Home-btn:hover, #Modpacks-btn:hover, #Settings-btn:hover, #Instance-btn:hover {
+#Home-btn:hover, #Modpacks-btn:hover, #Settings-btn:hover, #Instance-btn:hover, #Settings-Gen-btn:hover, #Settings-Mine-btn:hover {
     -fx-background-color: #0c182d;
     -fx-background-radius: 0em;
 }
