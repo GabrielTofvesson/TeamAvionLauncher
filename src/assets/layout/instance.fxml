@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
+
 <Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" stylesheets="@../style/nav.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Rectangle id="Modpack-back" arcHeight="5.0" arcWidth="5.0" height="47.0" strokeType="INSIDE" width="750.0" />
-        <Label layoutX="34.0" layoutY="5.0" text="Modpacks" textFill="WHITE">
+        <Label layoutX="34.0" layoutY="5.0" text="Instances" textFill="WHITE">
             <font>
                 <Font name="Centaur" size="31.0" />
             </font>
         </Label>
-      <TextField id="search-modpacks" layoutX="516.0" layoutY="5.0" prefHeight="25.0" prefWidth="212.0" promptText="Search Modpacks" />
     </children>
 </Pane>
