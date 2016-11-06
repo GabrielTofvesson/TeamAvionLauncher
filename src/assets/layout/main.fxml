@@ -29,7 +29,12 @@
               <Font name="Centaur" size="16.0" />
           </font>
       </Button>
-       <Button id="Settings-btn" layoutY="130.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Settings" textFill="WHITE" textOverrun="CLIP">
+       <Button id="Instance-btn" layoutY="130.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Instances" textFill="WHITE" textOverrun="CLIP">
+           <font>
+               <Font name="Centaur" size="16.0" />
+           </font>
+       </Button>
+       <Button id="Settings-btn" layoutY="170.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Settings" textFill="WHITE" textOverrun="CLIP">
            <font>
                <Font name="Centaur" size="16.0" />
            </font>
