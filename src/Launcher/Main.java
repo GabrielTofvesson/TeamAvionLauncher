@@ -13,16 +13,19 @@ package Launcher;
 import com.tofvesson.reflection.SafeReflection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
 import java.net.URL;
+
 import com.tofvesson.async.*;
 
 public class Main extends Application {
@@ -30,13 +33,13 @@ public class Main extends Application {
     public static final URL mainLauncher = Main.class.getResource("../assets/layout/main.fxml");                        // Launcher body
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
-    private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn, Settings_General_btn, Settings_Minecraft_btn;                                        // Define buttons
+    private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn;                                        // Define buttons
     private ImageView icon;
     private TextField Search_modpacks;
     private Image appIcon;
     private Rectangle dragBar;                                                                                          // Draggable top bar
     private Pane root, tab;
-    private Tabs activeTab = Tabs.Home;
+    private Node activeTab, settings_activeTab;
     Async stringUpdater;
 
     @Override
@@ -61,8 +64,6 @@ public class Main extends Application {
         Modpack_btn = (Button) root.lookup("#Modpacks-btn");
         Settings_btn = (Button) root.lookup("#Settings-btn");
         Instance_btn = (Button) root.lookup("#Instance-btn");
-        Settings_General_btn = (Button) root.lookup("Settings-Gen-btn");
-        Settings_Minecraft_btn = (Button) root.lookup("Settings-Mine-btn");
 
         tab = (Pane) root.lookup("#tab");
 
@@ -75,32 +76,57 @@ public class Main extends Application {
         min.setOnMouseClicked(event -> primaryStage.setIconified(true));                                                // Minimizes the program if minimize button is clicked
 
         Home_btn.setOnMouseClicked(event ->{
-            if(activeTab!=Tabs.Home){
-                (activeTab=Tabs.Home).switchTab(tab);
+            if(!activeTab.equals(Home_btn)){
+                updateTabSelection(Home_btn);
+                Tabs.switchTab("home", tab);
             }
         });                                                                                                             // Sets the active tab to the home tab unless it's already active
 
         Modpack_btn.setOnMouseClicked(event ->{
-            if(activeTab!=Tabs.Modpacks){
+            if(!activeTab.equals(Modpack_btn)){
+                updateTabSelection(Modpack_btn);
+                Tabs.switchTab("modpacks", tab);
                 if(stringUpdater!=null && stringUpdater.isAlive()) stringUpdater.cancel();
-                (activeTab=Tabs.Modpacks).switchTab(tab);                                                               // Sets the active tab to the modpacks tab unless it's already active
-
-                stringUpdater = new Async(SafeReflection.getFirstMethod(Main.class, "detectStringUpdate"), Tabs.Modpacks.loaded.lookup("#search-modpacks"));
+                stringUpdater = new Async(SafeReflection.getFirstMethod(Main.class, "detectStringUpdate"), Tabs.load("settings").lookup("#search-modpacks"));
 
             }
         });
 
         Instance_btn.setOnMouseClicked(event -> {
-            if(activeTab!=Tabs.Instance){
-                (activeTab = Tabs.Instance).switchTab(tab);
+            if(!activeTab.equals(Instance_btn)){
+                updateTabSelection(Instance_btn);
+                Tabs.switchTab("instance", tab);
+                DialogPane d = new DialogPane();
+                Tabs.load("instance").lookup("#Launch-VM").setOnMouseClicked(event1 -> {
+                    Dialog d1 = new Dialog<>();
+                    DialogPane d2 = d1.getDialogPane();
+                    d2.setContent(new TextArea("Hello"));
+                    d1.show();
 
+                });
             }
         });
 
         Settings_btn.setOnMouseClicked(event ->{
-            if(activeTab!=Tabs.Settings){
-                (activeTab=Tabs.Settings).switchTab(tab);                                                               // Sets the active tab to the settings tab unless it's already active
+            if(!activeTab.equals(Settings_btn)){
+                updateTabSelection(Settings_btn);
+                Node n = Tabs.switchTab("settings", tab);                                                               // Sets the active tab to the settings tab unless it's already active
 
+                (settings_activeTab=n.lookup("#Settings-Gen-btn")).setOnMouseClicked(event1 -> {
+                    // Generic Settings Sub-tab
+                    if(!settings_activeTab.equals(n.lookup("#Settings-Gen-btn"))){
+                        updateSettingsTabSelection(n.lookup("#Settings-Gen-btn"));
+                        Node genericLayout = Tabs.switchTab("settings_generic", (Pane) n.lookup("#Settings-Pane"));
+                    }
+                });
+
+                n.lookup("#Settings-Mine-btn").setOnMouseClicked(event1 -> {
+                    // Minecraft Settings Sub-tab
+                    if(!settings_activeTab.equals(n.lookup("#Settings-Mine-btn"))){
+                        updateSettingsTabSelection(n.lookup("#Settings-Mine-btn"));
+                        Node minecraftLayout = Tabs.switchTab("settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
+                    }
+                });
             }
         });
 
@@ -115,7 +141,8 @@ public class Main extends Application {
         });
 
         // Set up default layout
-        Tabs.Home.switchTab(tab);
+        activeTab = Home_btn;                                                                                           // Update selected tab
+        Tabs.switchTab("home", tab);
         icon.setImage(appIcon);
     }
 
@@ -123,9 +150,29 @@ public class Main extends Application {
         launch(args);
     }
 
+    /**
+     * Search for packs with an 80% match compared to detected string.
+     * @param toRead TextField to read from.
+     */
     public static void detectStringUpdate(TextField toRead){
         String s = "";
         while(true) if(!s.equals(toRead.getText())) System.out.println(s = toRead.getText());
 
+    }
+
+    void updateTabSelection(Node newTab){
+        activeTab.getStyleClass().remove("selected");
+        activeTab.getStyleClass().add("tab");
+        activeTab = newTab;
+        activeTab.getStyleClass().remove("tab");
+        activeTab.getStyleClass().add("selected");
+    }
+
+    void updateSettingsTabSelection(Node newTab){
+        settings_activeTab.getStyleClass().remove("selected");
+        settings_activeTab.getStyleClass().add("tab");
+        settings_activeTab = newTab;
+        settings_activeTab.getStyleClass().remove("tab");
+        settings_activeTab.getStyleClass().add("selected");
     }
 }

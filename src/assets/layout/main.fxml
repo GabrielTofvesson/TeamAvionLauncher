@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="900" stylesheets="@../style/nav.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
+<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="900" stylesheets="@../style/nav.css" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="white" height="50.0" strokeType="INSIDE" width="900.0" />
       <Button id="exit" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="862.0" layoutY="13.0" mnemonicParsing="false" stylesheets="@../style/nav.css" text="X" textFill="WHITE" />
@@ -19,22 +19,22 @@
          </font>
       </Label>
       <Rectangle id="nav" arcHeight="5.0" arcWidth="5.0" fill="#101e38" height="450.0" layoutY="50.0" stroke="TRANSPARENT" strokeType="INSIDE" width="150.0" />
-      <Button id="Home-btn" layoutY="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Home" textFill="WHITE" textOverrun="CLIP">
+      <Button id="Home-btn" layoutY="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="selected" text="Home" textFill="WHITE" textOverrun="CLIP">
          <font>
             <Font name="Centaur" size="16.0" />
          </font>
       </Button>
-      <Button id="Modpacks-btn" layoutY="90.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Modpack" textFill="WHITE" textOverrun="CLIP">
+      <Button id="Modpacks-btn" layoutY="90.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="tab" text="Modpack" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
           <font>
               <Font name="Centaur" size="16.0" />
           </font>
       </Button>
-       <Button id="Instance-btn" layoutY="130.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Instances" textFill="WHITE" textOverrun="CLIP">
+       <Button id="Instance-btn" layoutY="130.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="tab" text="Instances" textFill="WHITE" textOverrun="CLIP">
            <font>
                <Font name="Centaur" size="16.0" />
            </font>
        </Button>
-       <Button id="Settings-btn" layoutY="170.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Settings" textFill="WHITE" textOverrun="CLIP">
+       <Button id="Settings-btn" layoutY="170.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="tab" text="Settings" textFill="WHITE" textOverrun="CLIP">
            <font>
                <Font name="Centaur" size="16.0" />
            </font>

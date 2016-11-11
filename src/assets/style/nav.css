@@ -13,15 +13,27 @@
 #min:hover, #exit:hover{
     -fx-background-color: #bf0000;
 }
-#Home-btn, #Modpacks-btn, #Settings-btn, #Instance-btn, #Settings-Gen-btn, #Settings-Mine-btn{
-    -fx-background-color: rgba(0, 0, 0, 0);
-}
-#Home-btn:hover, #Modpacks-btn:hover, #Settings-btn:hover, #Instance-btn:hover, #Settings-Gen-btn:hover, #Settings-Mine-btn:hover {
-    -fx-background-color: #0c182d;
-    -fx-background-radius: 0em;
-}
 #search-modpacks {
     -fx-text-inner-color: white;
     -fx-background-color: rgba(0, 0, 0, 0.5);
     -fx-padding: 10px;
+}
+
+.tab {
+    -fx-background-color: rgba(0, 0, 0, 0);
+    -fx-background-radius: 0em;
+}
+
+.tab:hover{
+    -fx-background-color: #0c182d;
+
+}
+
+.selected {
+    -fx-background-color: #0c182d;
+    -fx-background-radius: 0em;
+}
+
+.selected:hover {
+    -fx-background-color: #050b14;
 }
