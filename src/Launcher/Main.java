@@ -14,7 +14,6 @@ import com.tofvesson.reflection.SafeReflection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -96,13 +95,11 @@ public class Main extends Application {
             if(!activeTab.equals(Instance_btn)){
                 updateTabSelection(Instance_btn);
                 Tabs.switchTab("instance", tab);
-                DialogPane d = new DialogPane();
                 Tabs.load("instance").lookup("#Launch-VM").setOnMouseClicked(event1 -> {
                     Dialog d1 = new Dialog<>();
                     DialogPane d2 = d1.getDialogPane();
-                    d2.setContent(new TextArea("Hello"));
+                    d2.setContent(new TextArea("Launching"));
                     d1.show();
-
                 });
             }
         });
