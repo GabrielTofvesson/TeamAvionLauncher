@@ -86,7 +86,7 @@ public class Main extends Application {
                 updateTabSelection(Modpack_btn, TabType.MAIN);
                 Tabs.switchTab("modpacks", tab);
                 if(stringUpdater!=null && stringUpdater.isAlive()) stringUpdater.cancel();
-                stringUpdater = new Async(SafeReflection.getFirstMethod(Main.class, "detectStringUpdate"), Tabs.load("settings").lookup("#search-modpacks"));
+                stringUpdater = new Async(SafeReflection.getFirstMethod(Main.class, "detectStringUpdate"), Tabs.load("modpacks").lookup("#search-modpacks"));
             }
         });
 
@@ -127,7 +127,10 @@ public class Main extends Application {
                     }
                 });
 
-                Tabs.switchTab(settings_activeTab.getId().equals("#Settings-Gen-btn")?"settings_generic":"settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
+
+                System.out.println(settings_activeTab.getId());
+
+                Tabs.switchTab(settings_activeTab.getId().equals("Settings-Gen-btn") ? "settings_generic" : "settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
             }
         });
 
@@ -177,7 +180,7 @@ public class Main extends Application {
 
 
 
-    public enum TabType{
+    enum TabType{
         SETTINGS, MAIN
     }
 }
