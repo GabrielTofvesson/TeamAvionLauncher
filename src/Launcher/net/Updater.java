@@ -17,15 +17,15 @@ public class Updater {
     }
 
     public void downloadStuff(){
-        //TODO: Download lots of stuff
+        //TODO:
     }
 
     public void downloadMoreStuff(){
-        //TODO: Download more stuff
+
     }
 
     public void downloadEvenMoreStuff(){
-        //TODO: Download even more stuff
+
     }
 
     public static Updater getInstance(String url) throws IOException {
