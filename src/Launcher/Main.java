@@ -172,14 +172,6 @@ public class Main extends Application {
         newTab.getStyleClass().add("selected");
     }
 
-
-
-
-
-
-
-
-
     enum TabType{
         SETTINGS, MAIN
     }
