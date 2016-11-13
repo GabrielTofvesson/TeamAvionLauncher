@@ -33,7 +33,7 @@ public class Main extends Application {
     // Semantic versioning system data
     public static final String  semVerDevState  = "PreDev";                                                             // Development stage
     public static final int     semVerMajor     = 0;                                                                    // Major version
-    public static final int     semVerMinor     = 0;                                                                    // Minor version
+    public static final int     semVerMinor     = 2;                                                                    // Minor version
     public static final int     semVerPatch     = 0;                                                                    // Patch version
 
 
