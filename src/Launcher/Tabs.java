@@ -21,7 +21,7 @@ public class Tabs {
      */
     public static Node load(String fileName){
         if(!fileName.endsWith(".fxml")) fileName+=".fxml";
-        URL file = Main.class.getResource("../assets/layout/"+fileName);
+        URL file = Main.class.getResource("/assets/layout/"+fileName);
         try {
             final boolean[] b = {false};
             loaded.stream().filter(p -> p.getKey().equals(file)).forEach(p->b[0]=true);
@@ -57,7 +57,7 @@ public class Tabs {
      */
     public static void unloadTab(String fileName){
         if(!fileName.endsWith(".fxml")) fileName+=".fxml";
-        URL file = Main.class.getResource("../assets/layout/"+fileName);
+        URL file = Main.class.getResource("/assets/layout/"+fileName);
         loaded.stream().filter(p->p.getKey().equals(file)).forEach(loaded::remove);
     }
 

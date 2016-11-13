@@ -29,7 +29,7 @@ import com.tofvesson.async.*;
 
 public class Main extends Application {
 
-    public static final URL mainLauncher = Main.class.getResource("../assets/layout/main.fxml");                        // Launcher body
+    public static final URL mainLauncher = Main.class.getResource("/assets/layout/main.fxml");                        // Launcher body
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
     private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn;                                        // Define buttons
@@ -51,7 +51,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
         primaryStage.getIcons().clear();
-        primaryStage.getIcons().add(appIcon = new Image(getClass().getResourceAsStream("../assets/icons/app.png")));
+        primaryStage.getIcons().add(appIcon = new Image(getClass().getResourceAsStream("/assets/icons/app.png")));
 
         // Field initialization
         exit = (Button) root.lookup("#exit");
@@ -126,9 +126,6 @@ public class Main extends Application {
 
                     }
                 });
-
-
-                System.out.println(settings_activeTab.getId());
 
                 Tabs.switchTab(settings_activeTab.getId().equals("Settings-Gen-btn") ? "settings_generic" : "settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
             }
