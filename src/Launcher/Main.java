@@ -105,9 +105,11 @@ public class Main extends Application {
                 updateTabSelection(Settings_btn, TabType.MAIN);
                 Node n = Tabs.switchTab("settings", tab);                                                               // Sets the active tab to the settings tab unless it's already active
 
-                (settings_activeTab=n.lookup("#Settings-Gen-btn")).setOnMouseClicked(event1 -> {
+                if(settings_activeTab==null) settings_activeTab = n.lookup("#Settings-Gen-btn");                        // First time stuff
+
+                n.lookup("#Settings-Gen-btn").setOnMouseClicked(event1 -> {
                     // Generic Settings Sub-tab
-                    if(!settings_activeTab.getId().equals(n.lookup("#Settings-Gen-btn").getId())){
+                    if(!settings_activeTab.getId().equals(n.lookup("#Settings-Gen-btn").getId())){                      // Use id to identify layouts
                         updateTabSelection(n.lookup("#Settings-Gen-btn"), TabType.SETTINGS);
                         Node genericLayout = Tabs.switchTab("settings_generic", (Pane) n.lookup("#Settings-Pane"));
 
@@ -117,7 +119,7 @@ public class Main extends Application {
 
                 n.lookup("#Settings-Mine-btn").setOnMouseClicked(event1 -> {
                     // Minecraft Settings Sub-tab
-                    if(!settings_activeTab.getId().equals(n.lookup("#Settings-Mine-btn").getId())){
+                    if(!settings_activeTab.getId().equals(n.lookup("#Settings-Mine-btn").getId())){                     // Use id to identify layouts
                         updateTabSelection(n.lookup("#Settings-Mine-btn"), TabType.SETTINGS);
                         Node minecraftLayout = Tabs.switchTab("settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
 
@@ -125,7 +127,7 @@ public class Main extends Application {
                     }
                 });
 
-                Tabs.switchTab("settings_generic", (Pane) n.lookup("#Settings-Pane"));
+                Tabs.switchTab(settings_activeTab.getId().equals("#Settings-Gen-btn")?"settings_generic":"settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
             }
         });
 
