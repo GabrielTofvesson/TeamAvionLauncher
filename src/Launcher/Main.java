@@ -13,7 +13,6 @@ package Launcher;
 import Launcher.net.Updater;
 import com.tofvesson.reflection.SafeReflection;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -38,7 +37,6 @@ public class Main extends Application {
     public static final int     semVerMajor     = 0;                                                                    // Major version
     public static final int     semVerMinor     = 2;                                                                    // Minor version
     public static final int     semVerPatch     = 1;                                                                    // Patch version
-
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
     private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn;                                        // Define buttons
@@ -133,7 +131,6 @@ public class Main extends Application {
                     if(!settings_activeTab.getId().equals(n.lookup("#Settings-Mine-btn").getId())){                     // Use id to identify layouts
                         updateTabSelection(n.lookup("#Settings-Mine-btn"), TabType.SETTINGS);
                         Node minecraftLayout = Tabs.switchTab("settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
-
 
                     }
                 });
