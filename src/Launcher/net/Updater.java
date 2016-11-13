@@ -1,5 +1,6 @@
 package Launcher.net;
 
+import Launcher.Main;
 import com.tofvesson.async.Async;
 import com.tofvesson.reflection.SafeReflection;
 import javax.net.ssl.HttpsURLConnection;
@@ -18,8 +19,8 @@ import static Launcher.Main.semVerPatch;
 public class Updater {
 
     private static volatile Updater instance;
-    private static final Async<Updater> setup = new Async<>(SafeReflection.getFirstConstructor(Updater.class));
-    public static final Pattern version = Pattern.compile("(?s)<span class=\"css-truncate-target\">.*(\\d).(\\d).(\\d)</span>.*<a href=\"/GabrielTofvesson/TeamAvionLauncher/releases/download/(.*)\\.jar\" rel=\"nofollow\">"); // Pattern to match when finding refs
+    private static Async<Updater> setup;
+    public static final Pattern version = Pattern.compile("(?s)<span class=\"css-truncate-target\">.*?(\\d)\\.(\\d)\\.(\\d)</span>.*?<a href=\"/GabrielTofvesson/TeamAvionLauncher/releases/download/(.*?)\\.jar\" rel=\"nofollow\">"); // Pattern to match when finding refs
     private HttpsURLConnection conn;
     public static final URL updateURL;
 
@@ -44,24 +45,27 @@ public class Updater {
                     conn.getInputStream()));
             String inputLine;
             StringBuilder response = new StringBuilder();
-
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
+            while ((inputLine = in.readLine()) != null) response.append(inputLine);
             in.close();
 
             Matcher m = version.matcher(response.toString());
             String downloadLink = "";
+            int semMajor = semVerMajor, semMinor = semVerMinor, semPatch = semVerPatch;
             while(m.find()){
                 int     semMaj = Integer.parseInt(m.group(1)),
                         semMin = Integer.parseInt(m.group(2)),
                         semPat = Integer.parseInt(m.group(3));
-                if(semMaj < semVerMajor || (semMaj==semVerMajor && semMin<semVerMinor) ||
-                        (semMaj==semVerMajor && semMin==semVerMinor && semPat<=semVerPatch)) continue;                  // Version found isn't new
+                if(semMaj < semMajor || (semMaj==semMajor && semMin<semMinor) ||
+                        (semMaj==semMajor && semMin==semMinor && semPat<=semPatch)) continue;                           // Version found isn't new
                 downloadLink = "https://github.com/GabrielTofvesson/TeamAvionLauncher/releases/download/"+m.group(4)+".jar";
+                semMajor = semMaj;
+                semMinor = semMin;
+                semPatch = semPat;
             }
             if(downloadLink.equals("")) return;
-            File f = new File("Tal1.jar");
+            File f = new File("TAL-"+semMajor+"_"+semMinor+"_"+semPatch+".jar"), f1;
+            if((f1=new File(Main.class.getResource("/assets/").getFile())).getParent().contains("!") && f1.getParent().contains("file:")) f1=new File(f1.getParent().substring(f1.getParent().indexOf("file:")+5, f1.getParent().length()-1));
+            if(f.isFile()) f.delete();
             f.createNewFile();
             OutputStream o = new FileOutputStream(f);
             HttpsURLConnection dl = (HttpsURLConnection) new URL(downloadLink).openConnection();                        // Downloader
@@ -77,15 +81,17 @@ public class Updater {
             while((i=reader.read(buffer))!=-1) o.write(buffer, 0, i);
             reader.close();
             o.close();
-            Runtime.getRuntime().exec("java -jar Tal1.jar");
+            Runtime.getRuntime().exec("java -jar "+f.getName()+" "+f1.getAbsolutePath()+" "+false);
             System.exit(0);
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             System.out.println("No internet connection available!");
         }
     }
 
+    public static void checkUpdate(){ setup = new Async<>(SafeReflection.getFirstConstructor(Updater.class)); }
+
     public static Updater getInstance() {
-        return instance==null?instance=setup.await():instance;                                                          // Await async creation
+        return instance==null?setup!=null?instance=setup.await():null:instance;                                         // Await async creation
     }
 }

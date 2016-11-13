@@ -24,6 +24,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.net.URL;
 
 import com.tofvesson.async.*;
@@ -34,7 +37,7 @@ public class Main extends Application {
     public static final String  semVerDevState  = "PreDev";                                                             // Development stage
     public static final int     semVerMajor     = 0;                                                                    // Major version
     public static final int     semVerMinor     = 2;                                                                    // Minor version
-    public static final int     semVerPatch     = 0;                                                                    // Patch version
+    public static final int     semVerPatch     = 1;                                                                    // Patch version
 
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
@@ -155,8 +158,12 @@ public class Main extends Application {
         icon.setImage(appIcon);
     }
 
-    public static void main(String[] args) {
-        Updater u = Updater.getInstance();
+    public static void main(String[] args) throws Exception{
+        if(args.length<2 || !args[1].equals("false")) Updater.checkUpdate();                                            // Check for update
+        if(args.length>0){
+            File f = new File(args[0]);
+            if(f.isFile()) while(!f.delete()) Thread.sleep(50);                                                         // Delete previous jar
+        }
         launch(args);
     }
 
