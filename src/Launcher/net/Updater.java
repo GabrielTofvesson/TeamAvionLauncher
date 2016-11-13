@@ -2,15 +2,12 @@ package Launcher.net;
 
 import com.tofvesson.async.Async;
 import com.tofvesson.reflection.SafeReflection;
-
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import static Launcher.Main.semVerMajor;
 import static Launcher.Main.semVerMinor;
 import static Launcher.Main.semVerPatch;
@@ -25,7 +22,6 @@ public class Updater {
     public static final Pattern version = Pattern.compile("(?s)<span class=\"css-truncate-target\">.*(\\d).(\\d).(\\d)</span>.*<a href=\"/GabrielTofvesson/TeamAvionLauncher/releases/download/(.*)\\.jar\" rel=\"nofollow\">"); // Pattern to match when finding refs
     private HttpsURLConnection conn;
     public static final URL updateURL;
-    private boolean isUpdateAvailable = false;
 
     static {
         URL u = null;
@@ -47,7 +43,7 @@ public class Updater {
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     conn.getInputStream()));
             String inputLine;
-            StringBuffer response = new StringBuffer();
+            StringBuilder response = new StringBuilder();
 
             while ((inputLine = in.readLine()) != null) {
                 response.append(inputLine);
@@ -55,7 +51,6 @@ public class Updater {
             in.close();
 
             Matcher m = version.matcher(response.toString());
-            int semMajor = 0, semMinor = 0, semPatch = 0;
             String downloadLink = "";
             while(m.find()){
                 int     semMaj = Integer.parseInt(m.group(1)),
@@ -63,9 +58,6 @@ public class Updater {
                         semPat = Integer.parseInt(m.group(3));
                 if(semMaj < semVerMajor || (semMaj==semVerMajor && semMin<semVerMinor) ||
                         (semMaj==semVerMajor && semMin==semVerMinor && semPat<=semVerPatch)) continue;                  // Version found isn't new
-                semMajor = semMaj;
-                semMinor = semMin;
-                semPatch = semPat;
                 downloadLink = "https://github.com/GabrielTofvesson/TeamAvionLauncher/releases/download/"+m.group(4)+".jar";
             }
             if(downloadLink.equals("")) return;
@@ -86,6 +78,7 @@ public class Updater {
             reader.close();
             o.close();
             Runtime.getRuntime().exec("java -jar Tal1.jar");
+            System.exit(0);
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("No internet connection available!");
