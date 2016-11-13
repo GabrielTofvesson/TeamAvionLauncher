@@ -40,7 +40,7 @@
            </font>
        </Button>
       <Pane id="tab" layoutX="150.0" layoutY="50.0" prefHeight="450.0" prefWidth="750.0" />
-      <Label layoutX="17.0" layoutY="455.0" text="Version : PreDev-0.1.0" textFill="white" />
+      <Label id="version" layoutX="17.0" layoutY="455.0" text="Version : $v" textFill="white" />
       <Label layoutX="9.0" layoutY="472.0" text="Copyright 2016 TeamAvion" textFill="WHITE">
          <font>
             <Font size="11.0" />

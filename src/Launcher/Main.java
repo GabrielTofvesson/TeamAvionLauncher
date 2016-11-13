@@ -30,7 +30,12 @@ import com.tofvesson.async.*;
 
 public class Main extends Application {
 
-    public static final URL mainLauncher = Main.class.getResource("/assets/layout/main.fxml");                        // Launcher body
+    // Semantic versioning system data
+    public static final String  semVerDevState  = "PreDev";                                                             // Development stage
+    public static final int     semVerMajor     = 0;                                                                    // Major version
+    public static final int     semVerMinor     = 0;                                                                    // Minor version
+    public static final int     semVerPatch     = 0;                                                                    // Patch version
+
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
     private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn;                                        // Define buttons
@@ -47,7 +52,9 @@ public class Main extends Application {
 
         primaryStage.initStyle(StageStyle.UNDECORATED);                                                                 // Remove ugly trash
 
-        root = FXMLLoader.load(mainLauncher);
+        root = (Pane) Tabs.load("main");                                                                                // Load via layout loader
+        ((Label)root.lookup("#version")).setText(((Label) root.lookup("#version"))                                      // Dynamically set version label
+                .getText().replace("$v", semVerDevState+"-"+semVerMajor+"."+semVerMinor+"."+semVerPatch));              // Use variables to define version
         primaryStage.setTitle("Team-Avion Launcher [WIP]");
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
@@ -150,7 +157,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         Updater u = Updater.getInstance();
-
         launch(args);
     }
 
