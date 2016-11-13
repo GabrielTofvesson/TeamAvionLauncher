@@ -113,7 +113,6 @@ public class Main extends Application {
                         updateTabSelection(n.lookup("#Settings-Gen-btn"), TabType.SETTINGS);
                         Node genericLayout = Tabs.switchTab("settings_generic", (Pane) n.lookup("#Settings-Pane"));
 
-
                     }
                 });
 
@@ -123,10 +122,8 @@ public class Main extends Application {
                         updateTabSelection(n.lookup("#Settings-Mine-btn"), TabType.SETTINGS);
                         Node minecraftLayout = Tabs.switchTab("settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
 
-
                     }
                 });
-
 
                 System.out.println(settings_activeTab.getId());
 
