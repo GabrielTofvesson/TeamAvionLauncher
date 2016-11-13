@@ -76,54 +76,56 @@ public class Main extends Application {
 
         Home_btn.setOnMouseClicked(event ->{
             if(!activeTab.equals(Home_btn)){
-                updateTabSelection(Home_btn);
+                updateTabSelection(Home_btn, TabType.MAIN);
                 Tabs.switchTab("home", tab);
             }
         });                                                                                                             // Sets the active tab to the home tab unless it's already active
 
         Modpack_btn.setOnMouseClicked(event ->{
             if(!activeTab.equals(Modpack_btn)){
-                updateTabSelection(Modpack_btn);
+                updateTabSelection(Modpack_btn, TabType.MAIN);
                 Tabs.switchTab("modpacks", tab);
                 if(stringUpdater!=null && stringUpdater.isAlive()) stringUpdater.cancel();
                 stringUpdater = new Async(SafeReflection.getFirstMethod(Main.class, "detectStringUpdate"), Tabs.load("settings").lookup("#search-modpacks"));
-
             }
         });
 
         Instance_btn.setOnMouseClicked(event -> {
             if(!activeTab.equals(Instance_btn)){
-                updateTabSelection(Instance_btn);
+                updateTabSelection(Instance_btn, TabType.MAIN);
                 Tabs.switchTab("instance", tab);
                 Tabs.load("instance").lookup("#Launch-VM").setOnMouseClicked(event1 -> {
-                    Dialog d1 = new Dialog<>();
-                    DialogPane d2 = d1.getDialogPane();
-                    d2.setContent(new TextArea("Launching"));
-                    d1.show();
+
                 });
             }
         });
 
         Settings_btn.setOnMouseClicked(event ->{
             if(!activeTab.equals(Settings_btn)){
-                updateTabSelection(Settings_btn);
+                updateTabSelection(Settings_btn, TabType.MAIN);
                 Node n = Tabs.switchTab("settings", tab);                                                               // Sets the active tab to the settings tab unless it's already active
 
                 (settings_activeTab=n.lookup("#Settings-Gen-btn")).setOnMouseClicked(event1 -> {
                     // Generic Settings Sub-tab
-                    if(!settings_activeTab.equals(n.lookup("#Settings-Gen-btn"))){
-                        updateSettingsTabSelection(n.lookup("#Settings-Gen-btn"));
+                    if(!settings_activeTab.getId().equals(n.lookup("#Settings-Gen-btn").getId())){
+                        updateTabSelection(n.lookup("#Settings-Gen-btn"), TabType.SETTINGS);
                         Node genericLayout = Tabs.switchTab("settings_generic", (Pane) n.lookup("#Settings-Pane"));
+
+
                     }
                 });
 
                 n.lookup("#Settings-Mine-btn").setOnMouseClicked(event1 -> {
                     // Minecraft Settings Sub-tab
-                    if(!settings_activeTab.equals(n.lookup("#Settings-Mine-btn"))){
-                        updateSettingsTabSelection(n.lookup("#Settings-Mine-btn"));
+                    if(!settings_activeTab.getId().equals(n.lookup("#Settings-Mine-btn").getId())){
+                        updateTabSelection(n.lookup("#Settings-Mine-btn"), TabType.SETTINGS);
                         Node minecraftLayout = Tabs.switchTab("settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
+
+
                     }
                 });
+
+                Tabs.switchTab("settings_generic", (Pane) n.lookup("#Settings-Pane"));
             }
         });
 
@@ -143,9 +145,7 @@ public class Main extends Application {
         icon.setImage(appIcon);
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+    public static void main(String[] args) { launch(args); }
 
     /**
      * Search for packs with an 80% match compared to detected string.
@@ -157,19 +157,25 @@ public class Main extends Application {
 
     }
 
-    void updateTabSelection(Node newTab){
-        activeTab.getStyleClass().remove("selected");
-        activeTab.getStyleClass().add("tab");
-        activeTab = newTab;
-        activeTab.getStyleClass().remove("tab");
-        activeTab.getStyleClass().add("selected");
+    void updateTabSelection(Node newTab, TabType t){
+        Node n = t==TabType.MAIN?activeTab:settings_activeTab;
+        n.getStyleClass().remove("selected");
+        n.getStyleClass().add("tab");
+        if(t==TabType.MAIN) activeTab = newTab;
+        else settings_activeTab = newTab;
+        newTab.getStyleClass().remove("tab");
+        newTab.getStyleClass().add("selected");
     }
 
-    void updateSettingsTabSelection(Node newTab){
-        settings_activeTab.getStyleClass().remove("selected");
-        settings_activeTab.getStyleClass().add("tab");
-        settings_activeTab = newTab;
-        settings_activeTab.getStyleClass().remove("tab");
-        settings_activeTab.getStyleClass().add("selected");
+
+
+
+
+
+
+
+
+    public enum TabType{
+        SETTINGS, MAIN
     }
 }
