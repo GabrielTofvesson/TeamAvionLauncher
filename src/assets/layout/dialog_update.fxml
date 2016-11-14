@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 
 <Pane xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
-   <Label prefHeight="103.0" prefWidth="421.0" text="Looking for updates..." textAlignment="CENTER">
+   <Label prefHeight="98.0" prefWidth="458.0" text="Launching TAL..." textAlignment="CENTER">
       <font>
          <Font size="40.0" />
       </font>
@@ -14,5 +14,10 @@
          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
       </padding>
    </Label>
-   <Label layoutX="23.0" layoutY="72.0" prefHeight="21.0" prefWidth="104.0" text="Everything is good" />
+   <Label layoutX="185.0" layoutY="73.0" prefHeight="21.0" prefWidth="104.0" text="Everything is good" />
+   <Label layoutX="23.0" layoutY="70.0" text="Looking for updates...">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Label>
 </Pane>
