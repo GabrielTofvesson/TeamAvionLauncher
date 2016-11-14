@@ -5,8 +5,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
-   <Label prefHeight="98.0" prefWidth="458.0" text="Launching TAL..." textAlignment="CENTER">
+<Pane prefHeight="109.0" prefWidth="432.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <Label prefHeight="56.0" prefWidth="432.0" text="Launching TAL..." textAlignment="CENTER">
       <font>
          <Font size="40.0" />
       </font>
