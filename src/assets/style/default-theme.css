@@ -4,8 +4,13 @@
 #rectangle {
     -fx-fill: #031128;
 }
+
+#rectangle-1 {
+    -fx-fill: #080920;
+}
+
 #Modpack-back {
-    -fx-fill: #042344;
+    -fx-fill: #0a0e2e;
 }
 #exit, #min{
     -fx-background-color: rgba(30, 25, 25, 0);
@@ -35,5 +40,5 @@
 }
 
 .selected:hover {
-    -fx-background-color: #050b14;
+    -fx-background-color: #0c182d;
 }

@@ -1,0 +1,39 @@
+#pane {
+    -fx-background-color: rgb(62, 62, 62);
+}
+#rectangle {
+    -fx-fill: #1a1a1a;
+}
+#Modpack-back {
+    -fx-fill: #424242;
+}
+#exit, #min{
+    -fx-background-color: rgba(30, 25, 25, 0);
+}
+#min:hover, #exit:hover{
+    -fx-background-color: #bf0000;
+}
+#search-modpacks {
+    -fx-text-inner-color: white;
+    -fx-background-color: rgb(82, 82, 82);
+    -fx-padding: 10px;
+}
+
+.tab {
+    -fx-background-color: rgba(0, 0, 0, 0);
+    -fx-background-radius: 0em;
+}
+
+.tab:hover{
+    -fx-background-color: #898989;
+
+}
+
+.selected {
+    -fx-background-color: #535353;
+    -fx-background-radius: 0em;
+}
+
+.selected:hover {
+    -fx-background-color: #898989;
+}
