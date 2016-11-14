@@ -45,6 +45,7 @@ public class Main extends Application {
     private Rectangle dragBar;                                                                                          // Draggable top bar
     private Pane root, tab;
     private Node activeTab, settings_activeTab;
+    private Label dialog_changer;
     Async stringUpdater;
 
     @Override
@@ -86,6 +87,8 @@ public class Main extends Application {
         Modpack_btn = (Button) root.lookup("#Modpacks-btn");
         Settings_btn = (Button) root.lookup("#Settings-btn");
         Instance_btn = (Button) root.lookup("#Instance-btn");
+
+        dialog_changer = (Label) root.lookup("#dialog-changer");
 
         tab = (Pane) root.lookup("#tab");
 
