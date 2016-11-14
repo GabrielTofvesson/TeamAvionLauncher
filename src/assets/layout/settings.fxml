@@ -8,15 +8,15 @@
 
 <Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Rectangle id="Modpack-back" arcHeight="5.0" arcWidth="5.0" height="50.0" strokeType="INSIDE" width="750.0" />
-        <Label layoutX="34.0" layoutY="5.0" text="Settings" textFill="WHITE">
+        <Rectangle id="Modpack-back" height="40.0" strokeType="INSIDE" width="750.0" />
+        <Label layoutX="331.0" layoutY="1.0" text="Settings" textFill="WHITE">
             <font>
                 <Font name="Centaur" size="31.0" />
             </font>
         </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d0d39" height="40.0" layoutY="50.0" width="750.0" />
-      <Button styleClass="selected" id="Settings-Gen-btn" layoutX="0.0" layoutY="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="General" textFill="WHITE" />
-      <Button styleClass="tab" id="Settings-Mine-btn" layoutX="100.0" layoutY="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Minecraft" textFill="WHITE">
+      <Rectangle fill="#0d0d39" height="40.0" layoutY="40.0" width="750.0" />
+      <Button id="Settings-Gen-btn" layoutY="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" styleClass="selected" text="General" textFill="WHITE" />
+      <Button id="Settings-Mine-btn" layoutX="100.0" layoutY="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" styleClass="tab" text="Minecraft" textFill="WHITE">
          <font>
             <Font name="Candara" size="12.0" />
          </font>
