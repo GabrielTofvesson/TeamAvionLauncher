@@ -8,6 +8,11 @@ does without them losing interest. Also, in case you are actually, seriously goi
 favour and pour yourself some nice Jack Daniels. You deserve it if you're going to read through this.
  */
 
+/*
+Do not Read Past this point... This is a human health advisory. Anyone reading past this point will risk his or her life.
+If you get sick reading, we will not claim responsibility on your health. Please Stay Clear of the Code.
+*/
+
 package Launcher;
 
 import Launcher.net.Updater;
@@ -27,6 +32,10 @@ import javafx.stage.StageStyle;
 import java.io.File;
 import com.tofvesson.async.*;
 import javafx.util.Duration;
+
+/*
+Do not go further. you risk your life. Read guideline above. Anyone reading past this point is no longer under our responsibility.
+*/
 
 public class Main extends Application {
 
