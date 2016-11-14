@@ -49,6 +49,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+
         if(args.length<2 || !args[1].equals("false")){
             Stage d = new Stage();
             Timeline t = new Timeline();
@@ -63,9 +66,7 @@ public class Main extends Application {
             });
             t1.setDaemon(true);
             t1.start();
-        } else primaryStage.show();
-
-        primaryStage.initStyle(StageStyle.UNDECORATED);                                                                 // Remove ugly trash
+        } else primaryStage.show();                                                               // Remove ugly trash
 
         root = (Pane) Tabs.load("main");                                                                                // Load via layout loader
         ((Label)root.lookup("#version")).setText(((Label) root.lookup("#version"))                                      // Dynamically set version label
