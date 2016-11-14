@@ -12,6 +12,8 @@ package Launcher;
 
 import Launcher.net.Updater;
 import com.tofvesson.reflection.SafeReflection;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -22,13 +24,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.net.URL;
-
 import com.tofvesson.async.*;
+import javafx.util.Duration;
 
 public class Main extends Application {
 
@@ -39,6 +37,7 @@ public class Main extends Application {
     public static final int     semVerPatch     = 1;                                                                    // Patch version
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
+    private static String[] args;
     private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn;                                        // Define buttons
     private ImageView icon;
     private TextField Search_modpacks;
@@ -50,6 +49,24 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        if(args.length<2 || !args[1].equals("false")){
+            Stage d = new Stage();
+            Timeline t = new Timeline();
+            t.getKeyFrames().add(new KeyFrame(Duration.millis(1), event ->{ d.close(); primaryStage.show(); }));
+            d.initStyle(StageStyle.UNDECORATED);
+            Pane n = (Pane) Tabs.load("dialog_update");
+            //n.getChildren().add(new Label("Hello World"));
+            d.setScene(new Scene(n));
+            d.show();
+            new Thread(()->{
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Updater.getInstance(t);
+            }).start();
+        }
 
         primaryStage.initStyle(StageStyle.UNDECORATED);                                                                 // Remove ugly trash
 
@@ -58,7 +75,6 @@ public class Main extends Application {
                 .getText().replace("$v", semVerDevState+"-"+semVerMajor+"."+semVerMinor+"."+semVerPatch));              // Use variables to define version
         primaryStage.setTitle("Team-Avion Launcher [WIP]");
         primaryStage.setScene(new Scene(root, 900, 500));
-        primaryStage.show();
         primaryStage.getIcons().clear();
         primaryStage.getIcons().add(appIcon = new Image(getClass().getResourceAsStream("/assets/icons/app.png")));
 
@@ -156,7 +172,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws Exception{
-        if(args.length<2 || !args[1].equals("false")) Updater.checkUpdate();                                            // Check for update
+        Main.args = args;
         if(args.length>0){
             File f = new File(args[0]);
             if(f.isFile()) while(!f.delete()) Thread.sleep(50);                                                         // Delete previous jar

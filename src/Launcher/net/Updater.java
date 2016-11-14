@@ -3,6 +3,7 @@ package Launcher.net;
 import Launcher.Main;
 import com.tofvesson.async.Async;
 import com.tofvesson.reflection.SafeReflection;
+import javafx.animation.Timeline;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
 import java.net.MalformedURLException;
@@ -30,14 +31,17 @@ public class Updater {
         updateURL = u;
     }
 
-    private Updater(){
+    private Updater(Timeline t){
         try {
             conn = (HttpsURLConnection) updateURL.openConnection();
             conn.setDoOutput(true);
             conn.setDoInput(true);
             conn.setRequestMethod("GET");
             conn.setRequestProperty("User-Agent", "Mozilla/5.0");
-            if(conn.getResponseCode()!=200) return;                                                                     // Can't get update site
+            if(conn.getResponseCode()!=200){
+                t.play();
+                return;                                                                                                 // Can't get update site
+            }
             conn.connect();
 
 
@@ -62,10 +66,16 @@ public class Updater {
                 semMinor = semMin;
                 semPatch = semPat;
             }
-            if(downloadLink.equals("")) return;
+            if(downloadLink.equals("")){
+                t.play();
+                return;
+            }
+            final int l=semMajor, j=semMinor, k=semPatch;
             File f = new File("TAL-"+semMajor+"_"+semMinor+"_"+semPatch+".jar"), f1;
-            if((f1=new File(Main.class.getResource("/assets/").getFile())).getParent().contains("!") && f1.getParent().contains("file:")) f1=new File(f1.getParent().substring(f1.getParent().indexOf("file:")+5, f1.getParent().length()-1));
-            if(f.isFile()) f.delete();
+            if((f1=new File(Main.class.getResource("/assets/").getFile())).getParent().contains("!") &&
+                    f1.getParent().contains("file:"))                                                                   // Find .jar representation of this program
+                f1=new File(f1.getParent().substring(f1.getParent().indexOf("file:")+5, f1.getParent().length()-1));    // Prepare for deletion
+            if(f.isFile()) f.renameTo(new File("-"+f.getName()));
             f.createNewFile();
             OutputStream o = new FileOutputStream(f);
             HttpsURLConnection dl = (HttpsURLConnection) new URL(downloadLink).openConnection();                        // Downloader
@@ -73,7 +83,10 @@ public class Updater {
             dl.setDoInput(true);
             dl.setRequestMethod("GET");
             dl.setRequestProperty("User-Agent", "Mozilla/5.0");
-            if(dl.getResponseCode()!=200) return;
+            if(dl.getResponseCode()!=200){
+                t.play();
+                return;
+            }
             dl.connect();
             InputStream reader = dl.getInputStream();
             int i;
@@ -86,12 +99,13 @@ public class Updater {
         } catch (IOException e) {
             //e.printStackTrace();
             System.out.println("No internet connection available!");
+            t.play();
         }
     }
+    public static void checkUpdate(Timeline t){ setup = new Async<>(SafeReflection.getFirstConstructor(Updater.class), t); }
 
-    public static void checkUpdate(){ setup = new Async<>(SafeReflection.getFirstConstructor(Updater.class)); }
-
-    public static Updater getInstance() {
-        return instance==null?setup!=null?instance=setup.await():null:instance;                                         // Await async creation
+    public static Updater getInstance(Timeline t) {
+        if(setup==null) checkUpdate(t);
+        return instance==null?instance=setup.await():instance;                                                          // Await async creation
     }
 }
