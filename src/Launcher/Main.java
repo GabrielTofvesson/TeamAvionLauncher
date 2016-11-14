@@ -6,9 +6,9 @@ not-so-messy code is extremely messy just because of how I work. I mean, I try t
 always tell me that it's virtually unreadable and it doesn't help that it's difficult to explain to them what the code
 does without them losing interest. Also, in case you are actually, seriously going to read this crap, do yourself a
 favour and pour yourself some nice Jack Daniels. You deserve it if you're going to read through this.
- */
 
-/*
+
+
 Do not Read Past this point... This is a human health advisory. Anyone reading past this point will risk his or her life.
 If you get sick reading, we will not claim responsibility on your health. Please Stay Clear of the Code.
 */
