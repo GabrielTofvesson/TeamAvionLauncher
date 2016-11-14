@@ -63,7 +63,7 @@ public class Main extends Application {
             });
             t1.setDaemon(true);
             t1.start();
-        }
+        } else primaryStage.show();
 
         primaryStage.initStyle(StageStyle.UNDECORATED);                                                                 // Remove ugly trash
 
