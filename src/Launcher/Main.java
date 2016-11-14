@@ -42,7 +42,7 @@ public class Main extends Application {
     // Semantic versioning system data
     public static final String  semVerDevState  = "PreDev";                                                             // Development stage
     public static final int     semVerMajor     = 0;                                                                    // Major version
-    public static final int     semVerMinor     = 2;                                                                    // Minor version
+    public static final int     semVerMinor     = 1;                                                                    // Minor version
     public static final int     semVerPatch     = 2;                                                                    // Patch version
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
@@ -184,6 +184,7 @@ public class Main extends Application {
     public static void main(String[] args) throws Exception{
         Main.args = args;
         if (args.length > 0) {
+            Thread.sleep(50);
             File f = new File(args[0]);
             if (f.isFile()) f.delete();                                                                                 // Delete previous jar
         }
