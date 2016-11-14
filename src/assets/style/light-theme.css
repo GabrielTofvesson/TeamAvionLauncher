@@ -1,20 +1,20 @@
 #pane {
-    -fx-background-color: rgba(7, 4, 20, 0.85);
+    -fx-background-color: rgba(206, 206, 206, 0.85);
 }
 #rectangle {
-    -fx-fill: #050517;
+    -fx-fill: #898989;
 }
 
 #rectangle-1 {
-    -fx-fill: #080920;
+    -fx-fill: #bfbfbf;
 }
 
 #rectangle-2 {
-    -fx-fill: #0d0d39;
+    -fx-fill: #909090;
 }
 
 #Modpack-back {
-    -fx-fill: #0a0e2e;
+    -fx-fill: #9f9f9f;
 }
 #exit, #min{
     -fx-background-color: rgba(30, 25, 25, 0);
@@ -34,15 +34,15 @@
 }
 
 .tab:hover{
-    -fx-background-color: #0c182d;
+    -fx-background-color: #d5d5d5;
 
 }
 
 .selected {
-    -fx-background-color: #0c182d;
+    -fx-background-color: #6e6e6e;
     -fx-background-radius: 0em;
 }
 
 .selected:hover {
-    -fx-background-color: #0c182d;
+    -fx-background-color: #6e6e6e;
 }
