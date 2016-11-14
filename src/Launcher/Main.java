@@ -33,7 +33,7 @@ public class Main extends Application {
     // Semantic versioning system data
     public static final String  semVerDevState  = "PreDev";                                                             // Development stage
     public static final int     semVerMajor     = 0;                                                                    // Major version
-    public static final int     semVerMinor     = 2;                                                                    // Minor version
+    public static final int     semVerMinor     = 0;                                                                    // Minor version
     public static final int     semVerPatch     = 1;                                                                    // Patch version
 
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
@@ -55,17 +55,14 @@ public class Main extends Application {
             t.getKeyFrames().add(new KeyFrame(Duration.millis(1), event ->{ d.close(); primaryStage.show(); }));
             d.initStyle(StageStyle.UNDECORATED);
             Pane n = (Pane) Tabs.load("dialog_update");
-            //n.getChildren().add(new Label("Hello World"));
             d.setScene(new Scene(n));
             d.show();
-            new Thread(()->{
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            Thread t1 = new Thread(()->{
+                try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
                 Updater.getInstance(t);
-            }).start();
+            });
+            t1.setDaemon(true);
+            t1.start();
         }
 
         primaryStage.initStyle(StageStyle.UNDECORATED);                                                                 // Remove ugly trash
@@ -173,9 +170,9 @@ public class Main extends Application {
 
     public static void main(String[] args) throws Exception{
         Main.args = args;
-        if(args.length>0){
+        if (args.length > 0) {
             File f = new File(args[0]);
-            if(f.isFile()) while(!f.delete()) Thread.sleep(50);                                                         // Delete previous jar
+            if (f.isFile()) f.delete();                                                                                 // Delete previous jar
         }
         launch(args);
     }

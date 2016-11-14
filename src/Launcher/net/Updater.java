@@ -70,7 +70,6 @@ public class Updater {
                 t.play();
                 return;
             }
-            final int l=semMajor, j=semMinor, k=semPatch;
             File f = new File("TAL-"+semMajor+"_"+semMinor+"_"+semPatch+".jar"), f1;
             if((f1=new File(Main.class.getResource("/assets/").getFile())).getParent().contains("!") &&
                     f1.getParent().contains("file:"))                                                                   // Find .jar representation of this program
@@ -94,6 +93,7 @@ public class Updater {
             while((i=reader.read(buffer))!=-1) o.write(buffer, 0, i);
             reader.close();
             o.close();
+            System.out.println("Starting!");
             Runtime.getRuntime().exec("java -jar "+f.getName()+" "+f1.getAbsolutePath()+" "+false);
             System.exit(0);
         } catch (IOException e) {
