@@ -1,9 +1,2 @@
 Language: Default
-string{
 
-
-}
-
-number{
-
-}

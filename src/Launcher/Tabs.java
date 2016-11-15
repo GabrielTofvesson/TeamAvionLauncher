@@ -13,6 +13,7 @@ public class Tabs {
 
     private static final ShiftingList<Pair<URL, Node>> loaded = new ShiftingList<>(35);                                 // Memory-efficient list of loaded files
 
+
     /**
      * Loads layout from file in layout assets folder. If layout is already loaded,
      * Tabs won't bother with reloading and will instead return the cached version.

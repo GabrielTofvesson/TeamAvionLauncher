@@ -16,23 +16,30 @@ If you get sick reading, we will not claim responsibility on your health. Please
 package Launcher;
 
 import Launcher.net.Updater;
+import com.tofvesson.async.Async;
 import com.tofvesson.reflection.SafeReflection;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import java.io.File;
-
-import com.tofvesson.async.*;
 import javafx.util.Duration;
+
+import java.io.File;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 Do not go further. you risk your life. Read guideline above. Anyone reading past this point is no longer under our responsibility.
@@ -47,17 +54,21 @@ public class Main extends Application {
     public static final int     semVerPatch     = 3;                                                                    // Patch version
 
 
-    private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
+    double xOffset = 0, yOffset = 0;                                                                                    // Offsets for dragging
     private static String[] args;
-    private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn, Default_theme, Dark_theme, Light_theme;                                        // Define buttons
+    Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn, Default_theme, Dark_theme, Light_theme;        // Define buttons
     private ImageView icon;
     private TextField Search_modpacks;
     private Image appIcon;
     private Rectangle dragBar;                                                                                          // Draggable top bar
-    private Pane root, tab;
-    private Node activeTab, settings_activeTab;
+    Pane root, tab;
+    Node activeTab, settings_activeTab;
     private Label dialog_changer;
+
     Async stringUpdater;
+    public static final URL
+            darkTheme=Main.class.getResource("/assets/style/dark-theme.css"),
+            lightTheme=Main.class.getResource("/assets/style/light-theme.css");
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -143,7 +154,7 @@ public class Main extends Application {
         Settings_btn.setOnMouseClicked(event ->{
             if(!activeTab.equals(Settings_btn)){
                 updateTabSelection(Settings_btn, TabType.MAIN);
-                Node n = Tabs.switchTab("settings", tab);                                                               // Sets the active tab to the settings tab unless it's already active
+                Node n = Tabs.switchTab("settings", tab), tmp;                                                          // Sets the active tab to the settings tab unless it's already active
 
                 if(settings_activeTab==null) settings_activeTab = n.lookup("#Settings-Gen-btn");                        // First time stuff
 
@@ -152,14 +163,7 @@ public class Main extends Application {
                     if(!settings_activeTab.getId().equals(n.lookup("#Settings-Gen-btn").getId())){                      // Use id to identify layouts
                         updateTabSelection(n.lookup("#Settings-Gen-btn"), TabType.SETTINGS);
                         Node genericLayout = Tabs.switchTab("settings_generic", (Pane) n.lookup("#Settings-Pane"));
-                        Tabs.load("settings_generic").lookup("#default-theme").setOnMouseClicked(event2 ->{
-                            root.getStylesheets().clear();
-                            root.getStylesheets().add(getClass().getResource("../assets/style/default-theme.css").toExternalForm());
-                        });
-                        Tabs.load("settings_generic").lookup("#light-theme").setOnMouseClicked(event2 ->{
-                            root.getStylesheets().clear();
-                            root.getStylesheets().add(getClass().getResource("../assets/style/light-theme.css").toExternalForm());
-                        });
+
                     }
                 });
 
@@ -173,6 +177,11 @@ public class Main extends Application {
                 });
 
                 Tabs.switchTab(settings_activeTab.getId().equals("Settings-Gen-btn") ? "settings_generic" : "settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
+                if((tmp=Tabs.load("settings_generic").lookup("#default-theme")).getOnMouseClicked()==null) {
+                    tmp.setOnMouseClicked(event2 -> Theme.Default.switchTo(root));
+                    Tabs.load("settings_generic").lookup("#light-theme").setOnMouseClicked(event2 -> Theme.Light.switchTo(root));
+                    Tabs.load("settings_generic").lookup("#dark-theme").setOnMouseClicked(event1 -> Theme.Dark.switchTo(root));
+                }
             }
         });
 
@@ -221,7 +230,36 @@ public class Main extends Application {
         newTab.getStyleClass().add("selected");
     }
 
+    public static List<Node> getFlatRepresentation(Parent root){
+        List<Node> l = new ArrayList<>();
+        l.add(root);
+        for(Node n : root.getChildrenUnmodifiable()){
+            if(n instanceof Parent)
+                l.addAll(getFlatRepresentation((Parent)n));
+            else l.add(n);
+        }
+        return l;
+    }
+
+    public void processStyleData(Node n){
+
+    }
+
     enum TabType{
         SETTINGS, MAIN
+    }
+
+    enum Theme{
+        Default(""), Dark(Main.class.getResource("/assets/style/dark-theme.css").toExternalForm()), Light(Main.class.getResource("/assets/style/light-theme.css").toExternalForm());
+
+        public final String style;
+        Theme(String style){ this.style = style; }
+
+        public void switchTo(Pane root){
+            ObservableList<String> l = root.getStylesheets();
+            if(l.contains(Light.style)) l.remove(Light.style);
+            if(l.contains(Dark.style)) l.remove(Dark.style);
+            if(this!=Default) l.add(style);
+        }
     }
 }
