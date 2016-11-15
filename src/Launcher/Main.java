@@ -30,6 +30,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import java.io.File;
+
 import com.tofvesson.async.*;
 import javafx.util.Duration;
 
@@ -45,9 +46,10 @@ public class Main extends Application {
     public static final int     semVerMinor     = 2;                                                                    // Minor version
     public static final int     semVerPatch     = 3;                                                                    // Patch version
 
+
     private double xOffset = 0, yOffset = 0;                                                                            // Offsets for dragging
     private static String[] args;
-    private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn;                                        // Define buttons
+    private Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn, Default_theme, Dark_theme, Light_theme;                                        // Define buttons
     private ImageView icon;
     private TextField Search_modpacks;
     private Image appIcon;
@@ -96,6 +98,9 @@ public class Main extends Application {
         Modpack_btn = (Button) root.lookup("#Modpacks-btn");
         Settings_btn = (Button) root.lookup("#Settings-btn");
         Instance_btn = (Button) root.lookup("#Instance-btn");
+        Default_theme = (Button) root.lookup("#default-theme");
+        Light_theme = (Button) root.lookup("#light-theme");
+        Dark_theme = (Button) root.lookup("#dark-theme");
 
         dialog_changer = (Label) root.lookup("#dialog-changer");
 
@@ -147,7 +152,9 @@ public class Main extends Application {
                     if(!settings_activeTab.getId().equals(n.lookup("#Settings-Gen-btn").getId())){                      // Use id to identify layouts
                         updateTabSelection(n.lookup("#Settings-Gen-btn"), TabType.SETTINGS);
                         Node genericLayout = Tabs.switchTab("settings_generic", (Pane) n.lookup("#Settings-Pane"));
+                        Tabs.load("settings_generic").lookup("#default-theme").setOnMouseClicked(event2 ->{
 
+                        });
 
                     }
                 });

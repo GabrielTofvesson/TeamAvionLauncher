@@ -19,4 +19,5 @@
          <Font size="17.0" />
       </font>
    </Label>
+   <Label id="i" layoutX="202.0" layoutY="75.0" text="$i" />
 </Pane>

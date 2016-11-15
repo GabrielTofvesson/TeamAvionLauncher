@@ -1,9 +1,13 @@
 package Launcher.net;
 
 import Launcher.Main;
+import Launcher.Tabs;
 import com.tofvesson.async.Async;
 import com.tofvesson.reflection.SafeReflection;
 import javafx.animation.Timeline;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
 import java.net.MalformedURLException;

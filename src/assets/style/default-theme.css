@@ -13,6 +13,30 @@
     -fx-fill: #0d0d39;
 }
 
+#default-theme,#dark-theme, #light-theme {
+    -fx-background-color: #181a39;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#default-theme:hover {
+    -fx-background-color: #0d0c39;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#dark-theme:hover {
+    -fx-background-color: #1c1c1c;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#light-theme:hover {
+    -fx-background-color: #bcbcbc;
+    -fx-background-radius: 0em;
+    -fx-text-fill: black;
+}
+
 #Modpack-back {
     -fx-fill: #0a0e2e;
 }
