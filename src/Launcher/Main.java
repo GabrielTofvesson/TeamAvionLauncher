@@ -155,6 +155,9 @@ public class Main extends Application {
                         Tabs.load("settings_generic").lookup("#default-theme").setOnMouseClicked(event2 ->{
 
                         });
+                        Tabs.load("settings_generic").lookup("#dark-theme").setOnMouseClicked(event2 ->{
+
+                        });
 
                     }
                 });
