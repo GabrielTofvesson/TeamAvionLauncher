@@ -153,10 +153,12 @@ public class Main extends Application {
                         updateTabSelection(n.lookup("#Settings-Gen-btn"), TabType.SETTINGS);
                         Node genericLayout = Tabs.switchTab("settings_generic", (Pane) n.lookup("#Settings-Pane"));
                         Tabs.load("settings_generic").lookup("#default-theme").setOnMouseClicked(event2 ->{
-
+                            root.getStylesheets().clear();
+                            root.getStylesheets().add(getClass().getResource("../assets/style/default-theme.css").toExternalForm());
                         });
-                        Tabs.load("settings_generic").lookup("#dark-theme").setOnMouseClicked(event2 ->{
-
+                        Tabs.load("settings_generic").lookup("#light-theme").setOnMouseClicked(event2 ->{
+                            root.getStylesheets().clear();
+                            root.getStylesheets().add(getClass().getResource("../assets/style/light-theme.css").toExternalForm());
                         });
 
                     }
