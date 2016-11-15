@@ -160,7 +160,6 @@ public class Main extends Application {
                             root.getStylesheets().clear();
                             root.getStylesheets().add(getClass().getResource("../assets/style/light-theme.css").toExternalForm());
                         });
-
                     }
                 });
 
