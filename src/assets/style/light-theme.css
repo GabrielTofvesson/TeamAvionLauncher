@@ -16,6 +16,11 @@
     -fx-text-fill: black;
 }
 
+#rectangle-3 {
+    -fx-fill: #979797;
+    -fx-text-fill: black;
+}
+
 #default-theme,#dark-theme, #light-theme {
     -fx-background-color: #7d7d7d;
     -fx-background-radius: 0em;
