@@ -141,6 +141,12 @@ public class Main extends Application {
                 Tabs.switchTab("modpacks", tab);
                 if(stringUpdater!=null && stringUpdater.isAlive()) stringUpdater.cancel();
                 stringUpdater = new Async(SafeReflection.getFirstMethod(Main.class, "detectStringUpdate"), Tabs.load("modpacks").lookup("#search-modpacks"));
+                Tabs.load("modpacks").lookup("#download-modpack").setOnMouseClicked(event1 -> {
+                    System.out.println("Downloading Modpack");
+                });
+                Tabs.load("modpacks").lookup("#view-modpack").setOnMouseClicked(event1 -> {
+                    System.out.println("Viewing Modpack");
+                });
             }
         });
 
@@ -181,9 +187,18 @@ public class Main extends Application {
 
                 Tabs.switchTab(settings_activeTab.getId().equals("Settings-Gen-btn") ? "settings_generic" : "settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
                 if((tmp=Tabs.load("settings_generic").lookup("#default-theme")).getOnMouseClicked()==null) {
-                    tmp.setOnMouseClicked(event2 -> Theme.Default.switchTo(root));
-                    Tabs.load("settings_generic").lookup("#light-theme").setOnMouseClicked(event2 -> Theme.Light.switchTo(root));
-                    Tabs.load("settings_generic").lookup("#dark-theme").setOnMouseClicked(event1 -> Theme.Dark.switchTo(root));
+                    tmp.setOnMouseClicked(event2 -> {
+                        Theme.Default.switchTo(root);
+                        System.out.println("Changing Theme to Default");
+                    });
+                    Tabs.load("settings_generic").lookup("#light-theme").setOnMouseClicked(event2 -> {
+                        Theme.Light.switchTo(root);
+                        System.out.println("Changing Theme to Light");
+                    });
+                    Tabs.load("settings_generic").lookup("#dark-theme").setOnMouseClicked(event1 -> {
+                        Theme.Dark.switchTo(root);
+                        System.out.println("Changing Theme to Dark");
+                    });
                 }
             }
         });
