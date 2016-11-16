@@ -1,0 +1,94 @@
+#pane {
+    -fx-background-color: #060606;
+}
+#rectangle {
+    -fx-fill: #0f0f0f;
+    -fx-text-fill: white;
+}
+
+#rectangle-1 {
+    -fx-fill: #171717;
+    -fx-text-fill: white;
+}
+
+#rectangle-2 {
+    -fx-fill: #0f0f0f;
+    -fx-text-fill: white;
+}
+
+#default-theme,#dark-theme, #light-theme {
+    -fx-background-color: #252525;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#default-theme:hover {
+    -fx-background-color: #0d0c39;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#dark-theme:hover {
+    -fx-background-color: #1c1c1c;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#light-theme:hover {
+    -fx-background-color: #bcbcbc;
+    -fx-background-radius: 0em;
+    -fx-text-fill: black;
+}
+
+#lable {
+    -fx-text-fill: white;
+}
+
+#Modpack-back {
+    -fx-fill: #1d1d1d;
+    -fx-text-fill: white;
+}
+#exit, #min{
+    -fx-background-color: rgba(30, 25, 25, 0);
+    -fx-text-fill: white;
+}
+#min:hover, #exit:hover{
+    -fx-background-color: #8d0000;
+    -fx-text-fill: white;
+}
+#search-modpacks {
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+    -fx-background-color: #1d1d1d;
+    -fx-padding: 10px;
+}
+
+#Home-btn, #Modpacks-btn, #Instance-btn, #Settings-btn {
+    -fx-text-fill: white;
+}
+#version {
+    -fx-text-fill: white;
+}
+
+#Settings-Gen-btn, #Settings-Mine-btn {
+    -fx-text-fill: white;
+}
+
+.tab {
+    -fx-background-color: rgba(0, 0, 0, 0);
+    -fx-background-radius: 0em;
+}
+
+.tab:hover{
+    -fx-background-color: #191919;
+
+}
+
+.selected {
+    -fx-background-color: #303030;
+    -fx-background-radius: 0em;
+}
+
+.selected:hover {
+    -fx-background-color: #303030;
+}

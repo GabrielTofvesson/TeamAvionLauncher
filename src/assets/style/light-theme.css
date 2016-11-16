@@ -1,23 +1,23 @@
 #pane {
-    -fx-background-color: #b6b6b6;
+    -fx-background-color: #ffffff;
 }
 #rectangle {
-    -fx-fill: #626262;
+    -fx-fill: #7d7d7d;
     -fx-text-fill: black;
 }
 
 #rectangle-1 {
-    -fx-fill: #6c6c6c;
+    -fx-fill: #8e8e8e;
     -fx-text-fill: black;
 }
 
 #rectangle-2 {
-    -fx-fill: #969696;
+    -fx-fill: #7d7d7d;
     -fx-text-fill: black;
 }
 
 #default-theme,#dark-theme, #light-theme {
-    -fx-background-color: #5c5c5c;
+    -fx-background-color: #7d7d7d;
     -fx-background-radius: 0em;
     -fx-text-fill: black;
 }
@@ -57,9 +57,9 @@
     -fx-text-fill: white;
 }
 #search-modpacks {
-    -fx-text-inner-color: black;
+    -fx-prompt-text-fill: black;
     -fx-text-fill: black;
-    -fx-background-color: rgba(130, 130, 130, 0.23);
+    -fx-background-color: #9b9b9b;
     -fx-padding: 10px;
 }
 
@@ -80,15 +80,15 @@
 }
 
 .tab:hover{
-    -fx-background-color: #7d7d7d;
+    -fx-background-color: #858585;
 
 }
 
 .selected {
-    -fx-background-color: #989898;
+    -fx-background-color: #e2e2e2;
     -fx-background-radius: 0em;
 }
 
 .selected:hover {
-    -fx-background-color: #989898;
+    -fx-background-color: #e2e2e2;
 }
