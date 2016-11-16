@@ -8,7 +8,7 @@ import javafx.util.Pair;
 import java.io.IOException;
 import java.net.URL;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class Tabs {
 
     private static final ShiftingList<Pair<URL, Node>> loaded = new ShiftingList<>(35);                                 // Memory-efficient list of loaded files

@@ -38,7 +38,6 @@ import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.io.File;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -69,9 +68,6 @@ public class Main extends Application {
     private Label dialog_changer;
 
     Async stringUpdater;
-    public static final URL
-            darkTheme=Main.class.getResource("/assets/style/dark-theme.css"),
-            lightTheme=Main.class.getResource("/assets/style/light-theme.css");
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -221,9 +217,9 @@ public class Main extends Application {
 
     public static void main(String[] args) throws Exception{
         // TODO: Fix this code
-        /* Localization l = new Localization(new File(Main.class.getResource("@/assets/lang").getFile()));                  // Create a localization with aggressive loading
+        Localization l = new Localization(new File(Main.class.getResource("/assets/lang").getFile()));                  // Create a localization with aggressive loading
         System.out.println(Arrays.toString(l.getLanguageNames()));
-        System.out.println("Success: "+l.get("du_label")); */
+        System.out.println("Success: "+l.get("du_label"));
         Main.args = args;
         if (args.length > 0) {
             File f = new File(args[0]);
