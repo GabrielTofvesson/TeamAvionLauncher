@@ -216,7 +216,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws Exception{
-        Localization l = new Localization(new File(Main.class.getResource("/assets/lang").getFile()));                  // Create a localization with aggressive loading
+        Localization l = new Localization( new File(Main.class.getResource("/assets/lang").getFile()) );                // Create a localization with aggressive loading
         System.out.println(Arrays.toString(l.getLanguageNames()));
         System.out.println("Success: "+l.get("du_label"));
         Main.args = args;
