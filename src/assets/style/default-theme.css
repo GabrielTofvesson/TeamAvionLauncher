@@ -27,6 +27,12 @@
     -fx-text-fill: white;
 }
 
+#download-modpack:hover, #view-modpack:hover, #Launch-VM:hover {
+    -fx-background-color: #151341;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
 #default-theme,#dark-theme, #light-theme {
     -fx-background-color: #181a39;
     -fx-background-radius: 0em;
