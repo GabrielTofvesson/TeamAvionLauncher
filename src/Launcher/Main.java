@@ -149,7 +149,7 @@ public class Main extends Application {
                 updateTabSelection(Instance_btn, TabType.MAIN);
                 Tabs.switchTab("instance", tab);
                 Tabs.load("instance").lookup("#Launch-VM").setOnMouseClicked(event1 -> {
-
+                    System.out.println("Launching Minecraft");
                 });
             }
         });
