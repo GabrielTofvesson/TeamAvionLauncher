@@ -24,3 +24,4 @@ Please Read [Terms of Services](https://github.com/Michael-Jouanneau/Team-Avion-
 
 ### - Libraries
 - [RefTools](https://github.com/GabrielTofvesson/libRefTools) (Provided by [Blynd3 Dev](https://github.com/GabrielTofvesson))
+- [JOE](https://github.com/GabrielTofvesson/JOE) (Provided by [Blynd3 Dev](https://github.com/GabrielTofvesson))
