@@ -21,6 +21,12 @@
     -fx-text-fill: white;
 }
 
+#download-modpack, #view-modpack, #Launch-VM {
+    -fx-background-color: #393939;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
 #default-theme,#dark-theme, #light-theme {
     -fx-background-color: #252525;
     -fx-background-radius: 0em;
