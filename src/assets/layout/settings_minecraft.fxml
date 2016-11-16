@@ -6,7 +6,7 @@
 
 <Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="750.0" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Label layoutX="22.0" layoutY="14.0" text="Minecraft Settings">
+        <Label id="lable" layoutX="22.0" layoutY="14.0" text="Minecraft Settings">
             <font>
                 <Font name="Centaur" size="25.0" />
             </font>

@@ -3,14 +3,17 @@
 }
 #rectangle {
     -fx-fill: #050517;
+    -fx-text-fill: white;
 }
 
 #rectangle-1 {
     -fx-fill: #080920;
+    -fx-text-fill: white;
 }
 
 #rectangle-2 {
     -fx-fill: #0d0d39;
+    -fx-text-fill: white;
 }
 
 #default-theme,#dark-theme, #light-theme {
@@ -37,19 +40,30 @@
     -fx-text-fill: black;
 }
 
+#lable {
+    -fx-text-fill: white;
+}
+
 #Modpack-back {
     -fx-fill: #0a0e2e;
+    -fx-text-fill: white;
 }
 #exit, #min{
     -fx-background-color: rgba(30, 25, 25, 0);
+    -fx-text-fill: white;
 }
 #min:hover, #exit:hover{
     -fx-background-color: #bf0000;
+    -fx-text-fill: white;
 }
 #search-modpacks {
     -fx-text-inner-color: white;
     -fx-background-color: rgba(0, 0, 0, 0.17);
     -fx-padding: 10px;
+}
+
+#Settings-Gen-btn, #Settings-Mine-btn {
+    -fx-text-fill: white;
 }
 
 .tab {
