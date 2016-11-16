@@ -62,6 +62,13 @@
     -fx-padding: 10px;
 }
 
+#Home-btn, #Modpacks-btn, #Instance-btn, #Settings-btn {
+    -fx-text-fill: white;
+}
+#version {
+    -fx-text-fill: white;
+}
+
 #Settings-Gen-btn, #Settings-Mine-btn {
     -fx-text-fill: white;
 }

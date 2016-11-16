@@ -19,29 +19,29 @@
          </font>
       </Label>
        <Rectangle id="rectangle-1" height="450.0" layoutY="50.0" styleClass="nav-bar" width="150.0" />
-      <Button id="Home-btn" layoutY="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="selected" text="Home" textFill="WHITE" textOverrun="CLIP">
+      <Button id="Home-btn" layoutY="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="selected" text="Home" textOverrun="CLIP">
          <font>
             <Font name="Centaur" size="16.0" />
          </font>
       </Button>
-      <Button id="Modpacks-btn" layoutY="90.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="tab" text="Modpack" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+      <Button id="Modpacks-btn" layoutY="90.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="tab" text="Modpack" textAlignment="CENTER" textOverrun="CLIP">
           <font>
               <Font name="Centaur" size="16.0" />
           </font>
       </Button>
-       <Button id="Instance-btn" layoutY="130.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="tab" text="Instances" textFill="WHITE" textOverrun="CLIP">
+       <Button id="Instance-btn" layoutY="130.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="tab" text="Instances" textOverrun="CLIP">
            <font>
                <Font name="Centaur" size="16.0" />
            </font>
        </Button>
-       <Button id="Settings-btn" layoutY="170.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="tab" text="Settings" textFill="WHITE" textOverrun="CLIP">
+       <Button id="Settings-btn" layoutY="170.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="tab" text="Settings" textOverrun="CLIP">
            <font>
                <Font name="Centaur" size="16.0" />
            </font>
        </Button>
       <Pane id="tab" layoutX="150.0" layoutY="50.0" prefHeight="450.0" prefWidth="750.0" />
-      <Label id="version" layoutX="17.0" layoutY="455.0" text="Version : $v" textFill="white" />
-      <Label id="lable" layoutX="9.0" layoutY="472.0" text="Copyright 2016 TeamAvion" textFill="WHITE">
+      <Label id="version" layoutX="17.0" layoutY="455.0" text="Version : $v" />
+      <Label id="lable" layoutX="9.0" layoutY="472.0" text="Copyright 2016 TeamAvion">
          <font>
             <Font size="11.0" />
          </font>

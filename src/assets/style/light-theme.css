@@ -1,31 +1,77 @@
 #pane {
-    -fx-background-color: rgba(206, 206, 206, 0.85);
+    -fx-background-color: #b6b6b6;
 }
 #rectangle {
-    -fx-fill: #898989;
+    -fx-fill: #626262;
+    -fx-text-fill: black;
 }
 
 #rectangle-1 {
-    -fx-fill: #bfbfbf;
+    -fx-fill: #6c6c6c;
+    -fx-text-fill: black;
 }
 
 #rectangle-2 {
-    -fx-fill: #909090;
+    -fx-fill: #969696;
+    -fx-text-fill: black;
+}
+
+#default-theme,#dark-theme, #light-theme {
+    -fx-background-color: #5c5c5c;
+    -fx-background-radius: 0em;
+    -fx-text-fill: black;
+}
+
+#default-theme:hover {
+    -fx-background-color: #0d0c39;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#dark-theme:hover {
+    -fx-background-color: #1c1c1c;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#light-theme:hover {
+    -fx-background-color: #bcbcbc;
+    -fx-background-radius: 0em;
+    -fx-text-fill: black;
+}
+
+#lable {
+    -fx-text-fill: black;
 }
 
 #Modpack-back {
-    -fx-fill: #9f9f9f;
+    -fx-fill: #9b9b9b;
+    -fx-text-fill: black;
 }
 #exit, #min{
     -fx-background-color: rgba(30, 25, 25, 0);
+    -fx-text-fill: black;
 }
 #min:hover, #exit:hover{
-    -fx-background-color: #bf0000;
+    -fx-background-color: #8d0000;
+    -fx-text-fill: white;
 }
 #search-modpacks {
     -fx-text-inner-color: black;
-    -fx-background-color: rgba(0, 0, 0, 0.17);
+    -fx-text-fill: black;
+    -fx-background-color: rgba(130, 130, 130, 0.23);
     -fx-padding: 10px;
+}
+
+#Home-btn, #Modpacks-btn, #Instance-btn, #Settings-btn {
+    -fx-text-fill: black;
+}
+#version {
+    -fx-text-fill: black;
+}
+
+#Settings-Gen-btn, #Settings-Mine-btn {
+    -fx-text-fill: black;
 }
 
 .tab {
@@ -34,15 +80,15 @@
 }
 
 .tab:hover{
-    -fx-background-color: #d5d5d5;
+    -fx-background-color: #7d7d7d;
 
 }
 
 .selected {
-    -fx-background-color: #6e6e6e;
+    -fx-background-color: #989898;
     -fx-background-radius: 0em;
 }
 
 .selected:hover {
-    -fx-background-color: #6e6e6e;
+    -fx-background-color: #989898;
 }
