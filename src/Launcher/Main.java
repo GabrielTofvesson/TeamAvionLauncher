@@ -17,6 +17,7 @@ package Launcher;
 
 import Launcher.net.Updater;
 import com.tofvesson.async.Async;
+import com.tofvesson.joe.Localization;
 import com.tofvesson.reflection.SafeReflection;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -39,10 +40,12 @@ import javafx.util.Duration;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
 Do not go further. you risk your life. Read guideline above. Anyone reading past this point is no longer under our responsibility.
+Beware the crocodiles on line 100!
 */
 
 public class Main extends Application {
@@ -202,6 +205,9 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws Exception{
+        Localization l = new Localization(new File(Main.class.getResource("/assets/lang").getFile()));                  // Create a localization with aggressive loading
+        System.out.println(Arrays.toString(l.getLanguageNames()));
+        System.out.println("Success: "+l.get("du_label"));
         Main.args = args;
         if (args.length > 0) {
             File f = new File(args[0]);
