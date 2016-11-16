@@ -53,7 +53,7 @@
     -fx-text-fill: white;
 }
 #min:hover, #exit:hover{
-    -fx-background-color: #bf0000;
+    -fx-background-color: #8d0000;
     -fx-text-fill: white;
 }
 #search-modpacks {
