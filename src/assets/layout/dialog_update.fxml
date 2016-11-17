@@ -4,6 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -25,5 +26,8 @@
    <ProgressIndicator layoutX="331.0" layoutY="28.0" mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT">
       <cursor>
          <Cursor fx:constant="WAIT" />
-      </cursor></ProgressIndicator>
+      </cursor>
+      <effect>
+         <ColorAdjust brightness="-1.0" contrast="-0.07" hue="-0.5" saturation="-0.98" />
+      </effect></ProgressIndicator>
 </Pane>
