@@ -77,7 +77,13 @@
     -fx-prompt-text-fill: white;
     -fx-text-fill: white;
     -fx-background-color: #1d1d1d;
-    -fx-padding: 10px;
+    -fx-padding: 5px;
+}
+
+#search-modpacks:hover {
+    -fx-border-style: solid;
+    -fx-border-color: white;
+    -fx-border-width: 0px 0px 2px 0px;
 }
 
 #Home-btn, #Modpacks-btn, #Instance-btn, #Settings-btn {
