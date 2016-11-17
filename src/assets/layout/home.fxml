@@ -22,7 +22,7 @@
          </font>
       </Label>
       <Label id="lable" layoutX="202.0" layoutY="67.0" text="PreDev-0.2.4" />
-      <Label id="lable" layoutX="43.0" layoutY="98.0" text="Two new thems to cheack out :">
+      <Label id="lable" layoutX="43.0" layoutY="98.0" text="Two new themes to check out :">
          <font>
             <Font name="Centaur" size="18.0" />
          </font>
