@@ -61,6 +61,29 @@
     -fx-text-fill: black;
 }
 
+#login {
+    -fx-text-fill: #950c14;
+}
+
+#login:hover {
+    -fx-text-fill: black;
+    -fx-border-style: solid;
+    -fx-border-color: #49000d;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+
+#minecraft-login-btn {
+    -fx-background-color: #b8b8b8;
+    -fx-background-radius: 0em;
+    -fx-text-fill: black;
+}
+
+#minecraft-login-btn:hover {
+    -fx-background-color: #000000;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
 #Modpack-back {
     -fx-fill: #c3c3c3;
     -fx-text-fill: black;

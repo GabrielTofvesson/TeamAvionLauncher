@@ -178,7 +178,10 @@ public class Main extends Application {
                     if(!settings_activeTab.getId().equals(n.lookup("#Settings-Mine-btn").getId())){                     // Use id to identify layouts
                         updateTabSelection(n.lookup("#Settings-Mine-btn"), TabType.SETTINGS);
                         Node minecraftLayout = Tabs.switchTab("settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
+                        Tabs.load("settings_minecraft").lookup("#minecraft-login-btn").setOnMouseClicked(event3 ->{
+                            System.out.println("Logging into minecraft");
 
+                        });
                     }
                 });
 
