@@ -27,7 +27,7 @@
                 <Font name="Centaur" size="20.0" />
             </font>
         </Label>
-        <Button id="Launch-VM" layoutX="186.0" layoutY="144.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="77.0" text="Launch" />
+        <Button id="Launch-VM" layoutX="148.0" layoutY="145.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="77.0" text="Launch" />
         <Label id="lable" layoutX="161.0" layoutY="99.0" prefHeight="25.0" prefWidth="126.0" text="Latest Version" wrapText="true" />
     </children>
 </Pane>

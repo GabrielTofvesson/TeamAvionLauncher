@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
@@ -20,7 +21,7 @@
             <Font name="Centaur" size="20.0" />
          </font>
       </Label>
-      <Label id="lable" layoutX="202.0" layoutY="67.0" text="Out in PreDev-0.2.3" />
+      <Label id="lable" layoutX="202.0" layoutY="67.0" text="PreDev-0.2.4" />
       <Label id="lable" layoutX="43.0" layoutY="98.0" text="Two new thems to cheack out :">
          <font>
             <Font name="Centaur" size="18.0" />
@@ -31,12 +32,18 @@
             <Font name="Centaur" size="16.0" />
          </font>
       </Label>
-      <ImageView fitHeight="56.0" fitWidth="89.0" layoutX="97.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="56.0" fitWidth="89.0" layoutX="97.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/light-theme.png" />
+         </image></ImageView>
       <Label id="lable" layoutX="217.0" layoutY="139.0" text="Dark:">
          <font>
             <Font name="Centaur" size="16.0" />
          </font>
       </Label>
-      <ImageView fitHeight="56.0" fitWidth="89.0" layoutX="275.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="56.0" fitWidth="89.0" layoutX="275.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/dark-theme.png" />
+         </image></ImageView>
    </children>
 </Pane>
