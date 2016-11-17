@@ -1,31 +1,123 @@
 #pane {
-    -fx-background-color: rgba(7, 4, 20, 0.85);
+    -fx-background-color: #05030c;
 }
 #rectangle {
-    -fx-fill: #050517;
+    -fx-fill: #050519;
+    -fx-text-fill: white;
 }
 
 #rectangle-1 {
-    -fx-fill: #080920;
+    -fx-fill: #070620;
+    -fx-text-fill: white;
 }
 
 #rectangle-2 {
-    -fx-fill: #0d0d39;
+    -fx-fill: #060317;
+    -fx-text-fill: white;
+}
+
+#rectangle-3 {
+    -fx-fill: #0b052e;
+    -fx-text-fill: white;
+}
+
+#download-modpack, #view-modpack, #Launch-VM {
+    -fx-background-color: #0a073b;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#download-modpack:hover, #view-modpack:hover, #Launch-VM:hover {
+    -fx-background-color: #07061b;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#default-theme,#dark-theme, #light-theme {
+    -fx-background-color: #0d072f;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#default-theme:hover {
+    -fx-background-color: #0d0c39;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#dark-theme:hover {
+    -fx-background-color: #1c1c1c;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#light-theme:hover {
+    -fx-background-color: #bcbcbc;
+    -fx-background-radius: 0em;
+    -fx-text-fill: black;
+}
+
+#lable {
+    -fx-text-fill: white;
+}
+
+#login {
+    -fx-text-fill: #950c14;
+}
+
+#login:hover {
+    -fx-text-fill: #ffffff;
+    -fx-border-style: solid;
+    -fx-border-color: #49000d;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+
+#minecraft-login-btn {
+    -fx-background-color: #0a073b;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
+}
+
+#minecraft-login-btn:hover {
+    -fx-background-color: #07061b;
+    -fx-background-radius: 0em;
+    -fx-text-fill: white;
 }
 
 #Modpack-back {
     -fx-fill: #0a0e2e;
+    -fx-text-fill: white;
 }
 #exit, #min{
     -fx-background-color: rgba(30, 25, 25, 0);
+    -fx-text-fill: white;
 }
 #min:hover, #exit:hover{
-    -fx-background-color: #bf0000;
+    -fx-background-color: #8d0000;
+    -fx-text-fill: white;
 }
 #search-modpacks {
-    -fx-text-inner-color: white;
-    -fx-background-color: rgba(0, 0, 0, 0.17);
-    -fx-padding: 10px;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+    -fx-background-color: #0a0e2e;
+    -fx-padding: 5px;
+}
+
+#search-modpacks:hover {
+    -fx-border-style: solid;
+    -fx-border-color: white;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+
+#Home-btn, #Modpacks-btn, #Instance-btn, #Settings-btn {
+    -fx-text-fill: white;
+}
+#version {
+    -fx-text-fill: white;
+}
+
+#Settings-Gen-btn, #Settings-Mine-btn {
+    -fx-text-fill: white;
 }
 
 .tab {
@@ -34,15 +126,15 @@
 }
 
 .tab:hover{
-    -fx-background-color: #0c182d;
+    -fx-background-color: #09042e;
 
 }
 
 .selected {
-    -fx-background-color: #0c182d;
+    -fx-background-color: #05030c;
     -fx-background-radius: 0em;
 }
 
 .selected:hover {
-    -fx-background-color: #0c182d;
+    -fx-background-color: #05030c;
 }

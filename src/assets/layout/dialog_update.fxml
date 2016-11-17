@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
-   <Label prefHeight="103.0" prefWidth="421.0" text="Looking for updates..." textAlignment="CENTER">
+<Pane id="dialog" prefHeight="109.0" prefWidth="432.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <Label prefHeight="56.0" prefWidth="432.0" text="Launching TAL..." textAlignment="CENTER">
       <font>
-         <Font size="40.0" />
+         <Font name="Centaur" size="44.0" />
       </font>
       <padding>
          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
       </padding>
    </Label>
-   <Label layoutX="23.0" layoutY="72.0" prefHeight="21.0" prefWidth="104.0" text="Everything is good" />
+   <Label layoutX="23.0" layoutY="70.0" text="Looking for updates...">
+      <font>
+         <Font name="Centaur" size="17.0" />
+      </font>
+   </Label>
+   <Label id="i" layoutX="202.0" layoutY="75.0" />
+   <ProgressIndicator layoutX="331.0" layoutY="28.0" mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT">
+      <cursor>
+         <Cursor fx:constant="WAIT" />
+      </cursor></ProgressIndicator>
 </Pane>
