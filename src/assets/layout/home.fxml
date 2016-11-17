@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -13,5 +14,29 @@
             <Font name="Centaur" size="31.0" />
          </font>
       </Label>
+      <Rectangle id="rectangle-3" height="140.0" layoutX="10.0" layoutY="50.0" width="730.0" />
+      <Label id="lable" layoutX="43.0" layoutY="63.0" text="NEW LAYOUTS">
+         <font>
+            <Font name="Centaur" size="20.0" />
+         </font>
+      </Label>
+      <Label id="lable" layoutX="202.0" layoutY="67.0" text="Out in PreDev-0.2.3" />
+      <Label id="lable" layoutX="43.0" layoutY="98.0" text="Two new thems to cheack out :">
+         <font>
+            <Font name="Centaur" size="18.0" />
+         </font>
+      </Label>
+      <Label id="lable" layoutX="43.0" layoutY="140.0" text="Light :">
+         <font>
+            <Font name="Centaur" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="56.0" fitWidth="89.0" layoutX="97.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true" />
+      <Label id="lable" layoutX="217.0" layoutY="139.0" text="Dark:">
+         <font>
+            <Font name="Centaur" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="56.0" fitWidth="89.0" layoutX="275.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </Pane>

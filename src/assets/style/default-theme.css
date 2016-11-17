@@ -1,40 +1,40 @@
 #pane {
-    -fx-background-color: #050317;
+    -fx-background-color: #05030c;
 }
 #rectangle {
-    -fx-fill: #050517;
+    -fx-fill: #050519;
     -fx-text-fill: white;
 }
 
 #rectangle-1 {
-    -fx-fill: #080920;
+    -fx-fill: #070620;
     -fx-text-fill: white;
 }
 
 #rectangle-2 {
-    -fx-fill: #050517;
+    -fx-fill: #060317;
     -fx-text-fill: white;
 }
 
 #rectangle-3 {
-    -fx-fill: #100839;
+    -fx-fill: #0b052e;
     -fx-text-fill: white;
 }
 
 #download-modpack, #view-modpack, #Launch-VM {
-    -fx-background-color: #1b1d4d;
+    -fx-background-color: #0a073b;
     -fx-background-radius: 0em;
     -fx-text-fill: white;
 }
 
 #download-modpack:hover, #view-modpack:hover, #Launch-VM:hover {
-    -fx-background-color: #151341;
+    -fx-background-color: #07061b;
     -fx-background-radius: 0em;
     -fx-text-fill: white;
 }
 
 #default-theme,#dark-theme, #light-theme {
-    -fx-background-color: #181a39;
+    -fx-background-color: #0d072f;
     -fx-background-radius: 0em;
     -fx-text-fill: white;
 }
@@ -97,15 +97,15 @@
 }
 
 .tab:hover{
-    -fx-background-color: #0c182d;
+    -fx-background-color: #09042e;
 
 }
 
 .selected {
-    -fx-background-color: #0c182d;
+    -fx-background-color: #05030c;
     -fx-background-radius: 0em;
 }
 
 .selected:hover {
-    -fx-background-color: #0c182d;
+    -fx-background-color: #05030c;
 }
