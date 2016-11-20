@@ -84,7 +84,7 @@
     -fx-text-fill: white;
 }
 
-#Modpack-back {
+#Modpack-back, #home-back, #Settings-back, #instance-back {
     -fx-fill: #0a0e2e;
     -fx-text-fill: white;
 }
