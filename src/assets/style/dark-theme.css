@@ -67,9 +67,6 @@
 
 #login:hover {
     -fx-text-fill: #ffffff;
-    -fx-border-style: solid;
-    -fx-border-color: #49000d;
-    -fx-border-width: 0px 0px 2px 0px;
 }
 
 #minecraft-login-btn {
