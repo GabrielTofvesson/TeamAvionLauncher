@@ -9,7 +9,7 @@
 
 <Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle id="Modpack-back" height="40.0" strokeType="INSIDE" width="750.0" />
+      <Rectangle id="home-back" height="40.0" strokeType="INSIDE" width="750.0" />
       <Label id="lable" layoutX="339.0" layoutY="1.0" text="Home">
          <font>
             <Font name="Centaur" size="31.0" />
@@ -22,7 +22,7 @@
          </font>
       </Label>
       <Label id="lable" layoutX="202.0" layoutY="67.0" text="PreDev-0.2.4" />
-      <Label id="lable" layoutX="43.0" layoutY="98.0" text="Two new thems to cheack out :">
+      <Label id="lable" layoutX="43.0" layoutY="98.0" text="Two new themes to check out :">
          <font>
             <Font name="Centaur" size="18.0" />
          </font>

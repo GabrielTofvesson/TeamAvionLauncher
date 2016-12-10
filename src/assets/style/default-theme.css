@@ -67,9 +67,6 @@
 
 #login:hover {
     -fx-text-fill: #ffffff;
-    -fx-border-style: solid;
-    -fx-border-color: #49000d;
-    -fx-border-width: 0px 0px 2px 0px;
 }
 
 #minecraft-login-btn {
@@ -84,7 +81,7 @@
     -fx-text-fill: white;
 }
 
-#Modpack-back {
+#Modpack-back, #home-back, #Settings-back, #instance-back {
     -fx-fill: #0a0e2e;
     -fx-text-fill: white;
 }
@@ -103,7 +100,7 @@
     -fx-padding: 5px;
 }
 
-#search-modpacks:hover {
+#search-modpacks:hover, #search-modpacks:focused {
     -fx-border-style: solid;
     -fx-border-color: white;
     -fx-border-width: 0px 0px 2px 0px;
