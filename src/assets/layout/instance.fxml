@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
+<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Rectangle id="instance-back" height="40.0" width="750.0" />
         <Label id="lable" layoutX="324.0" layoutY="1.0" text="Instances">
@@ -16,7 +16,7 @@
                 <Font name="Centaur" size="31.0" />
             </font>
         </Label>
-        <Rectangle id="rectangle-3" height="140.0" layoutX="14.0" layoutY="50.0" width="346.0" />
+        <Rectangle id="rectangle-3" height="140.0" layoutX="15.0" layoutY="50.0" width="346.0" />
         <ImageView fitHeight="87.0" fitWidth="165.0" layoutX="29.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../icons/modpack-default-img.png" />
@@ -30,5 +30,20 @@
         <Button id="Launch-VM" layoutX="242.0" layoutY="142.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" text="Launch" />
         <Label id="lable" layoutX="148.0" layoutY="88.0" prefHeight="40.0" prefWidth="196.0" text="Pure Vanilla, No mods, No addons. Have fun!" wrapText="true" />
       <Label id="lable" layoutX="41.0" layoutY="161.0" text="Latest Version : Minecraft v1.11" />
+      <Rectangle id="rectangle-3" height="140.0" layoutX="385.0" layoutY="50.0" width="346.0" />
+        <ImageView fitHeight="87.0" fitWidth="165.0" layoutX="409.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icons/modpack-default-img.png" />
+            </image>
+        </ImageView>
+        <Label id="lable" layoutX="539.0" layoutY="61.0" text="Avion Test">
+            <font>
+                <Font name="Centaur" size="20.0" />
+            </font>
+        </Label>
+        <Button id="Launch-VM" layoutX="622.0" layoutY="142.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" text="Launch" />
+        <Button id="Update-VM" layoutX="522.0" layoutY="142.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" text="Launch" />
+        <Label id="lable" layoutX="528.0" layoutY="88.0" prefHeight="40.0" prefWidth="196.0" text="Unique, and fun" wrapText="true" />
+        <Label id="lable" layoutX="400.0" layoutY="161.0" text="Version : Pre-Release" />
     </children>
 </Pane>
