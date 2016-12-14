@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
+<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle id="home-back" height="40.0" strokeType="INSIDE" width="750.0" />
       <Label id="lable" layoutX="339.0" layoutY="1.0" text="Home">
@@ -15,7 +15,7 @@
             <Font name="Centaur" size="31.0" />
          </font>
       </Label>
-      <Rectangle id="rectangle-3" height="140.0" layoutX="10.0" layoutY="50.0" width="730.0" />
+      <Rectangle id="rectangle-3" height="140.0" layoutX="10.0" layoutY="50.0" width="410.0" />
       <Label id="lable" layoutX="43.0" layoutY="63.0" text="NEW LAYOUTS">
          <font>
             <Font name="Centaur" size="20.0" />
@@ -44,6 +44,10 @@
       <ImageView fitHeight="56.0" fitWidth="89.0" layoutX="275.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/dark-theme.png" />
+         </image></ImageView>
+      <ImageView fitHeight="345.0" fitWidth="226.0" layoutX="468.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/Creeper.png" />
          </image></ImageView>
    </children>
 </Pane>
