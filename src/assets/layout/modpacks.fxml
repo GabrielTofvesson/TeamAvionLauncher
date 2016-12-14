@@ -45,8 +45,8 @@
                 <Font name="Centaur" size="20.0" />
             </font>
         </Label>
-        <Button id="view-modpack" layoutX="644.0" layoutY="295.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="47.0" text="View" />
-        <Button id="download-modpack" layoutX="553.0" layoutY="295.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="77.0" text="Download" />
+        <Button id="view-modpack-a" layoutX="644.0" layoutY="295.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="47.0" text="View" />
+        <Button id="download-modpack-a" layoutX="553.0" layoutY="295.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="77.0" text="Download" />
         <Label id="lable" layoutX="205.0" layoutY="246.0" prefHeight="25.0" prefWidth="480.0" text="Some random text. " wrapText="true" />
       <ScrollBar layoutX="736.0" layoutY="40.0" orientation="VERTICAL" prefHeight="410.0" prefWidth="14.0" />
     </children>

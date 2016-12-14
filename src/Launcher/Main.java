@@ -144,6 +144,12 @@ public class Main extends Application {
                 Tabs.load("modpacks").lookup("#view-modpack").setOnMouseClicked(event1 -> {
                     System.out.println("Viewing Modpack");
                 });
+                Tabs.load("modpacks").lookup("#download-modpack-a").setOnMouseClicked(event1 -> {
+                    System.out.println("Downloading Modpack-a");
+                });
+                Tabs.load("modpacks").lookup("#view-modpack-a").setOnMouseClicked(event1 -> {
+                    System.out.println("Viewing Modpack-a");
+                });
             }
         });
 
