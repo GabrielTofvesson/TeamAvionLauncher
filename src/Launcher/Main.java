@@ -32,8 +32,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
@@ -171,7 +173,7 @@ public class Main extends Application {
             }
         });
 
-        Settings_btn.setOnMouseClicked(event ->{
+        Settings_btn.setOnMouseClicked((MouseEvent event) ->{
             if(!activeTab.equals(Settings_btn)){
                 updateTabSelection(Settings_btn, TabType.MAIN);
                 Node n = Tabs.switchTab("settings", tab), tmp;                                                          // Sets the active tab to the settings tab unless it's already active
@@ -195,17 +197,25 @@ public class Main extends Application {
                         Tabs.load("settings_minecraft").lookup("#minecraft-login-btn").setOnMouseClicked(event3 ->{
                             System.out.println("Logging into minecraft");
 
-                            Stage login = new Stage();
-                            login.initStyle(StageStyle.UTILITY);
-                            Pane minecraftlogin = (Pane) Tabs.load("instance_userinfo");
-                            login.setScene(new Scene(minecraftlogin, 300, 308));
-                            login.show();
-                            login.setResizable(false);
-                            login.setTitle("Minecraft Login");
+                            try {
+                                Stage login = new Stage();
+                                login.initModality(Modality.APPLICATION_MODAL);
+                                login.initStyle(StageStyle.UTILITY);
+                                Pane minecraftlogin = (Pane) Tabs.load("instance_userinfo");
+                                login.setScene(new Scene(minecraftlogin, 300, 308));
+                                login.show();
+                                login.setResizable(false);
+                                login.setTitle("Minecraft Login");
 
-                            minecraftlogin.lookup("#minecraft-login").setOnMouseClicked(event4 ->{
-                                System.out.println("Logging in ....");
-                            });
+                                minecraftlogin.lookup("#minecraft-login").setOnMouseClicked(event4 ->{
+                                    System.out.println("Logging in ....");
+                                });
+
+                            }catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+
 
                         });
                     }
