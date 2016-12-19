@@ -147,12 +147,12 @@
     -fx-border-width: 0px 0px 2px 0px;
 }
 #minecraft-login {
-    -fx-background-color: #000026;
+    -fx-background-color: #252525;
+    -fx-background-radius: 0em;
     -fx-text-fill: white;
-    -fx-padding: 10px;
 }
-#minecraft-login:hover, #minecraft-login:focused{
-    -fx-background-color: #000040;
-    -fx-text-fill: white;
-    -fx-padding: 10px;
+#minecraft-login:hover {
+    -fx-background-color: #bcbcbc;
+    -fx-background-radius: 0em;
+    -fx-text-fill: black;
 }
