@@ -5,17 +5,40 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="300.0" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="100.0" layoutY="155.0" mnemonicParsing="false" text="Login" />
-      <Label layoutX="30.0" layoutY="66.0" text="Username" />
-      <Label layoutX="32.0" layoutY="100.0" text="Password" />
-      <CheckBox layoutX="100.0" layoutY="129.0" mnemonicParsing="false" text="Remember Me" />
-      <PasswordField layoutX="101.0" layoutY="96.0" promptText="Password" />
-      <TextField layoutX="101.0" layoutY="62.0" promptText="Username" />
-      <Label layoutX="108.0" layoutY="25.0" text="Minecrfat Login" />
+      <ImageView fitHeight="308.0" fitWidth="306.0" layoutX="-5.0" pickOnBounds="true">
+         <image>
+            <Image url="@../icons/Minecraft-Wallpaper.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="120.0" layoutY="235.0" mnemonicParsing="false" text="Login">
+         <font>
+            <Font name="Century" size="15.0" />
+         </font></Button>
+      <Label layoutX="23.0" layoutY="132.0" text="Username" textFill="WHITE">
+         <font>
+            <Font name="Century" size="15.0" />
+         </font></Label>
+      <Label layoutX="26.0" layoutY="175.0" text="Password" textFill="WHITE">
+         <font>
+            <Font name="Century" size="15.0" />
+         </font></Label>
+      <CheckBox layoutX="91.0" layoutY="210.0" mnemonicParsing="false" text="Remember Me" textFill="WHITE">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font></CheckBox>
+      <PasswordField layoutX="101.0" layoutY="172.0" promptText="Password" />
+      <TextField layoutX="101.0" layoutY="129.0" promptText="Username" />
+      <ImageView fitHeight="94.0" fitWidth="274.0" layoutX="14.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/minecraft.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
