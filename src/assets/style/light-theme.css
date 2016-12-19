@@ -21,13 +21,13 @@
     -fx-text-fill: black;
 }
 
-#download-modpack, #view-modpack, #Launch-VM {
+#download-modpack, #download-modpack-a, #view-modpack-a, #view-modpack, #Launch-VM, #Update-VM {
     -fx-background-color: #b8b8b8;
     -fx-background-radius: 0em;
     -fx-text-fill: black;
 }
 
-#download-modpack:hover, #view-modpack:hover, #Launch-VM:hover {
+#download-modpack:hover, #download-modpack-a:hover, #view-modpack-a:hover, #view-modpack:hover, #Launch-VM:hover, #Update-VM:hover {
     -fx-background-color: #000000;
     -fx-background-radius: 0em;
     -fx-text-fill: white;

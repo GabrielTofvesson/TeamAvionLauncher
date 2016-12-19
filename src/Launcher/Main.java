@@ -89,10 +89,10 @@ public class Main extends Application {
             });
             t1.setDaemon(true);
             t1.start();
-        } else primaryStage.show();                                                               // Remove ugly trash
+        } else primaryStage.show();                                                                                     // Remove ugly trash
 
-        root = (Pane) Tabs.load("main");                                                                                // Load via layout loader
-        ((Label)root.lookup("#version")).setText(((Label) root.lookup("#version"))                                      // Dynamically set version label
+        root = (Pane) Tabs.load("main");                                                                       // Load via layout loader
+        ((Label)root.lookup("#version")).setText(((Label) root.lookup("#version"))                      // Dynamically set version label
                 .getText().replace("$v", semVerDevState+"-"+semVerMajor+"."+semVerMinor+"."+semVerPatch));              // Use variables to define version
         primaryStage.setTitle("Team-Avion Launcher [WIP]");
         primaryStage.setScene(new Scene(root, 900, 500));
@@ -143,6 +143,12 @@ public class Main extends Application {
                 });
                 Tabs.load("modpacks").lookup("#view-modpack").setOnMouseClicked(event1 -> {
                     System.out.println("Viewing Modpack");
+                });
+                Tabs.load("modpacks").lookup("#download-modpack-a").setOnMouseClicked(event1 -> {
+                    System.out.println("Downloading Modpack-a");
+                });
+                Tabs.load("modpacks").lookup("#view-modpack-a").setOnMouseClicked(event1 -> {
+                    System.out.println("Viewing Modpack-a");
                 });
             }
         });
