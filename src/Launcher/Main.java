@@ -59,7 +59,7 @@ public class Main extends Application {
 
     double xOffset = 0, yOffset = 0;                                                                                    // Offsets for dragging
     private static String[] args;
-    Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn, Default_theme, Dark_theme, Light_theme;        // Define buttons
+    Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn, Default_theme, Dark_theme, Light_theme, Login_minecraft;        // Define buttons
     private ImageView icon;
     private TextField Search_modpacks;
     private Image appIcon;
@@ -112,6 +112,7 @@ public class Main extends Application {
         Default_theme = (Button) root.lookup("#default-theme");
         Light_theme = (Button) root.lookup("#light-theme");
         Dark_theme = (Button) root.lookup("#dark-theme");
+        Login_minecraft = (Button) root.lookup("#minecraft-login-btn");
 
         dialog_changer = (Label) root.lookup("#dialog-changer");
 
@@ -131,6 +132,8 @@ public class Main extends Application {
                 Tabs.switchTab("home", tab);
             }
         });                                                                                                             // Sets the active tab to the home tab unless it's already active
+
+
 
         Modpack_btn.setOnMouseClicked(event ->{
             if(!activeTab.equals(Modpack_btn)){
@@ -186,6 +189,14 @@ public class Main extends Application {
                         Node minecraftLayout = Tabs.switchTab("settings_minecraft", (Pane) n.lookup("#Settings-Pane"));
                         Tabs.load("settings_minecraft").lookup("#minecraft-login-btn").setOnMouseClicked(event3 ->{
                             System.out.println("Logging into minecraft");
+
+                            Stage l = new Stage();
+                            l.initStyle(StageStyle.UTILITY);
+                            Pane m = (Pane) Tabs.load("instance_userinfo");
+                            l.setScene(new Scene(m));
+                            l.show();
+                            l.setResizable(false);
+                            l.setTitle("Minecraft Login");
 
                         });
                     }
