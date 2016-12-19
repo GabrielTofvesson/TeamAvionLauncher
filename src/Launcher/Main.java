@@ -190,13 +190,13 @@ public class Main extends Application {
                         Tabs.load("settings_minecraft").lookup("#minecraft-login-btn").setOnMouseClicked(event3 ->{
                             System.out.println("Logging into minecraft");
 
-                            Stage l = new Stage();
-                            l.initStyle(StageStyle.UTILITY);
-                            Pane m = (Pane) Tabs.load("instance_userinfo");
-                            l.setScene(new Scene(m));
-                            l.show();
-                            l.setResizable(false);
-                            l.setTitle("Minecraft Login");
+                            Stage login = new Stage();
+                            login.initStyle(StageStyle.UTILITY);
+                            Pane minecraftlogin = (Pane) Tabs.load("instance_userinfo");
+                            login.setScene(new Scene(minecraftlogin, 300, 308));
+                            login.show();
+                            login.setResizable(false);
+                            login.setTitle("Minecraft Login");
 
                         });
                     }
