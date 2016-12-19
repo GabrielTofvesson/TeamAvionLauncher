@@ -135,3 +135,24 @@
 .selected:hover {
     -fx-background-color: #05030c;
 }
+#minecraftuser, #minecraftpass{
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-padding: 5px;
+}
+#minecraftuser:hover, #minecraftpass:hover, #minecraftuser:focused, #minecraftpass:focused{
+    -fx-border-style: solid;
+    -fx-border-color: white;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+#minecraft-login {
+    -fx-background-color: #000026;
+    -fx-text-fill: white;
+    -fx-padding: 10px;
+}
+#minecraft-login:hover, #minecraft-login:focused{
+    -fx-background-color: #000040;
+    -fx-text-fill: white;
+    -fx-padding: 10px;
+}

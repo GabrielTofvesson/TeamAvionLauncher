@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -17,24 +16,16 @@
             <Image url="@../icons/Minecraft-Wallpaper.png" />
          </image>
       </ImageView>
-      <Button layoutX="120.0" layoutY="235.0" mnemonicParsing="false" text="Login">
+      <Button id="minecraft-login" layoutX="120.0" layoutY="253.0" mnemonicParsing="false" text="Login">
          <font>
             <Font name="Century" size="15.0" />
          </font></Button>
-      <Label layoutX="23.0" layoutY="132.0" text="Username" textFill="WHITE">
-         <font>
-            <Font name="Century" size="15.0" />
-         </font></Label>
-      <Label layoutX="26.0" layoutY="175.0" text="Password" textFill="WHITE">
-         <font>
-            <Font name="Century" size="15.0" />
-         </font></Label>
-      <CheckBox layoutX="91.0" layoutY="210.0" mnemonicParsing="false" text="Remember Me" textFill="WHITE">
+      <CheckBox layoutX="88.0" layoutY="217.0" mnemonicParsing="false" text="Remember Me" textFill="WHITE">
          <font>
             <Font name="Century" size="14.0" />
          </font></CheckBox>
-      <PasswordField layoutX="101.0" layoutY="172.0" promptText="Password" />
-      <TextField layoutX="101.0" layoutY="129.0" promptText="Username" />
+      <PasswordField id="minecraftpass" layoutX="44.0" layoutY="174.0" prefHeight="25.0" prefWidth="214.0" promptText="Password" />
+      <TextField id="minecraftuser" layoutX="44.0" layoutY="129.0" prefHeight="25.0" prefWidth="214.0" promptText="Username" />
       <ImageView fitHeight="94.0" fitWidth="274.0" layoutX="14.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/minecraft.png" />
