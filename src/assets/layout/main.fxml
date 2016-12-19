@@ -7,11 +7,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="900" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
+<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="900" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle id="rectangle" fill="white" height="50.0" strokeType="INSIDE" width="900.0" />
-      <Button id="exit" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="862.0" layoutY="13.0" mnemonicParsing="false" text="X"/>
-       <Button id="min" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="841.0" layoutY="13.0" mnemonicParsing="false" text="-"/>
+      <Button id="exit" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="862.0" layoutY="13.0" mnemonicParsing="false" text="X" />
+       <Button id="min" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="841.0" layoutY="13.0" mnemonicParsing="false" text="-" />
        <ImageView id="icon" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" />
        <Label id="lable" layoutX="75.0" layoutY="11.0" text="Team-Avion Launcher">
          <font>
@@ -40,7 +40,7 @@
            </font>
        </Button>
       <Pane id="tab" layoutX="150.0" layoutY="50.0" prefHeight="450.0" prefWidth="750.0" />
-      <Label id="version" layoutX="17.0" layoutY="455.0" text="Version : $v" />
+      <Label id="version" layoutX="8.0" layoutY="455.0" text="Version : $v" />
       <Label id="lable" layoutX="9.0" layoutY="472.0" text="Copyright 2016 TeamAvion">
          <font>
             <Font size="11.0" />

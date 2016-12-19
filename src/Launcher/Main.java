@@ -58,7 +58,8 @@ public class Main extends Application {
     public static final String  semVerDevState  = "PreDev";                                                             // Development stage
     public static final int     semVerMajor     = 0;                                                                    // Major version
     public static final int     semVerMinor     = 2;                                                                    // Minor version
-    public static final int     semVerPatch     = 6;                                                                    // Patch version
+    public static final int     semVerPatch     = 5;                                                                    // Patch version
+    public static final int     semVerSubPatch  = 1;
 
 
     double xOffset = 0, yOffset = 0;                                                                                    // Offsets for dragging
@@ -98,8 +99,8 @@ public class Main extends Application {
 
         root = (Pane) Tabs.load("main");                                                                       // Load via layout loader
         ((Label)root.lookup("#version")).setText(((Label) root.lookup("#version"))                      // Dynamically set version label
-                .getText().replace("$v", semVerDevState+"-"+semVerMajor+"."+semVerMinor+"."+semVerPatch));              // Use variables to define version
-        primaryStage.setTitle("Team-Avion Launcher [WIP]");
+                .getText().replace("$v", semVerDevState+" "+semVerMajor+"."+semVerMinor+"."+semVerPatch+"-"+semVerSubPatch));              // Use variables to define version
+        primaryStage.setTitle("Team-Avion Launcher");
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.getIcons().clear();
         primaryStage.getIcons().add(appIcon = new Image(getClass().getResourceAsStream("/assets/icons/app.png")));
