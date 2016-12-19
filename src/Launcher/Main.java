@@ -28,6 +28,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -36,6 +37,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import javafx.util.StringConverter;
 
 import java.io.File;
 import java.io.IOException;
@@ -61,10 +63,11 @@ public class Main extends Application {
     private static String[] args;
     Button exit, min, Home_btn, Modpack_btn, Settings_btn, Instance_btn, Default_theme, Dark_theme, Light_theme, Login_minecraft;        // Define buttons
     private ImageView icon;
-    private TextField Search_modpacks;
+    private TextField Search_modpacks, Username_minecraft;
     private Image appIcon;
     private Rectangle dragBar;                                                                                          // Draggable top bar
     Pane root, tab;
+    private PasswordField Password_minecraft;
     Node activeTab, settings_activeTab;
     private Label dialog_changer;
 
@@ -121,6 +124,8 @@ public class Main extends Application {
         icon = (ImageView) root.lookup("#icon");
 
         Search_modpacks = (TextField) root.lookup("#search-modpacks");
+        Username_minecraft = (TextField) root.lookup("#minecraftuser");
+        Password_minecraft = (PasswordField) root.lookup("#minecraftpass");
 
         // Infrastructural navigation
         exit.setOnMouseClicked(event -> primaryStage.close());                                                          // Closes the program if exit button is clicked
@@ -197,6 +202,10 @@ public class Main extends Application {
                             login.show();
                             login.setResizable(false);
                             login.setTitle("Minecraft Login");
+
+                            minecraftlogin.lookup("#minecraft-login").setOnMouseClicked(event4 ->{
+                                System.out.println("Logging in ....");
+                            });
 
                         });
                     }
