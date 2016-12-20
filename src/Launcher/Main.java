@@ -140,9 +140,6 @@ public class Main extends Application {
                 Tabs.switchTab("home", tab);
             }
         });                                                                                                             // Sets the active tab to the home tab unless it's already active
-
-
-
         Modpack_btn.setOnMouseClicked(event ->{
             if(!activeTab.equals(Modpack_btn)){
                 updateTabSelection(Modpack_btn, TabType.MAIN);
@@ -173,15 +170,12 @@ public class Main extends Application {
                 });
             }
         });
-
         Settings_btn.setOnMouseClicked((MouseEvent event) ->{
             if(!activeTab.equals(Settings_btn)){
                 updateTabSelection(Settings_btn, TabType.MAIN);
                 Node n = Tabs.switchTab("settings", tab), tmp;                                                          // Sets the active tab to the settings tab unless it's already active
-
                 if(settings_activeTab==null) settings_activeTab = n.lookup("#Settings-Gen-btn");                        // First time stuff
-
-                n.lookup("#Settings-Gen-btn").setOnMouseClicked(event1 -> {
+                    n.lookup("#Settings-Gen-btn").setOnMouseClicked(event1 -> {
                     // Generic Settings Sub-tab
                     if(!settings_activeTab.getId().equals(n.lookup("#Settings-Gen-btn").getId())){                      // Use id to identify layouts
                         updateTabSelection(n.lookup("#Settings-Gen-btn"), TabType.SETTINGS);
@@ -189,7 +183,6 @@ public class Main extends Application {
 
                     }
                 });
-
                 n.lookup("#Settings-Mine-btn").setOnMouseClicked(event1 -> {
                     // Minecraft Settings Sub-tab
                     if(!settings_activeTab.getId().equals(n.lookup("#Settings-Mine-btn").getId())){                     // Use id to identify layouts
@@ -215,9 +208,6 @@ public class Main extends Application {
                             }catch (Exception e) {
                                 e.printStackTrace();
                             }
-
-
-
                         });
                     }
                 });
