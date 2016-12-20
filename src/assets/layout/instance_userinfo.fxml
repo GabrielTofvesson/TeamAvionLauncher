@@ -31,5 +31,6 @@
             <Image url="@../icons/minecraft.png" />
          </image>
       </ImageView>
+      <Button id="close-minecraft-login-window" layoutX="250.0" layoutY="5.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="45.0" text="Close" />
    </children>
 </Pane>

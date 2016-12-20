@@ -88,6 +88,7 @@ public class Main extends Application {
             d.initStyle(StageStyle.UNDECORATED);
             Pane n = (Pane) Tabs.load("dialog_update");
             d.setScene(new Scene(n));
+            d.getIcons().add(appIcon = new Image(getClass().getResourceAsStream("/assets/icons/app.png")));
             d.show();
             Thread t1 = new Thread(()->{
                 try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
@@ -191,23 +192,22 @@ public class Main extends Application {
                         Tabs.load("settings_minecraft").lookup("#minecraft-login-btn").setOnMouseClicked(event3 ->{
                             System.out.println("Logging into minecraft");
 
-                            try {
-                                Stage login = new Stage();
-                                login.initModality(Modality.APPLICATION_MODAL);
-                                login.initStyle(StageStyle.UTILITY);
-                                Pane minecraftlogin = (Pane) Tabs.load("instance_userinfo");
-                                login.setScene(new Scene(minecraftlogin, 300, 308));
-                                login.show();
-                                login.setResizable(false);
-                                login.setTitle("Minecraft Login");
+                            Stage login = new Stage();
+                            login.initModality(Modality.APPLICATION_MODAL);
+                            login.initStyle(StageStyle.UNDECORATED);
+                            Pane minecraftlogin = (Pane) Tabs.load("instance_userinfo");
+                            login.setScene(new Scene(minecraftlogin, 300, 308));
+                            login.show();
+                            login.setResizable(false);
+                            login.setTitle("Minecraft Login");
 
-                                minecraftlogin.lookup("#minecraft-login").setOnMouseClicked(event4 ->{
-                                    System.out.println("Logging in ....");
-                                });
+                            minecraftlogin.lookup("#close-minecraft-login-window").setOnMouseClicked(event4 ->{
+                                login.close();
+                            });
 
-                            }catch (Exception e) {
-                                e.printStackTrace();
-                            }
+                            minecraftlogin.lookup("#minecraft-login").setOnMouseClicked(event4 ->{
+                                System.out.println("Logging in ....");
+                            });
                         });
                     }
                 });
