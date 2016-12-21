@@ -204,6 +204,7 @@ public class Main extends Application {
 
 
                             minecraftlogin.lookup("#close-minecraft-login-window").setOnMouseClicked(event4 ->{
+                                System.out.println("Closing window");
                                 login.close();
                             });
 
