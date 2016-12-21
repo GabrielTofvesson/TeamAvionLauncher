@@ -201,6 +201,8 @@ public class Main extends Application {
                             login.setResizable(false);
                             login.setTitle("Minecraft Login");
 
+
+
                             minecraftlogin.lookup("#close-minecraft-login-window").setOnMouseClicked(event4 ->{
                                 login.close();
                             });
