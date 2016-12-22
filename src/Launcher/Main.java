@@ -191,7 +191,7 @@ public class Main extends Application {
                             Stage login = new Stage();
                             login.initModality(Modality.APPLICATION_MODAL);
                             login.initStyle(StageStyle.UNDECORATED);
-                            Pane minecraftlogin = (Pane) Tabs.load("instance_userinfo");
+                            Pane minecraftlogin = (Pane) Tabs.reloadTab("instance_userinfo");
                             login.setScene(new Scene(minecraftlogin, 300, 308));
                             login.show();
                             login.setResizable(false);
