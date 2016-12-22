@@ -39,7 +39,13 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -265,6 +271,40 @@ public class Main extends Application {
             if (f.isFile()) while(!f.delete()) Thread.sleep(50);                                                        // Delete previous jar
         }
         launch(args);
+    }
+
+    private static String MakeJSONRequest(String username, String password){ return "{\"agent\": { \"name\": \"Minecraft\", \"version\": 1 }, \"username\": \""+username+"\", \"password\": \""+password+"\"}"; }
+
+    private static String httpRequest(URL url, String content) throws Exception {
+        byte[] contentBytes = content.getBytes("UTF-8");
+
+        URLConnection connection = url.openConnection();
+        connection.setDoInput(true);
+        connection.setDoOutput(true);
+        connection.setRequestProperty("Accept-Charset", "UTF-8");
+        connection.setRequestProperty("Content-Type", "application/json");
+        connection.setRequestProperty("Content-Length", Integer.toString(contentBytes.length));
+
+        OutputStream requestStream = connection.getOutputStream();
+        requestStream.write(contentBytes, 0, contentBytes.length);
+        requestStream.close();
+
+        String response = "";
+        BufferedReader responseStream;
+        if (((HttpURLConnection) connection).getResponseCode() == 200) {
+            responseStream = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
+        } else {
+            responseStream = new BufferedReader(new InputStreamReader(((HttpURLConnection) connection).getErrorStream(), "UTF-8"));
+        }
+
+        response = responseStream.readLine();
+        responseStream.close();
+
+        if (((HttpURLConnection) connection).getResponseCode() != 200) {
+            //Failed to login (Invalid Credentials or whatever)
+        }
+
+        return response;
     }
 
     /**
