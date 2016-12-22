@@ -204,12 +204,12 @@ public class Main extends Application {
                             dragbar_1 = (Pane) Tabs.load("instance_userinfo").lookup("#dragbar-1");
 
                             dragbar_1.setOnMousePressed(event4 -> {
-                                xOffset = event.getSceneX();
-                                yOffset = event.getSceneY();
+                                xOffset = event4.getSceneX();
+                                yOffset = event4.getSceneY();
                             });
                             dragbar_1.setOnMouseDragged(event4 -> {
-                                login.setX(event.getScreenX() - xOffset);
-                                login.setY(event.getScreenY() - yOffset);
+                                login.setX(event4.getScreenX() - xOffset);
+                                login.setY(event4.getScreenY() - yOffset);
                             });
 
                             minecraftlogin.lookup("#close-minecraft-login-window").setOnMouseClicked(event4 ->{

@@ -146,12 +146,12 @@
     -fx-border-color: white;
     -fx-border-width: 0px 0px 2px 0px;
 }
-#minecraft-login {
+#minecraft-login, #close-minecraft-login-window {
     -fx-background-color: #252525;
     -fx-background-radius: 0em;
     -fx-text-fill: white;
 }
-#minecraft-login:hover {
+#minecraft-login:hover, #close-minecraft-login-window:hover{
     -fx-background-color: #bcbcbc;
     -fx-background-radius: 0em;
     -fx-text-fill: black;
