@@ -23,10 +23,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -201,7 +198,7 @@ public class Main extends Application {
                             login.setResizable(false);
                             login.setTitle("Minecraft Login");
 
-                            dragbar_1 = (Pane) Tabs.load("instance_userinfo").lookup("#dragbar-1");
+                            dragbar_1 = (Pane) minecraftlogin.lookup("#dragbar-1");
 
                             dragbar_1.setOnMousePressed(event4 -> {
                                 xOffset = event4.getSceneX();
@@ -219,6 +216,21 @@ public class Main extends Application {
 
                             minecraftlogin.lookup("#minecraft-login").setOnMouseClicked(event4 ->{
                                 System.out.println("Logging in ....");
+                                Pane lw;
+                                Scene s = login.getScene();
+                                login.setScene(new Scene(lw=(Pane)Tabs.reloadTab("instance_loginwait"), 300, 308));
+                                login.getScene().getRoot().setOnMousePressed(event5 -> {
+                                    xOffset = event5.getSceneX();
+                                    yOffset = event5.getSceneY();
+                                });
+                                login.getScene().getRoot().setOnMouseDragged(event5 -> {
+                                    login.setX(event5.getScreenX() - xOffset);
+                                    login.setY(event5.getScreenY() - yOffset);
+                                });
+                                lw.lookup("#login_cancel").setOnMouseClicked(event2 -> {
+                                    System.out.println("Canceled");
+                                    login.setScene(s);
+                                });
                             });
                         });
                     }
