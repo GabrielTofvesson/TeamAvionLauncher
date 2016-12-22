@@ -59,7 +59,6 @@ public class Main extends Application {
     public static final int     semVerMajor     = 0;                                                                    // Major version
     public static final int     semVerMinor     = 2;                                                                    // Minor version
     public static final int     semVerPatch     = 5;                                                                    // Patch version
-    public static final int     semVerSubPatch  = 1;
 
 
     double xOffset = 0, yOffset = 0;                                                                                    // Offsets for dragging
@@ -69,7 +68,7 @@ public class Main extends Application {
     private TextField Search_modpacks, Username_minecraft;
     private Image appIcon;
     private Rectangle dragBar;                                                                                          // Draggable top bar
-    Pane root, tab;
+    Pane root, tab, dragbar_1;
     private PasswordField Password_minecraft;
     Node activeTab, settings_activeTab;
     private Label dialog_changer;
@@ -100,7 +99,7 @@ public class Main extends Application {
 
         root = (Pane) Tabs.load("main");                                                                       // Load via layout loader
         ((Label)root.lookup("#version")).setText(((Label) root.lookup("#version"))                      // Dynamically set version label
-                .getText().replace("$v", semVerDevState+" "+semVerMajor+"."+semVerMinor+"."+semVerPatch+"-"+semVerSubPatch));              // Use variables to define version
+                .getText().replace("$v", semVerDevState+" "+semVerMajor+"."+semVerMinor+"."+semVerPatch));              // Use variables to define version
         primaryStage.setTitle("Team-Avion Launcher");
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.getIcons().clear();
@@ -111,6 +110,7 @@ public class Main extends Application {
         min = (Button) root.lookup("#min");
 
         dragBar = (Rectangle) root.lookup("#rectangle");
+
 
         Home_btn = (Button) root.lookup("#Home-btn");
         Modpack_btn = (Button) root.lookup("#Modpacks-btn");
@@ -201,7 +201,16 @@ public class Main extends Application {
                             login.setResizable(false);
                             login.setTitle("Minecraft Login");
 
+                            dragbar_1 = (Pane) Tabs.load("instance_userinfo").lookup("#dragbar-1");
 
+                            dragbar_1.setOnMousePressed(event4 -> {
+                                xOffset = event.getSceneX();
+                                yOffset = event.getSceneY();
+                            });
+                            dragbar_1.setOnMouseDragged(event4 -> {
+                                login.setX(event.getScreenX() - xOffset);
+                                login.setY(event.getScreenY() - yOffset);
+                            });
 
                             minecraftlogin.lookup("#close-minecraft-login-window").setOnMouseClicked(event4 ->{
                                 System.out.println("Closing window");
