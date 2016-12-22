@@ -23,10 +23,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -72,6 +69,8 @@ public class Main extends Application {
     private PasswordField Password_minecraft;
     Node activeTab, settings_activeTab;
     private Label dialog_changer;
+    private CheckBox RAM_Default;
+    private Slider RAM_slider;
 
     Async stringUpdater;
 
@@ -110,7 +109,6 @@ public class Main extends Application {
         min = (Button) root.lookup("#min");
 
         dragBar = (Rectangle) root.lookup("#rectangle");
-
 
         Home_btn = (Button) root.lookup("#Home-btn");
         Modpack_btn = (Button) root.lookup("#Modpacks-btn");
@@ -221,6 +219,11 @@ public class Main extends Application {
                                 System.out.println("Logging in ....");
                             });
                         });
+
+                        RAM_Default = (CheckBox) Tabs.load("settings_minecraft").lookup("#RAM-Default");
+                        RAM_slider = (Slider) Tabs.load("settings_minecraft").lookup("#RAM-slider");
+                        RAM_slider.setDisable(true);
+                        RAM_Default.setSelected(true);
                     }
                 });
 

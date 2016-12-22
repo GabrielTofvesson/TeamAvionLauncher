@@ -57,7 +57,7 @@
     -fx-text-fill: black;
 }
 
-#lable {
+#lable, #RAM-Default, #RAM-slider {
     -fx-text-fill: white;
 }
 
