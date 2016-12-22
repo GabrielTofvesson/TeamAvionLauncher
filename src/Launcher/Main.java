@@ -58,7 +58,7 @@ public class Main extends Application {
     public static final String  semVerDevState  = "PreDev";                                                             // Development stage
     public static final int     semVerMajor     = 0;                                                                    // Major version
     public static final int     semVerMinor     = 2;                                                                    // Minor version
-    public static final int     semVerPatch     = 5;                                                                    // Patch version
+    public static final int     semVerPatch     = 6;                                                                    // Patch version
 
 
     double xOffset = 0, yOffset = 0;                                                                                    // Offsets for dragging
