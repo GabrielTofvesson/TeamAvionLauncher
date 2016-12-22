@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="750.0" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
+<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="750.0" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Label id="lable" layoutX="22.0" layoutY="14.0" text="Minecraft Settings">
             <font>
                 <Font name="Centaur" size="25.0" />
             </font>
         </Label>
-      <Label id="lable" layoutX="32.0" layoutY="77.0" text="Account:" />
+      <Label id="lable" layoutX="14.0" layoutY="77.0" text="Account :">
+         <font>
+            <Font name="Century" size="15.0" />
+         </font></Label>
       <Button id="minecraft-login-btn" layoutX="90.0" layoutY="71.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="59.0" text="Login" />
       <Label id="login" layoutX="160.0" layoutY="78.0" text="Not logged in" />
+      <Slider id="lable" blockIncrement="1.0" disable="true" layoutX="15.0" layoutY="147.0" majorTickUnit="1.0" max="16.0" minorTickCount="0" prefHeight="37.0" prefWidth="286.0" showTickLabels="true" showTickMarks="true" value="8.0" />
+      <Label id="lable" layoutX="14.0" layoutY="123.0" text="Alocated RAM :">
+         <font>
+            <Font name="Century" size="15.0" />
+         </font>
+      </Label>
+      <CheckBox id="lable" layoutX="149.0" layoutY="124.0" mnemonicParsing="false" selected="true" text="Use Systems Default">
+         <font>
+            <Font name="Century" size="13.0" />
+         </font>
+      </CheckBox>
     </children>
 </Pane>

@@ -7,8 +7,6 @@ always tell me that it's virtually unreadable and it doesn't help that it's diff
 does without them losing interest. Also, in case you are actually, seriously going to read this crap, do yourself a
 favour and pour yourself some nice Jack Daniels. You deserve it if you're going to read through this.
 
-
-
 Do not Read Past this point... This is a human health advisory. Anyone reading past this point will risk his or her life.
 If you get sick reading, we will not claim responsibility on your health. Please Stay Clear of the Code.
 */
@@ -261,7 +259,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws Exception{
-        // TODO: Try and fix this code please, It still doesn't work on my PC.
+        // TODO: Needs Fixing.
         /* Localization l = new Localization(new File(Main.class.getResource("../assets/lang/").getFile()));                // Create a localization with aggressive loading
         System.out.println(Arrays.toString(l.getLanguageNames()));
         System.out.println("Success: "+l.get("du_label")); */
