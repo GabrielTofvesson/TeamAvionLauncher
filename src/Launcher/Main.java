@@ -69,7 +69,7 @@ public class Main extends Application {
     private PasswordField Password_minecraft;
     Node activeTab, settings_activeTab;
     private Label dialog_changer;
-    private CheckBox RAM_Default, Minimized_window_minecraft_launch;
+    private CheckBox RAM_Default, Minimized_window_minecraft_launch, Close_window_minecraft_launch;
     private Slider RAM_slider;
 
     Async stringUpdater;
@@ -224,11 +224,11 @@ public class Main extends Application {
 
                         RAM_Default = (CheckBox) Minecraft_settings.lookup("#RAM-Default");
                         RAM_slider = (Slider) Minecraft_settings.lookup("#RAM-slider");
-                        Minimized_window_minecraft_launch = (CheckBox) Minecraft_settings.lookup("#Minimized_window_minecraft_launch");
 
+
+                        // Default States for the General Settings
                         RAM_slider.setDisable(true);
                         RAM_Default.setSelected(true);
-                        Minimized_window_minecraft_launch.setSelected(true);
                     }
                 });
 
