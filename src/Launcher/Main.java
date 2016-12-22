@@ -17,7 +17,6 @@ package Launcher;
 
 import Launcher.net.Updater;
 import com.tofvesson.async.Async;
-import com.tofvesson.joe.Localization;
 import com.tofvesson.reflection.SafeReflection;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -39,12 +38,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-import javafx.util.StringConverter;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /*
