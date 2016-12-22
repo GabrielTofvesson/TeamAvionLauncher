@@ -31,12 +31,12 @@
             <Font name="Century" size="15.0" />
          </font>
       </CheckBox>
-      <CheckBox id="lable" layoutX="35.0" layoutY="185.0" mnemonicParsing="false" text="Close Window when Mincraft Launches">
+      <CheckBox id="Close_window_minecraft_launch" layoutX="35.0" layoutY="185.0" mnemonicParsing="false" text="Close Window when Mincraft Launches">
          <font>
             <Font name="Century" size="15.0" />
          </font>
       </CheckBox>
-      <CheckBox id="lable" layoutX="344.0" layoutY="185.0" mnemonicParsing="false" selected="true" text="Minimize Window when Minecraft Launches">
+      <CheckBox id="Minimized_window_minecraft_launch" layoutX="344.0" layoutY="185.0" mnemonicParsing="false" text="Minimize Window when Minecraft Launches">
          <font>
             <Font name="Century" size="15.0" />
          </font>

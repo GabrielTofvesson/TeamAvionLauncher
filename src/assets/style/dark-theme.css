@@ -57,7 +57,7 @@
     -fx-text-fill: black;
 }
 
-#lable, #RAM-Default, #RAM-slider {
+#lable, #RAM-Default, #RAM-slider, #Minimized_window_minecraft_launch, #Close_window_minecraft_launch {
     -fx-text-fill: white;
 }
 
