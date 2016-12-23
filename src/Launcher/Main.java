@@ -69,7 +69,7 @@ public class Main extends Application {
     private PasswordField Password_minecraft;
     Node activeTab, settings_activeTab;
     private Label dialog_changer;
-    private CheckBox RAM_Default, Minimized_window_minecraft_launch, Close_window_minecraft_launch;
+    private CheckBox RAM_Default;
     private Slider RAM_slider;
 
     Async stringUpdater;
@@ -180,6 +180,7 @@ public class Main extends Application {
                         updateTabSelection(n.lookup("#Settings-Gen-btn"), TabType.SETTINGS);
                         Node genericLayout = Tabs.switchTab("settings_generic", (Pane) n.lookup("#Settings-Pane"));
 
+
                     }
                 });
                 n.lookup("#Settings-Mine-btn").setOnMouseClicked(event1 -> {
@@ -229,6 +230,7 @@ public class Main extends Application {
                         // Default States for the General Settings
                         RAM_slider.setDisable(true);
                         RAM_Default.setSelected(true);
+
                     }
                 });
 
