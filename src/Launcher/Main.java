@@ -52,10 +52,10 @@ Beware the crocodiles on line 100!
 public class Main extends Application {
 
     // Semantic versioning system data
-    public static final String  semVerDevState  = "PreDev";                                                             // Development stage
+    public static final String  semVerDevState  = "alpha-Dev";                                                             // Development stage
     public static final int     semVerMajor     = 0;                                                                    // Major version
-    public static final int     semVerMinor     = 2;                                                                    // Minor version
-    public static final int     semVerPatch     = 6;                                                                    // Patch version
+    public static final int     semVerMinor     = 3;                                                                    // Minor version
+    public static final int     semVerPatch     = 0;                                                                    // Patch version
 
 
     double xOffset = 0, yOffset = 0;                                                                                    // Offsets for dragging
