@@ -12,16 +12,11 @@
 
 <Pane id="dragbar-1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="300.0" stylesheets="@../style/default-theme.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="308.0" fitWidth="306.0" layoutX="-5.0" pickOnBounds="true">
-         <image>
-            <Image url="@../icons/Minecraft-Wallpaper.png" />
-         </image>
-      </ImageView>
       <Button id="minecraft-login" layoutX="120.0" layoutY="253.0" mnemonicParsing="false" text="Login">
          <font>
             <Font name="Century" size="15.0" />
          </font></Button>
-      <CheckBox layoutX="88.0" layoutY="217.0" mnemonicParsing="false" text="Remember Me" textFill="WHITE">
+      <CheckBox layoutX="88.0" layoutY="217.0" mnemonicParsing="false" text="Remember Me">
          <font>
             <Font name="Century" size="14.0" />
          </font></CheckBox>
@@ -33,12 +28,12 @@
          </image>
       </ImageView>
       <Button id="close-minecraft-login-window" layoutX="259.0" layoutY="14.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="28.0" text="X" />
-      <Label layoutX="14.0" layoutY="134.0" text="Username :" textFill="WHITE">
+      <Label layoutX="14.0" layoutY="134.0" text="Username :">
          <font>
             <Font name="Century" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="178.0" prefHeight="19.0" prefWidth="80.0" text="Password :" textFill="WHITE">
+      <Label layoutX="14.0" layoutY="178.0" prefHeight="19.0" prefWidth="80.0" text="Password :">
          <font>
             <Font name="Century" size="15.0" />
          </font>
