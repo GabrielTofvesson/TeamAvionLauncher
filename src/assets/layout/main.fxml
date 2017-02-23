@@ -19,23 +19,23 @@
             <Font name="Centaur" size="24.0" />
          </font>
       </Label>
-       <Rectangle id="rectangle-1" height="450.0" layoutY="50.0" styleClass="nav-bar" width="86.0" />
-      <Button id="Home-btn" layoutY="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="86.0" styleClass="selected" text="Home" textOverrun="CLIP">
+       <Rectangle id="rectangle-1" height="450.0" layoutY="50.0" styleClass="nav-bar" width="88.0" />
+      <Button id="Home-btn" layoutY="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="88.0" styleClass="selected" text="Home" textOverrun="CLIP">
          <font>
             <Font name="Centaur" size="16.0" />
          </font>
       </Button>
-      <Button id="Modpacks-btn" layoutY="90.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="86.0" styleClass="tab" text="Modpack" textAlignment="CENTER" textOverrun="CLIP">
+      <Button id="Modpacks-btn" layoutY="90.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="88.0" styleClass="tab" text="Modpack" textAlignment="CENTER" textOverrun="CLIP">
           <font>
               <Font name="Centaur" size="16.0" />
           </font>
       </Button>
-       <Button id="Instance-btn" layoutY="130.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="86.0" styleClass="tab" text="Instances" textOverrun="CLIP">
+       <Button id="Instance-btn" layoutY="130.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="88.0" styleClass="tab" text="Instances" textOverrun="CLIP">
            <font>
                <Font name="Centaur" size="16.0" />
            </font>
        </Button>
-       <Button id="Settings-btn" layoutY="170.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="86.0" styleClass="tab" textOverrun="CLIP">
+       <Button id="Settings-btn" layoutY="170.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="88.0" styleClass="tab" textOverrun="CLIP">
            <font>
                <Font name="Centaur" size="16.0" />
            </font>
@@ -47,7 +47,7 @@
          </graphic>
        </Button>
       <Pane id="tab" layoutX="88.0" layoutY="50.0" prefHeight="450.0" prefWidth="812.0" />
-      <Label id="version" layoutX="282.0" layoutY="14.0" prefHeight="24.0" prefWidth="132.0" text="Version : $v" wrapText="true" />
+      <Label id="version" layoutX="299.0" layoutY="14.0" prefHeight="24.0" prefWidth="132.0" text="Version : $v" wrapText="true" />
       <Label id="lable" layoutX="6.0" layoutY="450.0" prefHeight="50.0" prefWidth="60.0" text="2016 TeamAvion" wrapText="true">
          <font>
             <Font size="11.0" />
