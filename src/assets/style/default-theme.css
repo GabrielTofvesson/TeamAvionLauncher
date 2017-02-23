@@ -57,7 +57,7 @@
     -fx-text-fill: black;
 }
 
-#lable {
+#lable, #RAM-Default, #RAM-slider, #Minimized_window_minecraft_launch, #Close_window_minecraft_launch {
     -fx-text-fill: white;
 }
 
@@ -134,4 +134,36 @@
 
 .selected:hover {
     -fx-background-color: #05030c;
+}
+
+#minecraftuser, #minecraftpass{
+    -fx-prompt-text-fill: #000000;
+    -fx-text-fill: #000000;
+    -fx-background-color: transparent;
+    -fx-padding: 5px;
+}
+#minecraftuser:hover, #minecraftpass:hover, #minecraftuser:focused, #minecraftpass:focused{
+    -fx-border-style: solid;
+    -fx-border-color: #444444;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+#minecraft-login {
+    -fx-background-color: #292929;
+    -fx-background-radius: 2px;
+    -fx-text-fill: #ffffff;
+}
+#minecraft-login:hover, #close-minecraft-login-window:hover{
+    -fx-background-color: #575757;
+    -fx-background-radius: 2px;
+    -fx-text-fill: #e4e4e4;
+}
+#close-minecraft-login-window {
+    -fx-background-color: #2c0004;
+    -fx-background-radius: 2px;
+    -fx-text-fill: white;
+}
+#close-minecraft-login-window:hover{
+    -fx-background-color: #6e0003;
+    -fx-background-radius: 2px;
+    -fx-text-fill: white;
 }

@@ -33,10 +33,10 @@ public class Tabs {
         URL file = Main.class.getResource("/assets/layout/"+fileName);
         try {
             final boolean[] b = {false};
-            loaded.stream().filter(p -> p.getKey().equals(file)).forEach(p->b[0]=true);
+            loaded.stream().filter(p ->p!=null && p.getKey().equals(file)).forEach(p->b[0]=true);
             if(!b[0]) loaded.add(new Pair<>(file, FXMLLoader.load(file)));                                              // Load file if it isn't already loaded
             final Node[] p1 = new Node[]{new Pane()};
-            loaded.stream().filter(p->p.getKey().equals(file)).forEach(p->p1[0]=p.getValue());
+            loaded.stream().filter(p->p!=null && p.getKey().equals(file)).forEach(p->p1[0]=p.getValue());
             return p1[0];
         } catch (IOException e) {
             e.printStackTrace();
@@ -67,7 +67,7 @@ public class Tabs {
     public static void unloadTab(String fileName){
         if(!fileName.endsWith(".fxml")) fileName+=".fxml";
         URL file = Main.class.getResource("/assets/layout/"+fileName);
-        loaded.stream().filter(p->p.getKey().equals(file)).forEach(loaded::remove);
+        loaded.stream().filter(p->p!=null && p.getKey().equals(file)).forEach(loaded::remove);
     }
 
     /**
