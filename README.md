@@ -1,5 +1,6 @@
 # Team Avion Launcher (TAL)
-Current Version : Alpha Dev 0.0.1 [Download](https://github.com/GabrielTofvesson/TeamAvionLauncher/releases/download/AlphaDev-0.0.1/Team-Avion-Launcher-AlphaDev-0.0.1.jar), [Older Versions](https://github.com/GabrielTofvesson/TeamAvionLauncher/releases)
+Current Version : Alpha Dev 0.0.1 [Download](https://github.com/GabrielTofvesson/TeamAvionLauncher/releases/download/AlphaDev-0.0.1/Team-Avion-Launcher-AlphaDev-0.0.1.jar), [Older Versions](https://github.com/GabrielTofvesson/TeamAvionLauncher/releases). 
+
 Created by [Taco Dev](https://github.com/Michael-Jouanneau), [Blynd3 Dev](https://github.com/GabrielTofvesson) and, [Deathly Dev](https://github.com/ADeathyTouch) for Team Avion
 
 ### What is Team Avion Launcher (TAL)?
