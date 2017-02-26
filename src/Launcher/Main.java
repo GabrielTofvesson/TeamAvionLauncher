@@ -55,7 +55,7 @@ public class Main extends Application {
     public static final String  semVerDevState  = "Alpha-Dev";                                                          // Development stage
     public static final int     semVerMajor     = 0;                                                                    // Major version
     public static final int     semVerMinor     = 0;                                                                    // Minor version
-    public static final int     semVerPatch     = 2;                                                                    // Patch version
+    public static final int     semVerPatch     = 3;                                                                    // Patch version
 
 
     double xOffset = 0, yOffset = 0;                                                                                    // Offsets for dragging
