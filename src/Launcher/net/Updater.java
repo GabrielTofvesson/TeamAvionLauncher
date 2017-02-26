@@ -48,7 +48,6 @@ public class Updater {
             }
             conn.connect();
 
-
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     conn.getInputStream()));
             String inputLine;

@@ -13,7 +13,7 @@ If you get sick reading, we will not claim responsibility on your health. Please
 
 package Launcher;
 
-import Launcher.net.Updater;
+// import Launcher.net.Updater;
 import com.tofvesson.async.Async;
 import com.tofvesson.reflection.SafeReflection;
 import javafx.animation.KeyFrame;
@@ -52,7 +52,7 @@ Beware the crocodiles on line 100!
 public class Main extends Application {
 
     // Semantic versioning system data
-    public static final String  semVerDevState  = "Alpha-Dev";                                                             // Development stage
+    public static final String  semVerDevState  = "Alpha-Dev";                                                          // Development stage
     public static final int     semVerMajor     = 0;                                                                    // Major version
     public static final int     semVerMinor     = 0;                                                                    // Minor version
     public static final int     semVerPatch     = 1;                                                                    // Patch version
@@ -79,7 +79,8 @@ public class Main extends Application {
 
         primaryStage.initStyle(StageStyle.UNDECORATED);
 
-        if(args.length<2 || !args[1].equals("false")){
+        //TODO: Remove the comments under when updater class is fixed
+        /* if(args.length<2 || !args[1].equals("false")){
             Stage d = new Stage();
             Timeline t = new Timeline();
             t.getKeyFrames().add(new KeyFrame(Duration.millis(1), event ->{ d.close(); primaryStage.show(); }));
@@ -94,7 +95,7 @@ public class Main extends Application {
             });
             t1.setDaemon(true);
             t1.start();
-        } else primaryStage.show();                                                                                     // Remove ugly trash
+        } else primaryStage.show(); */                                                                                 // Remove ugly trash
 
         root = (Pane) Tabs.load("main");                                                                       // Load via layout loader
         ((Label)root.lookup("#version")).setText(((Label) root.lookup("#version"))                      // Dynamically set version label
@@ -103,6 +104,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.getIcons().clear();
         primaryStage.getIcons().add(appIcon = new Image(getClass().getResourceAsStream("/assets/icons/app.png")));
+        primaryStage.show(); // TODO: remove when the Upodater class is fixed
 
         // Field initialization
         exit = (Button) root.lookup("#exit");
