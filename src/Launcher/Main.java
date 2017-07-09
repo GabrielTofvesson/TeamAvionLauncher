@@ -14,6 +14,7 @@ If you get sick reading, we will not claim responsibility on your health. Please
 package Launcher;
 
 // import Launcher.net.Updater;
+import Launcher.net.Updater;
 import com.tofvesson.async.Async;
 import com.tofvesson.reflection.SafeReflection;
 import javafx.animation.KeyFrame;
@@ -54,8 +55,8 @@ public class Main extends Application {
     // Semantic versioning system data
     public static final String  semVerDevState  = "Alpha-Dev";                                                          // Development stage
     public static final int     semVerMajor     = 0;                                                                    // Major version
-    public static final int     semVerMinor     = 0;                                                                    // Minor version
-    public static final int     semVerPatch     = 2;                                                                    // Patch version
+    public static final int     semVerMinor     = 3;                                                                    // Minor version
+    public static final int     semVerPatch     = 0;                                                                    // Patch version
 
 
     double xOffset = 0, yOffset = 0;                                                                                    // Offsets for dragging
@@ -80,7 +81,7 @@ public class Main extends Application {
         primaryStage.initStyle(StageStyle.UNDECORATED);
 
         //TODO: Remove the comments under when updater class is fixed
-        /* if(args.length<2 || !args[1].equals("false")){
+        if(args.length<2 || !args[1].equals("false")){
             Stage d = new Stage();
             Timeline t = new Timeline();
             t.getKeyFrames().add(new KeyFrame(Duration.millis(1), event ->{ d.close(); primaryStage.show(); }));
@@ -95,7 +96,7 @@ public class Main extends Application {
             });
             t1.setDaemon(true);
             t1.start();
-        } else primaryStage.show(); */                                                                                 // Remove ugly trash
+        } else primaryStage.show();                                                                                // Remove ugly trash
 
         root = (Pane) Tabs.load("main");                                                                       // Load via layout loader
         ((Label)root.lookup("#version")).setText(((Label) root.lookup("#version"))                      // Dynamically set version label
