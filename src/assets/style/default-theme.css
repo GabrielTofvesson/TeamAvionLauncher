@@ -1,40 +1,42 @@
 #pane {
-    -fx-background-color: #290d95;
+    -fx-background-color: #6770e3;
 }
 #rectangle {
-    -fx-fill: #17177d;
+    -fx-fill: #373ab0;
     -fx-text-fill: white;
 }
 
 #rectangle-1 {
-    -fx-fill: #1b1884;
+    -fx-fill: #4e4ecf;
     -fx-text-fill: white;
 }
 
 #rectangle-2 {
-    -fx-fill: #20118e;
+    -fx-fill: #4c46d5;
     -fx-text-fill: white;
 }
 
 #rectangle-3 {
-    -fx-fill: #170c77;
+    -fx-fill: #3736ac;
     -fx-text-fill: white;
+    -webkit-box-shadow: 10px 10px 15px rgba(191, 191, 191, 0.72);
+    box-shadow: 10px 10px 15px rgba(191, 191, 191, 0.72);
 }
 
 #download-modpack, #download-modpack-a, #view-modpack-a, #view-modpack, #Launch-VM, #Update-VM {
-    -fx-background-color: #0d08a2;
+    -fx-background-color: #5d7ba6;
     -fx-background-radius: 0em;
     -fx-text-fill: white;
 }
 
 #download-modpack:hover, #view-modpack:hover, #view-modpack-a:hover, #download-modpack-a:hover, #Launch-VM:hover, #Update-VM:hover {
-    -fx-background-color: #161580;
+    -fx-background-color: #2442da;
     -fx-background-radius: 0em;
     -fx-text-fill: white;
 }
 
 #default-theme,#dark-theme, #light-theme {
-    -fx-background-color: #320da9;
+    -fx-background-color: #4051c2;
     -fx-background-radius: 0em;
     -fx-text-fill: white;
 }
@@ -70,19 +72,19 @@
 }
 
 #minecraft-login-btn {
-    -fx-background-color: #0a073b;
+    -fx-background-color: #3e58cb;
     -fx-background-radius: 0em;
     -fx-text-fill: white;
 }
 
 #minecraft-login-btn:hover {
-    -fx-background-color: #07061b;
+    -fx-background-color: #2c3f7b;
     -fx-background-radius: 0em;
     -fx-text-fill: white;
 }
 
 #Modpack-back, #home-back, #Settings-back, #instance-back {
-    -fx-fill: #1b2f96;
+    -fx-fill: #2a36c9;
     -fx-text-fill: white;
 }
 #exit, #min{
@@ -96,7 +98,7 @@
 #search-modpacks {
     -fx-prompt-text-fill: white;
     -fx-text-fill: white;
-    -fx-background-color: #162f99;
+    -fx-background-color: rgba(230, 42, 152, 0);
     -fx-padding: 5px;
 }
 
@@ -123,17 +125,17 @@
 }
 
 .tab:hover{
-    -fx-background-color: #1f0e90;
+    -fx-background-color: #372bf1;
 
 }
 
 .selected {
-    -fx-background-color: #301d73;
+    -fx-background-color: #496ce2;
     -fx-background-radius: 0em;
 }
 
 .selected:hover {
-    -fx-background-color: #2c1a69;
+    -fx-background-color: #2421e0;
 }
 
 #minecraftuser, #minecraftpass{
